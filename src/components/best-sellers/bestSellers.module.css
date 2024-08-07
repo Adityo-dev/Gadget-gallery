@@ -1,0 +1,86 @@
+.bestSellersAllDataContainer {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1550px;
+}
+
+.bestSellersHeaderTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bestSellersAllDataInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.bestSellersTitleText {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.tabBtnContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.tabBtn {
+  border: none;
+  background-color: transparent;
+  font-size: 1.02rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.tabBtn:hover {
+  color: #0068c8;
+}
+
+.bestSellersLineHr {
+  border-top: 1px solid #dfd9d9;
+}
+
+.categoryInfoDataContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.seeMoreContainer {
+  position: relative;
+  grid-column: 4/-1;
+}
+
+.sreMoreImage {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.seeMoreInfoContainer {
+  position: absolute;
+  top: 120px;
+  left: 50px;
+  color: #fff;
+}
+
+.seeMoreSubtitle {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.seeMoreTitle {
+  font-size: 56px;
+  font-weight: 800;
+  white-space: pre-line;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}

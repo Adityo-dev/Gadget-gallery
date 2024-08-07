@@ -1,0 +1,33 @@
+.banner2AllDataContainer {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1550px;
+}
+
+.banner2DataContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 100px;
+  border-radius: 10px;
+}
+
+.headerTitle {
+  font-size: 1rem;
+  color: #dd2831;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 52px;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 32px;
+  white-space: pre-line;
+}
+
+.bannerImage {
+  width: 550px;
+  height: 300px;
+}

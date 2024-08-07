@@ -1,0 +1,14 @@
+.shopNowBtn {
+  width: 160px;
+  font-size: 1rem;
+  font-weight: 600;
+  justify-content: center;
+  display: flex;
+  text-wrap: nowrap;
+  border: none;
+  background-color: #0068c8;
+  color: #fff;
+  padding: 15px 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,44 @@
+.trendingProductsSliderAllDataMainContainer {
+  position: relative;
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 50px 0;
+}
+
+.sliderAllDataContainer {
+  width: 80%;
+  max-width: 1550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.trendingProductsText {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.trendingProductsHrLine {
+  border-top: 1px solid #cfc9c9;
+}
+
+/* slider arrow  */
+.nextArrowContainer,
+.prevArrowContainer {
+  position: absolute;
+  top: -88px;
+  right: 0;
+  background-color: #cfc9c9;
+  color: #fff;
+  width: 35px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.prevArrowContainer {
+  top: -88px;
+  right: 70px;
+}

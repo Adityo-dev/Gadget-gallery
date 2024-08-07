@@ -1,0 +1,235 @@
+.navigationBarAllDataContainer {
+  background-color: #fff;
+}
+
+/* Navigation bar Top section data style */
+.topNavAllDataContainer {
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 12px 0;
+}
+
+.topNavDataContainer {
+  width: 80%;
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+.topNavInfoContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}
+
+.electricIcon {
+  display: none;
+}
+
+.categoryListHighlightText {
+  color: #fcc904;
+}
+
+.categoryListText {
+  color: #fff;
+}
+
+/* Navigation bar Center section data style */
+.centerNavAllDataContainer {
+  width: 80%;
+  max-width: 1550px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 0;
+}
+
+.gadgetGalleryLogo {
+  width: 160px;
+  height: 65px;
+}
+
+.searchFieldContainer {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  border: 2px solid #0068c8;
+  border-radius: 8px;
+}
+
+.allCategories {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  text-wrap: nowrap;
+  text-transform: capitalize;
+  padding: 0 30px;
+  border-right: 1px solid #000000;
+  height: 50px;
+  border-radius: 0 2px 2px 0;
+}
+
+.angleDownIcon {
+  padding: 0 2px;
+}
+
+.searchField {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  color: #353333;
+  border: none;
+  padding: 5px 20px;
+  font-size: 1rem;
+}
+
+.searchButton {
+  background-color: #0068c8;
+  color: #fff;
+  border: none;
+  padding: 17px 30px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.searchButton:hover {
+  background-color: #1a74c9;
+}
+
+.centerNavRightDataContainer {
+  display: flex;
+}
+
+.centerNavRightDataInfoContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.centerNavRightDataIcon {
+  font-size: 22px;
+  margin-top: 6px;
+  margin-left: 30px;
+}
+
+.centerNavRightDataText {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}
+
+.centerNavHelpNumber {
+  color: #0068c8;
+  font-weight: 600;
+}
+
+/* Navigation bar Bottom section data style */
+.bottomNavHrLine {
+  border-top: 1px solid #cfc9c9;
+}
+
+.bottomNavAllDataContainer {
+  position: relative;
+  width: 80%;
+  max-width: 1550px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  text-transform: capitalize;
+}
+
+.shopCategoriesALlDataContainer {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  position: relative;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.shopCategoriesAllTextContainer {
+  display: flex;
+  gap: 90px;
+  align-items: center;
+  border-right: 1px solid #cfc9c9;
+  height: 50px;
+}
+
+.shopCategoriesTextAndIconContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.alignJustifyIcon {
+  font-size: 1.5rem;
+}
+
+.arrowDownIcon {
+  margin-right: 30px;
+  padding: 0 2px;
+}
+
+/* bottom Nav List All Data Container */
+.bottomNavListAllDataContainer {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.navCategoryRightList {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.bottomNavRightHeartIcon {
+  font-size: 1.5rem;
+}
+
+.navCategoryListRightItemHrLine {
+  border-right: 1px solid #cfc9c9;
+  height: 50px;
+}
+
+.bottomNavRightTodayDealText {
+  font-weight: 600;
+}
+
+/* >>>> */
+.shopCategoriesALlDataInfoContainer {
+  width: 100%;
+  position: absolute;
+  top: 61px;
+  background-color: #fff;
+  padding: 0;
+  z-index: 0;
+  display: none;
+}
+
+.navCategoryListItemHrLine {
+  border: 1px solid #cfc9c9;
+}
+
+.navCategoryListHrLineAndCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.navCategoryListItemContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

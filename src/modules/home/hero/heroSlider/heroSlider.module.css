@@ -1,0 +1,83 @@
+.sliderDataContainer {
+  width: 80%;
+  max-width: 1550px;
+  height: 55vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  padding-left: 100px;
+  cursor: pointer;
+}
+
+.sliderInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  color: #fff;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-wrap: nowrap;
+  background-color: #dd2831;
+  border-radius: 0 5px 5px 5px;
+  padding: 5px 20px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
+  white-space: pre-line;
+}
+
+.subTitle {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-top: 7px;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.05rem;
+  text-transform: capitalize;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f8c604;
+  animation: waterWave 2s ease-in-out infinite;
+}
+
+@keyframes waterWave {
+  0% {
+    transform: translateY(0);
+    text-shadow: 0 0 5px #ffffff80;
+  }
+  50% {
+    transform: translateY(-10px);
+    text-shadow: 0 0 15px #ffffffcc;
+  }
+  100% {
+    transform: translateY(0);
+    text-shadow: 0 0 5px #ffffff80;
+  }
+}
+
+.sliderImageContainer {
+  width: 55%;
+}
+
+.sliderImage {
+  width: 90%;
+  height: 100%;
+}

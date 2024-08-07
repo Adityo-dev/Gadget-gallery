@@ -1,0 +1,28 @@
+.productCategoryAllDataContainer {
+  width: 80%;
+  max-width: 1550px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px;
+}
+
+.productCategoryDataContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 23px 20px;
+  border-radius: 10px;
+}
+
+.productCategoryIcon {
+  width: 27%;
+  height: 100%;
+}
+
+.productCategoryTitle {
+  text-transform: capitalize;
+  font-weight: 600;
+}
