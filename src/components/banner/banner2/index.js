@@ -1,10 +1,10 @@
 import styles from "./banner2.module.css";
 import Image from "next/image";
 import Link from "next/link";
-
+// import components
+import DynamicButton from "@/components/button";
 // import image
 import banner3 from "../../../assets/images/banner/banner-3.png";
-import DynamicButton from "@/components/button";
 
 const productBanner2Data = [
   {

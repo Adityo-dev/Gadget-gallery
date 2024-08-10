@@ -48,9 +48,10 @@ import accessories6 from "../../assets/images/products/accessories/6.png";
 import accessories7 from "../../assets/images/products/accessories/7.png";
 
 // banner
-import banner8 from "../../assets/images/banner/banner-8.jpeg";
-import banner9 from "../../assets/images/banner/banner-9.jpeg";
-import banner11 from "../../assets/images/banner/banner-11.jpg";
+import phoneBanner from "../../assets/images/banner/banner-16.png";
+import laptopBanner from "../../assets/images/banner/banner-18.png";
+import watchBanner from "../../assets/images/banner/banner-17.png";
+import accessoriesBanner from "../../assets/images/banner/banner-11.jpg";
 import DynamicButton from "../button";
 
 const bestSellersData = [
@@ -139,7 +140,7 @@ const bestSellersData = [
       },
     ],
     seeMoreData: {
-      image: banner8,
+      image: phoneBanner,
       subTitle: "best selling collection",
       title: "big sale",
       url: "",
@@ -238,7 +239,7 @@ const bestSellersData = [
       },
     ],
     seeMoreData: {
-      image: banner9,
+      image: laptopBanner,
       subTitle: "up to 20% up",
       title: "best gift",
       url: "",
@@ -329,7 +330,7 @@ const bestSellersData = [
       },
     ],
     seeMoreData: {
-      image: banner8,
+      image: watchBanner,
       subTitle: "up to 20% up",
       title: "best gift",
       url: "",
@@ -420,7 +421,7 @@ const bestSellersData = [
       },
     ],
     seeMoreData: {
-      image: banner11,
+      image: accessoriesBanner,
       subTitle: "buy 1 get 1 free",
       title: "don't miss!",
       url: "",

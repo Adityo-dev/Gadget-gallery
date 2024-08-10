@@ -46,7 +46,7 @@ const sliderData = [
 
 function HeroSlider() {
   const settings = {
-    dots: true,
+    dots: false,
     fade: true,
     infinite: true,
     speed: 500,

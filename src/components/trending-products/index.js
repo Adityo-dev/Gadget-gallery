@@ -5,21 +5,25 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // import components
 import RowCart from "../products-cart/rowCart";
-// import image
-import laptop1 from "../../assets/images/products/laptop/1.png";
-import laptop2 from "../../assets/images/products/laptop/5.png";
-import laptop3 from "../../assets/images/products/laptop/2.png";
-import phone1 from "../../assets/images/products/smart-phone/0.png";
-import phone2 from "../../assets/images/products/smart-phone/1.png";
-import phone3 from "../../assets/images/products/smart-phone/3.png";
-import watch1 from "../../assets/images/products/watch/0.png";
-import watch2 from "../../assets/images/products/watch/1.png";
 import NextArrow from "./NextArrow";
 import PrevArrow from "./PrevArrow";
+// import image
+import product1 from "../../assets/images/products/laptop/1.png";
+import product2 from "../../assets/images/products/games/6.png";
+import product3 from "../../assets/images/products/smart-phone/0.png";
+import product4 from "../../assets/images/products/headphones/2.png";
+import product5 from "../../assets/images/products/watch/0.png";
+import product6 from "../../assets/images/products/television/3.png";
+import product7 from "../../assets/images/products/speakers/0.png";
+import product8 from "../../assets/images/products/laptop/2.png";
+import product9 from "../../assets/images/products/smart-phone/10.png";
+import product10 from "../../assets/images/products/headphones/11.png";
+import product11 from "../../assets/images/products/games/1.png";
+import product12 from "../../assets/images/products/speakers/5.png";
 
 const trendingProductsData = [
   {
-    image: laptop1,
+    image: product1,
     name: "laptops",
     title: "MacBook Pro 13.3″ 16GB/512GB Silver",
     rating: 5,
@@ -30,7 +34,7 @@ const trendingProductsData = [
     url: "",
   },
   {
-    image: watch1,
+    image: product2,
     name: "watch",
     title: "MacBook Pro 13.3″ 16GB/512GB Silver",
     rating: 5,
@@ -41,7 +45,7 @@ const trendingProductsData = [
     url: "",
   },
   {
-    image: phone1,
+    image: product3,
     name: "phone",
     title: "MacBook Pro 13.3″ 16GB/512GB Silver",
     rating: 5,
@@ -52,7 +56,7 @@ const trendingProductsData = [
     url: "",
   },
   {
-    image: laptop2,
+    image: product4,
     name: "laptops",
     title: "MacBook Pro 13.3″ 16GB/512GB Silver",
     rating: 5,
@@ -63,7 +67,7 @@ const trendingProductsData = [
     url: "",
   },
   {
-    image: watch2,
+    image: product5,
     name: "watch",
     title: "MacBook Pro 13.3″ 16GB/512GB Silver",
     rating: 5,
@@ -74,7 +78,7 @@ const trendingProductsData = [
     url: "",
   },
   {
-    image: phone2,
+    image: product6,
     name: "phone",
     title: "MacBook Pro 13.3″ 16GB/512GB Silver",
     rating: 5,
@@ -85,7 +89,7 @@ const trendingProductsData = [
     url: "",
   },
   {
-    image: laptop2,
+    image: product7,
     name: "laptops",
     title: "MacBook Pro 13.3″ 16GB/512GB Silver",
     rating: 5,
@@ -96,7 +100,7 @@ const trendingProductsData = [
     url: "",
   },
   {
-    image: laptop3,
+    image: product8,
     name: "laptops",
     title: "MacBook Pro 13.3″ 16GB/512GB Silver",
     rating: 5,
@@ -107,7 +111,7 @@ const trendingProductsData = [
     url: "",
   },
   {
-    image: laptop1,
+    image: product9,
     name: "laptops",
     title: "MacBook Pro 13.3″ 16GB/512GB Silver",
     rating: 5,
@@ -118,7 +122,7 @@ const trendingProductsData = [
     url: "",
   },
   {
-    image: watch1,
+    image: product10,
     name: "watch",
     title: "MacBook Pro 13.3″ 16GB/512GB Silver",
     rating: 5,
@@ -129,7 +133,7 @@ const trendingProductsData = [
     url: "",
   },
   {
-    image: phone3,
+    image: product11,
     name: "phone",
     title: "MacBook Pro 13.3″ 16GB/512GB Silver",
     rating: 5,
@@ -140,7 +144,7 @@ const trendingProductsData = [
     url: "",
   },
   {
-    image: watch2,
+    image: product12,
     name: "watch",
     title: "MacBook Pro 13.3″ 16GB/512GB Silver",
     rating: 5,
