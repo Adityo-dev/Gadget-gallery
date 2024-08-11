@@ -131,11 +131,10 @@
 
 /* Navigation bar Bottom section data style */
 .bottomNavHrLine {
-  border-top: 1px solid #cfc9c9;
+  border-top: 1px solid #ebebeb;
 }
 
 .bottomNavAllDataContainer {
-  position: relative;
   width: 80%;
   max-width: 1550px;
   margin: 0 auto;
@@ -150,17 +149,17 @@
   display: flex;
   gap: 35px;
   align-items: center;
-  position: relative;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
 }
 
 .shopCategoriesAllTextContainer {
+  position: relative;
   display: flex;
   gap: 90px;
   align-items: center;
-  border-right: 1px solid #cfc9c9;
+  border-right: 1px solid #ebebeb;
   height: 50px;
 }
 
@@ -180,6 +179,7 @@
 }
 
 /* bottom Nav List All Data Container */
+
 .bottomNavListAllDataContainer {
   display: flex;
   gap: 40px;
@@ -199,7 +199,7 @@
 }
 
 .navCategoryListRightItemHrLine {
-  border-right: 1px solid #cfc9c9;
+  border-right: 1px solid #ebebeb;
   height: 50px;
 }
 
@@ -208,28 +208,49 @@
 }
 
 /* >>>> */
+
 .shopCategoriesALlDataInfoContainer {
   width: 100%;
   position: absolute;
-  top: 61px;
+  top: 50px;
   background-color: #fff;
-  padding: 0;
-  z-index: 0;
+  border-radius: 0 0 10px 10px;
+  padding-top: 5px;
+  z-index: 300;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
   display: none;
 }
 
-.navCategoryListItemHrLine {
-  border: 1px solid #cfc9c9;
+.shopCategoriesALlDataContainer :hover .shopCategoriesALlDataInfoContainer {
+  opacity: 1;
+  display: block;
 }
 
 .navCategoryListHrLineAndCategory {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 100px;
+}
+
+.navCategoryListHrLineAndCategory :hover {
+  color: #0068c8;
 }
 
 .navCategoryListItemContainer {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 25px;
+  border-top: 1px solid #ebebeb;
+}
+
+.categoryDataIcon {
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+.categoryDataName {
+  font-size: 0.9rem;
+  text-transform: capitalize;
 }

@@ -7,6 +7,7 @@ import ProductBanner1 from "@/components/banner/banner1";
 import ProductBanner2 from "@/components/banner/banner2";
 import ProductBanner3 from "@/components/banner/banner3";
 import BestSellers from "@/components/best-sellers";
+import Company from "@/modules/home/company";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <ProductBanner3 />
       </div>
       <TrendingProducts />
+      <Company />
     </main>
   );
 }

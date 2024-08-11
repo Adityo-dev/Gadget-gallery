@@ -1,6 +1,12 @@
+"use client";
 import styles from "./product-category.module.css";
 import Image from "next/image";
 import Link from "next/link";
+
+// import slider
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // import icon
 import games_icon from "../../assets/icons/product-category-icon/icon-games.png";
@@ -11,28 +17,42 @@ import speaker_icon from "../../assets/icons/product-category-icon/icon-speaker.
 import television_icon from "../../assets/icons/product-category-icon/icon-television.png";
 
 const productCategoryData = [
-  { icon: laptops_icon, title: "laptops", pathName: "/games" },
-  { icon: games_icon, title: "games", pathName: "/games" },
-  { icon: phone_icon, title: "phones", pathName: "/games" },
-  { icon: television_icon, title: "television", pathName: "/games" },
-  { icon: headphone_icon, title: "headphone", pathName: "/games" },
-  { icon: speaker_icon, title: "speakers", pathName: "/games" },
+  { icon: laptops_icon, title: "laptops", pathName: "/00" },
+  { icon: games_icon, title: "games", pathName: "/" },
+  { icon: phone_icon, title: "phones", pathName: "/" },
+  { icon: television_icon, title: "television", pathName: "/" },
+  { icon: headphone_icon, title: "headphone", pathName: "/" },
+  { icon: speaker_icon, title: "speakers", pathName: "/" },
 ];
 
 const ProductCategory = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    arrows: false,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+  };
   return (
     <section>
       <div className={styles.productCategoryAllDataContainer}>
-        {productCategoryData.map((category, ind) => (
-          <div className={styles.productCategoryDataContainer} key={ind}>
-            <Image
-              className={styles.productCategoryIcon}
-              src={category?.icon}
-              alt="product-category-icon"
-            />
-            <p className={styles.productCategoryTitle}>{category?.title}</p>
-          </div>
-        ))}
+        <Slider {...settings}>
+          {productCategoryData.map((category, ind) => (
+            <div className={styles.productCategoryDataContainer} key={ind}>
+              <div className={styles.productCategoryDataInfo}>
+                <Image
+                  className={styles.productCategoryIcon}
+                  src={category?.icon}
+                  alt="product-category-icon"
+                />
+                <p className={styles.productCategoryTitle}>{category?.title}</p>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </section>
   );

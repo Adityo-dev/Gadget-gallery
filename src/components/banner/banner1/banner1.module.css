@@ -2,6 +2,7 @@
   overflow: hidden;
   width: 80%;
   margin: 0 auto;
+  max-width: 1550px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;

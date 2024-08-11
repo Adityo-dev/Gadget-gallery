@@ -1,13 +1,14 @@
 .productCategoryAllDataContainer {
-  width: 80%;
+  width: 100%;
   max-width: 1550px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 30px;
 }
 
 .productCategoryDataContainer {
+  padding: 0 12px;
+}
+
+.productCategoryDataInfo {
   display: flex;
   gap: 10px;
   justify-content: center;
@@ -18,7 +19,8 @@
   border: 1px solid #fff;
   transition: 200ms ease;
 }
-.productCategoryDataContainer:hover {
+
+.productCategoryDataInfo:hover {
   border: 1px solid #0068c8;
 }
 

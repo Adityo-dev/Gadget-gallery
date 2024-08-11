@@ -36,7 +36,6 @@ import watch4 from "../../assets/images/products/watch/4.png";
 import watch5 from "../../assets/images/products/watch/5.png";
 import watch6 from "../../assets/images/products/watch/6.png";
 import watch7 from "../../assets/images/products/watch/7.png";
-import watch8 from "../../assets/images/products/watch/8.png";
 // accessories
 import accessories0 from "../../assets/images/products/accessories/0.png";
 import accessories1 from "../../assets/images/products/accessories/1.png";

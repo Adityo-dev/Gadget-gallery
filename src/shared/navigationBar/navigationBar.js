@@ -14,6 +14,17 @@ import { TfiAngleDown } from "react-icons/tfi";
 import { LuAlignJustify } from "react-icons/lu";
 import { TfiHeart } from "react-icons/tfi";
 
+import { RiSmartphoneLine } from "react-icons/ri";
+import { MdOutlineLaptopMac } from "react-icons/md";
+import { CiCamera } from "react-icons/ci";
+import { PiHeadphonesThin } from "react-icons/pi";
+import { PiGameController } from "react-icons/pi";
+import { PiTelevisionSimpleThin } from "react-icons/pi";
+import { IoWatchOutline } from "react-icons/io5";
+import { PiSpeakerHifi } from "react-icons/pi";
+import { TbAperture } from "react-icons/tb";
+import { GoGift } from "react-icons/go";
+
 const navData = [
   {
     topNavData: {
@@ -48,6 +59,7 @@ const navData = [
       shopCategories: [
         {
           categoryName: "Smartphone",
+          icon: <RiSmartphoneLine />,
           url: "",
           subCategories: [
             {
@@ -96,6 +108,7 @@ const navData = [
 
         {
           categoryName: "Laptops",
+          icon: <MdOutlineLaptopMac />,
           url: "",
           subCategories: [
             {
@@ -120,38 +133,47 @@ const navData = [
 
         {
           categoryName: "Camera",
+          icon: <CiCamera />,
           url: "",
         },
         {
           categoryName: "Headphones",
+          icon: <PiHeadphonesThin />,
           url: "",
         },
         {
           categoryName: "PC Gaming",
+          icon: <PiGameController />,
           url: "",
         },
         {
           categoryName: "Tablets",
+          icon: <RiSmartphoneLine />,
           url: "",
         },
         {
           categoryName: "Television",
+          icon: <PiTelevisionSimpleThin />,
           url: "",
         },
         {
           categoryName: "Smartwatches",
+          icon: <IoWatchOutline />,
           url: "",
         },
         {
           categoryName: "Speakers",
+          icon: <PiSpeakerHifi />,
           url: "",
         },
         {
-          categoryName: " Kid Electronic",
+          categoryName: "Kid Electronic",
+          icon: <TbAperture />,
           url: "",
         },
         {
           categoryName: "Tech Gift",
+          icon: <GoGift />,
           url: "",
         },
       ],
@@ -334,7 +356,13 @@ const NavigationBar = () => {
       {/* Navigation bar Center section data */}
       <section>
         <div className={styles.centerNavAllDataContainer}>
-          <Image className={styles.gadgetGalleryLogo} src={ggLogo} alt="" />
+          <Link href={"/"}>
+            <Image
+              className={styles.gadgetGalleryLogo}
+              src={ggLogo}
+              alt="gadgets gallery logo"
+            />
+          </Link>
           <div className={styles.searchFieldContainer}>
             <p className={styles.allCategories}>
               <span>all categories</span>{" "}
@@ -387,32 +415,31 @@ const NavigationBar = () => {
                 <p>Shop Categories</p>
               </div>
               <TfiAngleDown className={styles.arrowDownIcon} />
-            </div>
-
-            <div className={styles.shopCategoriesALlDataInfoContainer}>
-              {navData.map((bottomNav, ind) => (
-                <div key={ind}>
-                  <div className={styles.navCategoryListItemContainer}>
+              {/* shop categories Data  */}
+              <div className={styles.shopCategoriesALlDataInfoContainer}>
+                {navData.map((bottomNav, ind) => (
+                  <div key={ind}>
                     {bottomNav?.bottomNavData?.shopCategories.map(
                       (categoryData, ind) => (
-                        <div
+                        <Link
+                          href={categoryData?.url}
                           className={styles.navCategoryListHrLineAndCategory}
                           key={ind}
                         >
-                          <p className={styles.navCategoryListItemHrLine}></p>
-
-                          <Link
-                            className={styles.navCategoryListItem}
-                            href={categoryData.url}
-                          >
-                            {categoryData?.categoryName}
-                          </Link>
-                        </div>
+                          <p className={styles.navCategoryListItemContainer}>
+                            <span className={styles.categoryDataIcon}>
+                              {categoryData?.icon}
+                            </span>
+                            <span className={styles.categoryDataName}>
+                              {categoryData?.categoryName}
+                            </span>
+                          </p>
+                        </Link>
                       )
                     )}
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             <div>
