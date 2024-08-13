@@ -8,6 +8,8 @@ import ProductBanner2 from "@/components/banner/banner2";
 import ProductBanner3 from "@/components/banner/banner3";
 import BestSellers from "@/components/best-sellers";
 import Company from "@/modules/home/company";
+import Newsletter from "@/modules/home/newsletter";
+import Service from "@/modules/home/service";
 
 export default function Home() {
   return (
@@ -21,6 +23,8 @@ export default function Home() {
       </div>
       <TrendingProducts />
       <Company />
+      <Newsletter />
+      <Service />
     </main>
   );
 }

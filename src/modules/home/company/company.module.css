@@ -3,3 +3,15 @@
   margin: 0 auto;
   max-width: 1550px;
 }
+
+.companyImage {
+  width: 160px;
+  height: 40px;
+  opacity: 0.2;
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+
+.companyImage:hover {
+  opacity: 1;
+}

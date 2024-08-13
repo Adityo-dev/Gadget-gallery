@@ -36,7 +36,7 @@ const Company = () => {
     slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 8000,
   };
 
   return (

@@ -1,0 +1,61 @@
+.newsletterAllDataContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.newsletterBgImage {
+  width: 100%;
+}
+
+.newsletterDataContainer {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 50px 80px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.newsletterInfoText {
+  font-size: 42px;
+  line-height: 55px;
+}
+
+.inputFieldContainer {
+  display: flex;
+  width: 70%;
+}
+
+.emailField {
+  width: 80%;
+  height: 50px;
+  border-radius: 5px 0 0 5px;
+  padding: 0 150px 0 20px;
+  border: 1px solid #000;
+}
+
+.subscribeBtn {
+  width: 20%;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  margin-left: -10px;
+  transition: all 0.3s ease;
+}
+
+.inputFieldContainer:hover .emailField {
+  border: 1px solid #0068c8;
+}
+
+.inputFieldContainer:hover .subscribeBtn {
+  background-color: #0068c8;
+}
