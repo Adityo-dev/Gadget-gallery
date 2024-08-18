@@ -69,8 +69,10 @@ const ProductBanner1 = () => {
               >
                 {data?.subTitle}
               </p>
-              <div className={ind === 1 && styles.banner1RightBtn}>
-                <DynamicButton btnUrl={data?.url} btnName={"shop now"} />
+              <div className={styles.btnShopNow}>
+                <div className={ind === 1 && styles.banner1RightBtn}>
+                  <DynamicButton btnUrl={data?.url} btnName={"shop now"} />
+                </div>
               </div>
             </div>
             <Image

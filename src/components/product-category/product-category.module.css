@@ -33,3 +33,37 @@
   text-transform: capitalize;
   font-weight: 600;
 }
+
+/* ------- */
+
+@media only screen and (max-width: 500px) {
+  .productCategoryDataContainer {
+    padding: 10px;
+  }
+
+  .productCategoryDataInfo {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 23px 20px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    transition: 200ms ease;
+  }
+
+  .productCategoryDataInfo:hover {
+    border: 1px solid #0068c8;
+  }
+
+  .productCategoryIcon {
+    width: 27%;
+    height: 100%;
+  }
+
+  .productCategoryTitle {
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+}

@@ -2,9 +2,9 @@
   width: 80%;
   margin: 0 auto;
   max-width: 1550px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
 }
 
 .serviceDataContainer {
@@ -27,4 +27,33 @@
 .serviceSubTitle {
   font-size: 1rem;
   line-height: 28px;
+}
+/* ----------- */
+
+@media only screen and (max-width: 500px) {
+  .serviceAllDataContainer {
+    width: 94%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+
+  .serviceDataContainer {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .serviceIcon {
+    font-size: 50px;
+  }
+
+  .serviceTitle {
+    font-size: 0.95rem;
+  }
+
+  .serviceSubTitle {
+    font-size: 0.8rem;
+    line-height: 22px;
+    margin-top: 10px;
+  }
 }

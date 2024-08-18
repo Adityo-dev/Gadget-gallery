@@ -25,6 +25,7 @@
   font-size: 0.8rem;
   padding: 2px 15px;
   border-radius: 0 5px 5px 5px;
+  text-transform: uppercase;
 }
 
 .title {
@@ -43,4 +44,42 @@
   width: 100%;
   height: 260px;
   margin-bottom: -5px;
+}
+
+/* ------------- */
+/* @media screen and (min-width: 481px) and (max-width: 768px) {
+} */
+
+@media only screen and (max-width: 500px) {
+  .banner3AllDataContainer {
+    width: 94%;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .banner3AllInfoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+  }
+
+  .title {
+    font-size: 20px;
+    margin: 12px 0 10px 0;
+  }
+
+  .subTitle {
+    font-size: 0.72rem;
+  }
+
+  .bannerImage {
+    height: 100%;
+    margin-bottom: -25px;
+  }
 }

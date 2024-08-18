@@ -2,6 +2,7 @@
   width: 80%;
   margin: 0 auto;
   max-width: 1550px;
+  overflow: hidden;
 }
 
 .banner2DataContainer {
@@ -30,4 +31,31 @@
 .bannerImage {
   width: 550px;
   height: 300px;
+}
+
+/* ----------- */
+
+@media only screen and (max-width: 500px) {
+  .banner2AllDataContainer {
+    width: 94%;
+  }
+
+  .banner2DataContainer {
+    padding: 10px 30px;
+  }
+
+  .headerTitle {
+    font-size: 0.72rem;
+    margin-bottom: 5px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .bannerImage {
+    width: 450px;
+    height: 250px;
+  }
 }

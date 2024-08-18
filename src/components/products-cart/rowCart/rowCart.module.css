@@ -94,3 +94,63 @@
   color: #848484;
   font-weight: 300;
 }
+
+/* -------- */
+
+@media only screen and (max-width: 500px) {
+  .cartDataContainer {
+    gap: 5px;
+    margin: 0 0 12px 0;
+    padding: 0px;
+  }
+
+  .productImage {
+    width: 130px;
+    height: 100%;
+  }
+
+  .hotAndDiscountContainer {
+    gap: 4px;
+    top: 12px;
+    left: 5px;
+  }
+
+  .productDiscount,
+  .productHot {
+    width: 40px;
+    padding: 1.5px 10px;
+    font-size: 0.6rem;
+  }
+
+  .productHot {
+    background-color: #dd2831;
+  }
+
+  .productHotNone {
+    display: none;
+  }
+
+  .cartDataInfoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .productName {
+    font-size: 0.7rem;
+  }
+
+  .productTitle {
+    font-size: 0.95rem;
+    line-height: 22px;
+  }
+
+  .productsPriceContainer {
+    gap: 8px;
+  }
+
+  .productsCurrentPrice,
+  .productsOldPrice {
+    font-size: 0.82rem;
+  }
+}

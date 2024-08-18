@@ -69,6 +69,12 @@
 .productTitle {
   font-size: 1rem;
   line-height: 24px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .productsPriceContainer {
@@ -101,4 +107,54 @@
   opacity: 1;
   right: 25px;
   top: 25px;
+}
+
+/* --------- */
+
+@media only screen and (max-width: 500px) {
+  .cartAllDataContainer {
+    padding: 10px 15px 15px 15px;
+  }
+
+  .cartImage {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hotAndDiscountContainer {
+    gap: 4px;
+    top: 15px;
+    left: 10px;
+  }
+
+  .productDiscount,
+  .productHot {
+    width: 40px;
+    font-size: 0.6rem;
+  }
+
+  .cartInfoContainer {
+    gap: 5px;
+  }
+
+  .productName {
+    font-size: 0.75rem;
+  }
+
+  .productTitle {
+    font-size: 0.85rem;
+    line-height: 22px;
+    -webkit-line-clamp: 2;
+  }
+
+  .productsPriceContainer {
+    gap: 8px;
+  }
+
+  .productsCurrentPrice,
+  .productsOldPrice {
+    font-size: 0.85rem;
+  }
+
+  /* --------- */
 }

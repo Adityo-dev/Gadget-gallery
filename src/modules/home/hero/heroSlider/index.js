@@ -51,7 +51,7 @@ function HeroSlider() {
     infinite: true,
     speed: 500,
     autoplaySpeed: 6000,
-    autoplay: true,
+    // autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     waitForAnimate: false,
@@ -76,7 +76,9 @@ function HeroSlider() {
                 <p className={styles.priceContainer}>
                   From <span className={styles.price}>${data?.price}</span>
                 </p>
-                <DynamicButton btnName={"Shop now"} btnUrl={data?.url} />
+                <div className={styles.btnShopNow}>
+                  <DynamicButton btnName={"Shop now"} btnUrl={data?.url} />
+                </div>
               </div>
 
               <div className={styles.sliderImageContainer}>

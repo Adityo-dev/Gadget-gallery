@@ -42,3 +42,29 @@
   top: -88px;
   right: 70px;
 }
+
+/* ----------- */
+@media only screen and (max-width: 500px) {
+  .sliderAllDataContainer {
+    width: 94%;
+    gap: 25px;
+  }
+
+  .trendingProductsText {
+    font-size: 20px;
+  }
+
+  /* slider arrow  */
+  .nextArrowContainer,
+  .prevArrowContainer {
+    top: -73px;
+    right: 0;
+    width: 30px;
+    height: 25px;
+  }
+
+  .prevArrowContainer {
+    top: -73px;
+    right: 50px;
+  }
+}

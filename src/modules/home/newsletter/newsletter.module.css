@@ -62,3 +62,36 @@
 .inputFieldContainer:hover .subscribeBtn {
   background-color: #0068c8;
 }
+
+/* --------------- */
+@media only screen and (max-width: 500px) {
+  .newsletterDataContainer {
+    width: 94%;
+    padding: 20px;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .newsletterInfoText {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .inputFieldContainer {
+    width: 100%;
+  }
+
+  .emailField {
+    width: 80%;
+    height: 45px;
+    padding: 20px;
+    border: 1px solid #0068c8;
+  }
+
+  .subscribeBtn {
+    width: 40%;
+    font-size: 0.75rem;
+    background-color: #0068c8;
+  }
+}

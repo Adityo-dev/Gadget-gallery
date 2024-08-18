@@ -12,3 +12,12 @@
   border-radius: 5px;
   text-transform: uppercase;
 }
+
+@media only screen and (max-width: 500px) {
+  .shopNowBtn {
+    width: 140px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 12px 0;
+  }
+}

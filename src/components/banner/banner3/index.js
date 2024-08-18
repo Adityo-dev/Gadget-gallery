@@ -53,7 +53,7 @@ const ProductBanner3 = () => {
           style={{ backgroundColor: `${data?.backgroundColor}` }}
           key={ind}
         >
-          <div>
+          <div className={styles.banner3AllInfoContainer}>
             <p className={styles.tag}>{data?.tag}</p>
             <h2 className={styles.title}>{data?.title}</h2>
             <p className={styles.subTitle}>{data?.subTitle}</p>
