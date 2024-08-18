@@ -1,0 +1,21 @@
+.cartAndHomeContainer {
+  background-color: #f5f5f5;
+}
+
+.cartAndHome {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1550px;
+  padding: 25px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home {
+  color: #848484;
+}
+
+.home:hover {
+  text-decoration: underline;
+}

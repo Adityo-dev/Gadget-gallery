@@ -50,7 +50,7 @@ function HeroSlider() {
     fade: true,
     infinite: true,
     speed: 500,
-    autoplaySpeed: 8000,
+    autoplaySpeed: 6000,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,

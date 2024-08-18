@@ -45,13 +45,14 @@ const navData = [
           icon: <TfiHeadphoneAlt />,
           title: "need help?",
           helpNumber: "+8801770365981",
+          url: "/",
         },
       },
       {
-        info: { icon: <FaRegUser />, title: "my account" },
+        info: { icon: <FaRegUser />, title: "my account", url: "/" },
       },
       {
-        info: { icon: <LuShoppingCart />, title: "my cart" },
+        info: { icon: <LuShoppingCart />, title: "my cart", url: "/cart" },
       },
     ],
 
@@ -383,7 +384,8 @@ const NavigationBar = () => {
             {navData.map((data, ind) => (
               <div className={styles.centerNavRightDataContainer} key={ind}>
                 {data?.centerNavData?.map((item, ind) => (
-                  <div
+                  <Link
+                    href={item?.info?.url}
                     className={styles.centerNavRightDataInfoContainer}
                     key={ind}
                   >
@@ -397,7 +399,7 @@ const NavigationBar = () => {
                         {item?.info?.helpNumber}
                       </span>
                     </p>
-                  </div>
+                  </Link>
                 ))}
                 <p></p>
               </div>
@@ -458,9 +460,11 @@ const NavigationBar = () => {
           </div>
 
           <div className={styles.navCategoryRightList}>
-            <TfiHeart className={styles.bottomNavRightHeartIcon} />
+            <Link href={"/wishlist"}>
+              <TfiHeart className={styles.bottomNavRightHeartIcon} />
+            </Link>
             <p className={styles.navCategoryListRightItemHrLine}></p>
-            <Link className={styles.bottomNavRightTodayDealText} href={""}>
+            <Link className={styles.bottomNavRightTodayDealText} href={"/"}>
               Today's Deal
             </Link>
           </div>
