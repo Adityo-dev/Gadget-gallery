@@ -95,18 +95,16 @@
 
 /* --------- */
 
-.gg {
+.cartButton {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 15px;
+  top: 30px;
   opacity: 0;
-  transition: all 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
 }
 
-.cartAllDataContainer:hover .gg {
+.cartAllDataContainer:hover .cartButton {
   opacity: 1;
-  right: 25px;
-  top: 25px;
 }
 
 /* --------- */

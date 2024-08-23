@@ -1,6 +1,7 @@
 import styles from "./columnCart.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import CartButton from "../cartBtn";
 
 const ColumnCart = ({ cartData }) => {
   return (
@@ -44,8 +45,8 @@ const ColumnCart = ({ cartData }) => {
         </p>
       </div>
 
-      <div className={styles.gg}>
-        <p>Hi</p>
+      <div className={styles.cartButton}>
+        <CartButton />
       </div>
     </main>
   );
