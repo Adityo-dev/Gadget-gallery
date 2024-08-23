@@ -32,7 +32,7 @@ const RowCart = ({ cartData }) => {
           {cartData?.name}
         </Link>
         <Link
-          href={cartData?.url}
+          href={`cartData?.url`}
           className={`${styles.productName} ${styles.productTitle}`}
         >
           {cartData?.title}

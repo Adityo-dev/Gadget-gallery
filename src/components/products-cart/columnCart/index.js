@@ -7,7 +7,7 @@ const ColumnCart = ({ cartData }) => {
   return (
     <main className={styles.cartAllDataContainer}>
       <div>
-        <Link href={cartData?.url}>
+        <Link href={`/shop/${cartData?.title}`}>
           <Image className={styles.cartImage} src={cartData?.image} alt="" />
         </Link>
         <div className={styles.hotAndDiscountContainer}>

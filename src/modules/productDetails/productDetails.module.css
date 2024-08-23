@@ -1,0 +1,88 @@
+.productDetailsAndHomeContainer {
+  background-color: #f5f5f5;
+}
+
+.productDetailsAndHome {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1550px;
+  padding: 25px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home,
+.shop {
+  color: #848484;
+  text-transform: capitalize;
+}
+
+.home:hover {
+  text-decoration: underline;
+}
+
+.shop:hover {
+  text-decoration: underline;
+}
+
+.productDetails {
+  text-transform: capitalize;
+}
+
+.productDetailsALlDataContainer {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 30px;
+}
+
+.title {
+  font-size: 18px;
+  color: #848484;
+  text-transform: capitalize;
+}
+
+.name {
+  font-size: 34px;
+  font-weight: normal;
+  text-transform: capitalize;
+  margin: 10px 0;
+}
+
+.ratingReviewAndStockContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: capitalize;
+}
+
+.stock {
+  border: 1px solid #0fb232;
+  color: #0fb232;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 15px;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.currentPrice {
+  color: #dd2831;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.oldPrice {
+  color: #848484;
+  font-size: 22px;
+  font-weight: 300;
+}
