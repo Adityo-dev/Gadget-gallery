@@ -6,7 +6,9 @@ const RowCart = ({ cartData }) => {
   return (
     <div className={styles.cartDataContainer}>
       <div className={styles.productImageContainer}>
-        <Image className={styles.productImage} src={cartData?.image} alt="" />
+        <Link href={`/shop/${cartData?.title}`}>
+          <Image className={styles.productImage} src={cartData?.image} alt="" />
+        </Link>
         <div className={styles.hotAndDiscountContainer}>
           <p
             className={
@@ -32,7 +34,7 @@ const RowCart = ({ cartData }) => {
           {cartData?.name}
         </Link>
         <Link
-          href={`cartData?.url`}
+          href={`/shop/${cartData?.title}`}
           className={`${styles.productName} ${styles.productTitle}`}
         >
           {cartData?.title}

@@ -34,7 +34,7 @@ const ColumnCart = ({ cartData }) => {
         <Link href={cartData?.url} className={styles.productName}>
           {cartData?.name}
         </Link>
-        <Link href={cartData?.url} className={styles.productTitle}>
+        <Link href={`/shop/${cartData?.title}`} className={styles.productTitle}>
           {cartData?.title}
         </Link>
         <p className={styles.productsPriceContainer}>

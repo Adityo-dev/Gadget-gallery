@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import RowCart from "../products-cart/rowCart";
 import NextArrow from "./NextArrow";
 import PrevArrow from "./PrevArrow";
+
 // import image
 import product1 from "../../assets/images/products/laptop/1.png";
 import product2 from "../../assets/images/products/games/6.png";
@@ -25,7 +26,7 @@ const trendingProductsData = [
   {
     image: product1,
     name: "laptops",
-    title: "MacBook Pro 13.3″ 16GB/512GB Silver",
+    title: "MacBook Pro 13.3″ 16GB-512GB Silver",
     rating: 5,
     currentPrice: "1527.00",
     oldPrice: "1795.00",
@@ -36,7 +37,7 @@ const trendingProductsData = [
   {
     image: product2,
     name: "watch",
-    title: "MacBook Pro 13.3″ 16GB/512GB Silver",
+    title: "MacBook Pro 13.3″ 16GB-512GB Silver",
     rating: 5,
     currentPrice: "1527.00",
     oldPrice: "1795.00",
@@ -47,7 +48,7 @@ const trendingProductsData = [
   {
     image: product3,
     name: "phone",
-    title: "MacBook Pro 13.3″ 16GB/512GB Silver",
+    title: "MacBook Pro 13.3″ 16GB-512GB Silver",
     rating: 5,
     currentPrice: "1527.00",
     oldPrice: "1795.00",
@@ -58,7 +59,7 @@ const trendingProductsData = [
   {
     image: product4,
     name: "laptops",
-    title: "MacBook Pro 13.3″ 16GB/512GB Silver",
+    title: "MacBook Pro 13.3″ 16GB-512GB Silver",
     rating: 5,
     currentPrice: "1527.00",
     oldPrice: "1795.00",
@@ -69,7 +70,7 @@ const trendingProductsData = [
   {
     image: product5,
     name: "watch",
-    title: "MacBook Pro 13.3″ 16GB/512GB Silver",
+    title: "MacBook Pro 13.3″ 16GB-512GB Silver",
     rating: 5,
     currentPrice: "1527.00",
     oldPrice: "1795.00",
@@ -80,7 +81,7 @@ const trendingProductsData = [
   {
     image: product6,
     name: "phone",
-    title: "MacBook Pro 13.3″ 16GB/512GB Silver",
+    title: "MacBook Pro 13.3″ 16GB-512GB Silver",
     rating: 5,
     currentPrice: "1527.00",
     oldPrice: "1795.00",
@@ -91,7 +92,7 @@ const trendingProductsData = [
   {
     image: product7,
     name: "laptops",
-    title: "MacBook Pro 13.3″ 16GB/512GB Silver",
+    title: "MacBook Pro 13.3″ 16GB-512GB Silver",
     rating: 5,
     currentPrice: "1527.00",
     oldPrice: "1795.00",
@@ -102,7 +103,7 @@ const trendingProductsData = [
   {
     image: product8,
     name: "laptops",
-    title: "MacBook Pro 13.3″ 16GB/512GB Silver",
+    title: "MacBook Pro 13.3″ 16GB-512GB Silver",
     rating: 5,
     currentPrice: "1527.00",
     oldPrice: "1795.00",
@@ -113,7 +114,7 @@ const trendingProductsData = [
   {
     image: product9,
     name: "laptops",
-    title: "MacBook Pro 13.3″ 16GB/512GB Silver",
+    title: "MacBook Pro 13.3″ 16GB-512GB Silver",
     rating: 5,
     currentPrice: "1527.00",
     oldPrice: "1795.00",
@@ -124,7 +125,7 @@ const trendingProductsData = [
   {
     image: product10,
     name: "watch",
-    title: "MacBook Pro 13.3″ 16GB/512GB Silver",
+    title: "MacBook Pro 13.3″ 16GB-512GB Silver",
     rating: 5,
     currentPrice: "1527.00",
     oldPrice: "1795.00",
@@ -135,7 +136,7 @@ const trendingProductsData = [
   {
     image: product11,
     name: "phone",
-    title: "MacBook Pro 13.3″ 16GB/512GB Silver",
+    title: "MacBook Pro 13.3″ 16GB-512GB Silver",
     rating: 5,
     currentPrice: "1527.00",
     oldPrice: "1795.00",
@@ -146,7 +147,7 @@ const trendingProductsData = [
   {
     image: product12,
     name: "watch",
-    title: "MacBook Pro 13.3″ 16GB/512GB Silver",
+    title: "MacBook Pro 13.3″ 16GB-512GB Silver",
     rating: 5,
     currentPrice: "1527.00",
     oldPrice: "1795.00",
