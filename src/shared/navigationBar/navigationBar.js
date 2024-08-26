@@ -465,7 +465,7 @@ const NavigationBar = () => {
             </Link>
             <p className={styles.navCategoryListRightItemHrLine}></p>
             <Link className={styles.bottomNavRightTodayDealText} href={"/"}>
-              Today's Deal
+              Today&apos;s Deal
             </Link>
           </div>
         </div>
