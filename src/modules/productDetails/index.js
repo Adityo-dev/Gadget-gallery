@@ -10,7 +10,7 @@ const ProductDetails = ({ data }) => {
     {
       title: "Xbox series",
       name: searchValue,
-      rating: 5,
+      rating: 4,
       review: 2,
       stock: 81,
       currentPrice: 78.89,
