@@ -1,7 +1,7 @@
 .firstImageContainer {
   background-color: #fff;
   border: 1px solid #dfdfdf;
-  border-radius: 15px;
+  border-radius: 10px;
   width: 100%;
   height: 100%;
 }
@@ -30,7 +30,26 @@
   background-color: #fff;
   border: 1px solid #dfdfdf;
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 500px) {
+  .firstImage {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .secondImageContainer {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+
+  .secondImage {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
 }

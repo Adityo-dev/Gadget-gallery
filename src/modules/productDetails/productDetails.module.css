@@ -47,6 +47,7 @@
 
 .name {
   font-size: 34px;
+  line-height: 36px;
   font-weight: normal;
   text-transform: capitalize;
   margin: 10px 0 15px 0;
@@ -152,4 +153,87 @@
 
 .shareIcon:hover {
   color: #0068c8;
+}
+
+@media only screen and (max-width: 500px) {
+  .productDetailsAndHome {
+    width: 90%;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .home,
+  .shop {
+    font-size: 14px;
+  }
+
+  .productDetails {
+    font-size: 14px;
+  }
+
+  .productDetailsALlDataContainer {
+    width: 94%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .name {
+    font-size: 24px;
+    /* margin: 10px 0 15px 0; */
+  }
+
+  .ratingReviewAndStockContainer {
+    gap: 5px;
+  }
+
+  .stock {
+    padding: 2px 10px;
+    font-size: 14px;
+  }
+
+  .priceContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .currentPrice {
+    font-size: 26px;
+  }
+
+  .oldPrice {
+    font-size: 20px;
+  }
+
+  .discount {
+    font-size: 16px;
+    margin-left: 0;
+  }
+
+  .serviceList {
+    font-size: 14px;
+  }
+
+  .hrLine {
+    margin: 40px 0;
+  }
+
+  .tagsContainer,
+  .shareContainer {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0;
+  }
+
+  .shareIcon {
+    font-size: 18px;
+    margin-top: 5px;
+  }
 }
