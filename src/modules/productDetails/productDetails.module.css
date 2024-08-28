@@ -8,7 +8,6 @@
   max-width: 1550px;
   padding: 25px 0;
   display: flex;
-  align-items: center;
   gap: 10px;
 }
 
@@ -55,9 +54,15 @@
 
 .ratingReviewAndStockContainer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+  row-gap: 15px;
   text-transform: capitalize;
+}
+
+.ratingStar {
+  font-size: 20px;
 }
 
 .stock {
@@ -139,6 +144,7 @@
 .sku {
   color: #848484;
   transition: all 0.3s;
+  margin-left: 10px;
 }
 
 .tags:hover {
@@ -149,6 +155,7 @@
   font-size: 20px;
   color: #848484;
   transition: all 0.3s;
+  margin-left: 10px;
 }
 
 .shareIcon:hover {
@@ -159,16 +166,10 @@
   .productDetailsAndHome {
     width: 90%;
     padding: 20px 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
   }
 
   .home,
-  .shop {
-    font-size: 14px;
-  }
-
+  .shop,
   .productDetails {
     font-size: 14px;
   }
@@ -185,23 +186,21 @@
   }
 
   .name {
-    font-size: 24px;
-    /* margin: 10px 0 15px 0; */
+    font-size: 22px;
+    line-height: 32px;
   }
 
-  .ratingReviewAndStockContainer {
-    gap: 5px;
+  .ratingStar {
+    font-size: 18px;
   }
 
   .stock {
-    padding: 2px 10px;
-    font-size: 14px;
+    margin-left: 5px;
   }
 
   .priceContainer {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    gap: 14px;
+    margin-top: 18px;
   }
 
   .currentPrice {
@@ -209,11 +208,11 @@
   }
 
   .oldPrice {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .discount {
-    font-size: 16px;
+    font-size: 14px;
     margin-left: 0;
   }
 
@@ -227,9 +226,11 @@
 
   .tagsContainer,
   .shareContainer {
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 14px 0;
+    margin: 12px 0;
+  }
+
+  .tagsContainer {
+    align-items: normal;
   }
 
   .shareIcon {

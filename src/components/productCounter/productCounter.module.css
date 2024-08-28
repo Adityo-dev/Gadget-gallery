@@ -6,7 +6,7 @@
 
 .cartCounterContainer {
   width: 40%;
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ededed;

@@ -87,6 +87,7 @@ const ProductDetails = ({ data }) => {
                 {data.rating && (
                   <>
                     <Rating
+                      className={styles.ratingStar}
                       name="rating"
                       defaultValue={data?.rating}
                       precision={0.5}
@@ -149,17 +150,19 @@ const ProductDetails = ({ data }) => {
                 {data.tags && (
                   <div className={styles.tagsContainer}>
                     <span>Tags:</span>
-                    {data.tags.map((tag, ind) => (
-                      <Link className={styles.tags} href={tag?.url} key={ind}>
-                        {tag?.name} {ind < data.tags.length - 1 && ","}
-                      </Link>
-                    ))}
+                    <span>
+                      {data.tags.map((tag, ind) => (
+                        <Link className={styles.tags} href={tag?.url} key={ind}>
+                          {tag?.name} {ind < data.tags.length - 1 && ","}
+                        </Link>
+                      ))}
+                    </span>
                   </div>
                 )}
 
                 {data.share && (
                   <div className={styles.shareContainer}>
-                    <span>share:</span>
+                    <span>share: </span>
                     {data.share.map((share, ind) => (
                       <Link
                         className={styles.shareIcon}

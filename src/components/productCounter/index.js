@@ -15,11 +15,7 @@ const ProductCounter = () => {
   return (
     <div className={styles.cartCounterBtnContainer}>
       <div className={styles.cartCounterContainer}>
-        <button
-          className={styles.cartCounterBtn}
-          onClick={decrement}
-          disabled={count === 0}
-        >
+        <button className={styles.cartCounterBtn} onClick={decrement}>
           -
         </button>
         <span className={styles.cartCounterCounter}>{count}</span>

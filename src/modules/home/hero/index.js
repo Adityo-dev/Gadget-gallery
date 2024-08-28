@@ -1,6 +1,6 @@
 import styles from "./hero.module.css";
 // import components
-import ProductCategory from "@/components/product-category";
+import ProductCategory from "@/components/product-category/categoty";
 import HeroSlider from "./heroSlider";
 
 const HomeHero = () => {

@@ -9,20 +9,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // import icon
-import games_icon from "../../assets/icons/product-category-icon/icon-games.png";
-import headphone_icon from "../../assets/icons/product-category-icon/icon-headphone.png";
-import laptops_icon from "../../assets/icons/product-category-icon/icon-laptops.png";
-import phone_icon from "../../assets/icons/product-category-icon/icon-phone.png";
-import speaker_icon from "../../assets/icons/product-category-icon/icon-speaker.png";
-import television_icon from "../../assets/icons/product-category-icon/icon-television.png";
+import games_icon from "../../../assets/icons/product-category-icon/icon-games.png";
+import headphone_icon from "../../../assets/icons/product-category-icon/icon-headphone.png";
+import laptops_icon from "../../../assets/icons/product-category-icon/icon-laptops.png";
+import phone_icon from "../../../assets/icons/product-category-icon/icon-phone.png";
+import speaker_icon from "../../../assets/icons/product-category-icon/icon-speaker.png";
+import television_icon from "../../../assets/icons/product-category-icon/icon-television.png";
 
 const productCategoryData = [
-  { icon: laptops_icon, title: "laptops", pathName: "/00" },
-  { icon: games_icon, title: "games", pathName: "/" },
-  { icon: phone_icon, title: "phones", pathName: "/" },
-  { icon: television_icon, title: "television", pathName: "/" },
-  { icon: headphone_icon, title: "headphone", pathName: "/" },
-  { icon: speaker_icon, title: "speakers", pathName: "/" },
+  { icon: laptops_icon, title: "laptops", pathName: "/laptops" },
+  { icon: games_icon, title: "games", pathName: "/games" },
+  { icon: phone_icon, title: "smartphones", pathName: "/smartphones" },
+  { icon: television_icon, title: "television", pathName: "/television" },
+  { icon: headphone_icon, title: "headphone", pathName: "/headphone" },
+  { icon: speaker_icon, title: "speakers", pathName: "/speakers" },
 ];
 
 const ProductCategory = () => {
@@ -67,14 +67,17 @@ const ProductCategory = () => {
         <Slider {...settings}>
           {productCategoryData.map((category, ind) => (
             <div className={styles.productCategoryDataContainer} key={ind}>
-              <div className={styles.productCategoryDataInfo}>
+              <Link
+                href={`/product-category/${category?.pathName}`}
+                className={styles.productCategoryDataInfo}
+              >
                 <Image
                   className={styles.productCategoryIcon}
                   src={category?.icon}
                   alt="product-category-icon"
                 />
                 <p className={styles.productCategoryTitle}>{category?.title}</p>
-              </div>
+              </Link>
             </div>
           ))}
         </Slider>
