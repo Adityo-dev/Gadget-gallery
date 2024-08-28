@@ -17,12 +17,12 @@ import speaker_icon from "../../../assets/icons/product-category-icon/icon-speak
 import television_icon from "../../../assets/icons/product-category-icon/icon-television.png";
 
 const productCategoryData = [
-  { icon: laptops_icon, title: "laptops", pathName: "/laptops" },
-  { icon: games_icon, title: "games", pathName: "/games" },
-  { icon: phone_icon, title: "smartphones", pathName: "/smartphones" },
-  { icon: television_icon, title: "television", pathName: "/television" },
-  { icon: headphone_icon, title: "headphone", pathName: "/headphone" },
-  { icon: speaker_icon, title: "speakers", pathName: "/speakers" },
+  { icon: laptops_icon, title: "laptops", pathName: "laptops" },
+  { icon: games_icon, title: "games", pathName: "games" },
+  { icon: phone_icon, title: "smartphones", pathName: "smartphones" },
+  { icon: television_icon, title: "television", pathName: "television" },
+  { icon: headphone_icon, title: "headphone", pathName: "headphone" },
+  { icon: speaker_icon, title: "speakers", pathName: "speakers" },
 ];
 
 const ProductCategory = () => {

@@ -1,3 +1,5 @@
+import ProductCategoryDetails from "@/components/product-category/productCategoryDetails";
+
 const fetchProductCategory = async () => {
   return [{ id: "1" }, { id: "2" }];
 };
@@ -11,9 +13,9 @@ export async function generateStaticParams() {
 
 const DynamicProductCategory = ({ params }) => {
   return (
-    <div>
-      <h1>Hi {params.slug}</h1>
-    </div>
+    <>
+      <ProductCategoryDetails productCategoryData={params.slug} />
+    </>
   );
 };
 
