@@ -25,7 +25,7 @@ const productCategoryData = [
   { icon: speaker_icon, title: "speakers", pathName: "speakers" },
 ];
 
-const ProductCategory = () => {
+const ProductCategorySlider = () => {
   const settings = {
     dots: false,
     infinite: true,
@@ -86,4 +86,4 @@ const ProductCategory = () => {
   );
 };
 
-export default ProductCategory;
+export default ProductCategorySlider;

@@ -1,12 +1,12 @@
 import styles from "./hero.module.css";
 // import components
-import ProductCategory from "@/components/product-category/categoty";
+import ProductCategorySlider from "@/components/product-category/categotySlider";
 import HeroSlider from "./heroSlider";
 
 const HomeHero = () => {
   return (
     <main className={styles.heroAllDataMainContainer}>
-      <ProductCategory />
+      <ProductCategorySlider />
       <HeroSlider />
     </main>
   );

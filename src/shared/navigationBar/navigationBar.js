@@ -61,7 +61,7 @@ const navData = [
         {
           categoryName: "Smartphone",
           icon: <RiSmartphoneLine />,
-          url: "",
+          url: "smartphone",
           subCategories: [
             {
               subCategoriesName: "Computers & Tablets",
@@ -110,7 +110,7 @@ const navData = [
         {
           categoryName: "Laptops",
           icon: <MdOutlineLaptopMac />,
-          url: "",
+          url: "laptops",
           subCategories: [
             {
               subCategoriesList: [
@@ -135,59 +135,59 @@ const navData = [
         {
           categoryName: "Camera",
           icon: <CiCamera />,
-          url: "",
+          url: "camera",
         },
         {
           categoryName: "Headphones",
           icon: <PiHeadphonesThin />,
-          url: "",
+          url: "headphones",
         },
         {
           categoryName: "PC Gaming",
           icon: <PiGameController />,
-          url: "",
+          url: "gaming",
         },
         {
           categoryName: "Tablets",
           icon: <RiSmartphoneLine />,
-          url: "",
+          url: "tablets",
         },
         {
           categoryName: "Television",
           icon: <PiTelevisionSimpleThin />,
-          url: "",
+          url: "television",
         },
         {
           categoryName: "Smartwatches",
           icon: <IoWatchOutline />,
-          url: "",
+          url: "watches",
         },
         {
           categoryName: "Speakers",
           icon: <PiSpeakerHifi />,
-          url: "",
+          url: "speakers",
         },
         {
           categoryName: "Kid Electronic",
           icon: <TbAperture />,
-          url: "",
+          url: "kid-electronic",
         },
         {
           categoryName: "Tech Gift",
           icon: <GoGift />,
-          url: "",
+          url: "gifts",
         },
       ],
 
       navListItems: [
         {
           categoryName: "Home",
-          url: "",
+          url: "/",
         },
 
         {
           categoryName: "laptop",
-          url: "",
+          url: "laptop",
           subCategories: [
             {
               subCategoriesName: "Computers & Tablets",
@@ -234,7 +234,7 @@ const navData = [
         },
         {
           categoryName: "Smartphone",
-          url: "",
+          url: "smartphone",
           subCategories: [
             {
               subCategoriesName: "Computers & Tablets",
@@ -262,7 +262,7 @@ const navData = [
         },
         {
           categoryName: "Headphones",
-          url: "",
+          url: "headphones",
           subCategories: [
             {
               subCategoriesName: "Computers & Tablets",
@@ -312,7 +312,7 @@ const navData = [
         },
         {
           categoryName: "Camera",
-          url: "",
+          url: "camera",
         },
       ],
     },
@@ -424,7 +424,7 @@ const NavigationBar = () => {
                     {bottomNav?.bottomNavData?.shopCategories.map(
                       (categoryData, ind) => (
                         <Link
-                          href={categoryData?.url}
+                          href={`/product-category/${categoryData?.url}`}
                           className={styles.navCategoryListHrLineAndCategory}
                           key={ind}
                         >
@@ -449,9 +449,14 @@ const NavigationBar = () => {
                 <div className={styles.bottomNavListAllDataContainer} key={ind}>
                   {bottomNav?.bottomNavData?.navListItems.map(
                     (navListData, ind) => (
-                      <div key={ind}>
+                      <Link
+                        key={ind}
+                        href={`${ind > 0 ? /product-category/ : ""}${
+                          navListData?.url
+                        }`}
+                      >
                         <p>{navListData?.categoryName}</p>
-                      </div>
+                      </Link>
                     )
                   )}
                 </div>
