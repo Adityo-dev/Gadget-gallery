@@ -1,7 +1,9 @@
+import DynamicProductDetailsDisplay from "@/components/DynamicProductDisplay";
+
 const Shop = () => {
   return (
     <div>
-      <p>Shop</p>
+      <DynamicProductDetailsDisplay />
     </div>
   );
 };

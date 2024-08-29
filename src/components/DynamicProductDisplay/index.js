@@ -1,31 +1,31 @@
-import styles from "./productCategoryDetails.module.css";
+import styles from "./dynamicProductDisplay.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
 // import components
-import ProductCategory from "../category";
-import ColumnCart from "@/components/products-cart/columnCart";
+import ColumnCart from "../products-cart/columnCart";
+import ProductCategory from "../product-category/category";
 
 // import image
-import product1 from "../../../assets/images/products/games/0.png";
-import product2 from "../../../assets/images/products/games/1.png";
-import product3 from "../../../assets/images/products/games/2.png";
-import product4 from "../../../assets/images/products/games/3.png";
-import product5 from "../../../assets/images/products/games/4.png";
-import product6 from "../../../assets/images/products/games/5.png";
-import product7 from "../../../assets/images/products/games/6.png";
-import product8 from "../../../assets/images/products/games/7.png";
-import product9 from "../../../assets/images/products/games/8.png";
-import product10 from "../../../assets/images/products/games/19.png";
-import product11 from "../../../assets/images/products/games/10.png";
-import product12 from "../../../assets/images/products/games/11.png";
-import product13 from "../../../assets/images/products/games/12.png";
-import product14 from "../../../assets/images/products/games/13.png";
-import product15 from "../../../assets/images/products/games/14.png";
-import product16 from "../../../assets/images/products/games/15.png";
-import product17 from "../../../assets/images/products/games/16.png";
-import product18 from "../../../assets/images/products/games/17.png";
-import product19 from "../../../assets/images/products/games/18.png";
+import product1 from "../../assets/images/products/games/0.png";
+import product2 from "../../assets/images/products/games/1.png";
+import product3 from "../../assets/images/products/games/2.png";
+import product4 from "../../assets/images/products/games/3.png";
+import product5 from "../../assets/images/products/games/4.png";
+import product6 from "../../assets/images/products/games/5.png";
+import product7 from "../../assets/images/products/games/6.png";
+import product8 from "../../assets/images/products/games/7.png";
+import product9 from "../../assets/images/products/games/8.png";
+import product10 from "../../assets/images/products/games/19.png";
+import product11 from "../../assets/images/products/games/10.png";
+import product12 from "../../assets/images/products/games/11.png";
+import product13 from "../../assets/images/products/games/12.png";
+import product14 from "../../assets/images/products/games/13.png";
+import product15 from "../../assets/images/products/games/14.png";
+import product16 from "../../assets/images/products/games/15.png";
+import product17 from "../../assets/images/products/games/16.png";
+import product18 from "../../assets/images/products/games/17.png";
+import product19 from "../../assets/images/products/games/18.png";
 
 const productCategory = [
   {
@@ -239,8 +239,8 @@ const productCategory = [
   },
 ];
 
-const ProductCategoryDetails = ({ productCategoryData }) => {
-  const pageName = productCategoryData;
+const DynamicProductDetailsDisplay = ({ productData }) => {
+  const pageName = productData;
   return (
     <>
       <section className={styles.productCategoryAndHomeContainer}>
@@ -279,4 +279,4 @@ const ProductCategoryDetails = ({ productCategoryData }) => {
   );
 };
 
-export default ProductCategoryDetails;
+export default DynamicProductDetailsDisplay;
