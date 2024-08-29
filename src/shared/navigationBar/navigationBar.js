@@ -175,7 +175,7 @@ const navData = [
         {
           categoryName: "Tech Gift",
           icon: <GoGift />,
-          url: "gifts",
+          url: "shop",
         },
       ],
 
@@ -424,7 +424,11 @@ const NavigationBar = () => {
                     {bottomNav?.bottomNavData?.shopCategories.map(
                       (categoryData, ind) => (
                         <Link
-                          href={`/product-category/${categoryData?.url}`}
+                          href={`${
+                            categoryData?.url === "shop"
+                              ? "/"
+                              : /product-category/
+                          }${categoryData?.url}`}
                           className={styles.navCategoryListHrLineAndCategory}
                           key={ind}
                         >
@@ -469,7 +473,7 @@ const NavigationBar = () => {
               <TfiHeart className={styles.bottomNavRightHeartIcon} />
             </Link>
             <p className={styles.navCategoryListRightItemHrLine}></p>
-            <Link className={styles.bottomNavRightTodayDealText} href={"/"}>
+            <Link className={styles.bottomNavRightTodayDealText} href={"/shop"}>
               Today&apos;s Deal
             </Link>
           </div>
