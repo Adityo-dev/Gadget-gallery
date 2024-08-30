@@ -86,7 +86,7 @@
 }
 
 /* ------- */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 800px) {
   .bestSellersAllDataContainer {
     width: 94%;
   }
@@ -123,6 +123,68 @@
   }
 
   .seeMoreContainer {
+    grid-column: 1/-1;
+  }
+
+  .sreMoreImage {
+    width: 100%;
+    height: 280px;
+  }
+
+  .seeMoreInfoContainer {
+    top: 100px;
+    left: 30px;
+  }
+
+  .seeMoreSubtitle {
+    font-size: 0.8rem;
+  }
+
+  .seeMoreTitle {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .bestSellersAllDataContainer {
+    width: 94%;
+  }
+
+  .bestSellersHeaderTitleContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .bestSellersAllDataInfoContainer {
+    gap: 20px;
+  }
+
+  .bestSellersTitleText {
+    font-size: 24px;
+  }
+
+  .tabBtnContainer {
+    column-gap: 25px;
+    row-gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tabBtn {
+    font-size: 0.8rem;
+  }
+
+  .categoryInfoDataContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .seeMoreContainer {
+    display: none;
     grid-column: 1/-1;
   }
 

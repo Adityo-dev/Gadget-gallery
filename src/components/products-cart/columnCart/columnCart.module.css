@@ -113,7 +113,7 @@
 
 /* --------- */
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 800px) {
   .cartAllDataContainer {
     padding: 10px 15px 15px 15px;
   }
