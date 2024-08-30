@@ -10,7 +10,7 @@
 }
 
 .cartImage {
-  width: 230px;
+  width: 100%;
   height: 220px;
 }
 
@@ -111,9 +111,88 @@
   opacity: 1;
 }
 
-/* --------- */
+/* ----responsive css--- */
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
+  .cartAllDataContainer {
+    padding: 10px 15px 15px 15px;
+  }
+
+  .cartImage {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hotAndDiscountContainer {
+    gap: 4px;
+    top: 15px;
+    left: 10px;
+  }
+
+  .productDiscount,
+  .productHot {
+    width: 40px;
+    font-size: 0.6rem;
+  }
+
+  .cartInfoContainer {
+    gap: 5px;
+  }
+
+  .productName {
+    font-size: 0.75rem;
+  }
+
+  .productTitle {
+    font-size: 0.85rem;
+    line-height: 22px;
+    -webkit-line-clamp: 2;
+  }
+
+  .productsPriceContainer {
+    gap: 8px;
+  }
+
+  .productsCurrentPrice,
+  .productsOldPrice {
+    font-size: 0.85rem;
+  }
+
+  /* --------- */
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  .productDiscount,
+  .productHot {
+    width: 50px;
+    font-size: 0.7rem;
+  }
+
+  .cartInfoContainer {
+    gap: 8px;
+  }
+
+  .productName {
+    font-size: 0.8rem;
+  }
+
+  .productTitle {
+    font-size: 0.93rem;
+  }
+
+  .productsPriceContainer {
+    gap: 10px;
+  }
+
+  .productsCurrentPrice,
+  .productsOldPrice {
+    font-size: 0.9rem;
+  }
+
+  /* --------- */
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1800px) {
   .cartAllDataContainer {
     padding: 10px 15px 15px 15px;
   }
