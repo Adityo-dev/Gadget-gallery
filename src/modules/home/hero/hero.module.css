@@ -6,7 +6,7 @@
   padding: 30px 0;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 750px) {
   .heroAllDataMainContainer {
     flex-direction: column-reverse;
     gap: 30px;

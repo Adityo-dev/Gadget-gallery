@@ -1,10 +1,10 @@
-import ProductDetailsSlider from "@/components/productDetailsSlider";
 import styles from "./productDetails.module.css";
 import Link from "next/link";
 
 // import rating component
 import * as React from "react";
 import Rating from "@mui/material/Rating";
+import ProductDetailsSlider from "@/components/productDetailsSlider";
 // import icon
 import { ImFacebook2 } from "react-icons/im";
 import { FaSquareXTwitter } from "react-icons/fa6";

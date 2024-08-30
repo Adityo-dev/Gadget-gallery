@@ -5,6 +5,9 @@ import Link from "next/link";
 // import components
 import ColumnCart from "../products-cart/columnCart";
 import ProductCategory from "../product-category/category";
+import * as React from "react";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 // import image
 import product1 from "../../assets/images/products/games/0.png";
@@ -273,6 +276,9 @@ const DynamicProductDetailsDisplay = ({ productData }) => {
               </div>
             ))}
           </div>
+          <Stack spacing={2}>
+            <Pagination count={10} variant="outlined" shape="rounded" />
+          </Stack>
         </div>
       </section>
     </>
