@@ -6,19 +6,21 @@ const Newsletter = () => {
   return (
     <div className={styles.newsletterAllDataContainer}>
       <Image className={styles.newsletterBgImage} src={newsletter_bg} alt="" />
-      <div className={styles.newsletterDataContainer}>
-        <h2 className={styles.newsletterInfoText}>
-          Sign Up For Newsletter & Get 20% Off
-        </h2>
-        <div className={styles.inputFieldContainer}>
-          <input
-            className={styles.emailField}
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your e-mail address"
-          />
-          <button className={styles.subscribeBtn}>Subscribe</button>
+      <div className={styles.infoContainer}>
+        <div className={styles.newsletterDataContainer}>
+          <h2 className={styles.newsletterInfoText}>
+            Sign Up For Newsletter & Get 20% Off
+          </h2>
+          <div className={styles.inputFieldContainer}>
+            <input
+              className={styles.emailField}
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your e-mail address"
+            />
+            <button className={styles.subscribeBtn}>Subscribe</button>
+          </div>
         </div>
       </div>
     </div>

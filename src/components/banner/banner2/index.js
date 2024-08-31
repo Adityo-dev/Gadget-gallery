@@ -30,11 +30,14 @@ const ProductBanner2 = () => {
             <h1 className={styles.title}>{bannerData?.title}</h1>
             <DynamicButton btnName={"Shop now"} btnUrl={bannerData?.url} />
           </div>
-          <Image
-            className={styles.bannerImage}
-            src={bannerData?.image}
-            alt=""
-          />
+
+          <div className={styles.imageContainer}>
+            <Image
+              className={styles.bannerImage}
+              src={bannerData?.image}
+              alt=""
+            />
+          </div>
         </div>
       ))}
     </div>

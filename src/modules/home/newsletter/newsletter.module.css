@@ -12,7 +12,7 @@
 
 .newsletterDataContainer {
   width: 80%;
-  max-width: 1550px;
+  max-width: 1600px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -64,7 +64,7 @@
 }
 
 /* --------------- */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1000px) {
   .newsletterDataContainer {
     width: 94%;
     padding: 20px;
@@ -93,5 +93,33 @@
     width: 40%;
     font-size: 0.75rem;
     background-color: #0068c8;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1700px) {
+  .newsletterDataContainer {
+    width: 94%;
+    padding: 30px;
+    gap: 40px;
+  }
+
+  .newsletterInfoText {
+    font-size: 2rem;
+    line-height: 50px;
+  }
+
+  .inputFieldContainer {
+    display: flex;
+    width: 70%;
+  }
+
+  .emailField {
+    width: 80%;
+    height: 50px;
+    padding: 0 150px 0 20px;
+  }
+
+  .subscribeBtn {
+    width: 20%;
   }
 }

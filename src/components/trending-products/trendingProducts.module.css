@@ -6,9 +6,9 @@
 }
 
 .sliderAllDataContainer {
-  width: 80%;
-  max-width: 1550px;
+  max-width: 1600px;
   margin: 0 auto;
+  padding: 0 30px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -46,12 +46,12 @@
 /* ----------- */
 @media only screen and (max-width: 500px) {
   .sliderAllDataContainer {
-    width: 94%;
     gap: 25px;
+    padding: 0 15px;
   }
 
   .trendingProductsText {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   /* slider arrow  */
@@ -66,5 +66,26 @@
   .prevArrowContainer {
     top: -73px;
     right: 50px;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .sliderAllDataContainer {
+    padding: 0 15px;
+    gap: 25px;
+  }
+
+  .trendingProductsText {
+    font-size: 1.5rem;
+  }
+
+  /* slider arrow  */
+  .nextArrowContainer,
+  .prevArrowContainer {
+    top: -73px;
+  }
+
+  .prevArrowContainer {
+    top: -73px;
   }
 }

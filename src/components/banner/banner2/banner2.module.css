@@ -1,7 +1,7 @@
 .banner2AllDataContainer {
-  width: 80%;
+  max-width: 1600px;
   margin: 0 auto;
-  max-width: 1550px;
+  padding: 0 30px;
   overflow: hidden;
 }
 
@@ -11,6 +11,7 @@
   align-items: center;
   padding: 40px 100px;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .headerTitle {
@@ -18,6 +19,7 @@
   color: #dd2831;
   margin-bottom: 3px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .title {
@@ -37,25 +39,63 @@
 
 @media only screen and (max-width: 500px) {
   .banner2AllDataContainer {
-    width: 94%;
+    padding: 0 15px;
   }
 
   .banner2DataContainer {
-    padding: 10px 30px;
+    padding: 22px;
+  }
+
+  .banner2InfoContainer {
+    width: 100%;
   }
 
   .headerTitle {
-    font-size: 0.72rem;
-    margin-bottom: 5px;
+    font-size: 0.9rem;
   }
 
   .title {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 1.6rem;
+    margin-bottom: 32px;
+    width: 70%;
+  }
+
+  .imageContainer {
+    width: 40%;
+  }
+  /* ----------- */
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .banner2AllDataContainer {
+    padding: 0 15px;
+  }
+
+  .banner2DataContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+  }
+
+  .headerTitle {
+    font-size: 1rem;
+    color: #dd2831;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 32px;
+    white-space: nowrap;
   }
 
   .bannerImage {
-    width: 450px;
-    height: 250px;
+    width: 550px;
+    height: 300px;
   }
+
+  /* ----------- */
 }

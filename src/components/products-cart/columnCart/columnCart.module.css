@@ -124,7 +124,6 @@
   }
 
   .hotAndDiscountContainer {
-    gap: 4px;
     top: 15px;
     left: 10px;
   }
@@ -146,7 +145,6 @@
   .productTitle {
     font-size: 0.85rem;
     line-height: 22px;
-    -webkit-line-clamp: 2;
   }
 
   .productsPriceContainer {
@@ -203,7 +201,6 @@
   }
 
   .hotAndDiscountContainer {
-    gap: 4px;
     top: 15px;
     left: 10px;
   }
@@ -225,17 +222,11 @@
   .productTitle {
     font-size: 0.85rem;
     line-height: 22px;
-    -webkit-line-clamp: 2;
-  }
-
-  .productsPriceContainer {
-    gap: 8px;
   }
 
   .productsCurrentPrice,
   .productsOldPrice {
     font-size: 0.85rem;
   }
-
   /* --------- */
 }
