@@ -1,9 +1,9 @@
 .serviceAllDataContainer {
   max-width: 1600px;
   margin: 0 auto;
+  padding: 0 30px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-content: space-between;
   gap: 120px;
 }
 
@@ -27,12 +27,13 @@
 .serviceSubTitle {
   font-size: 1rem;
   line-height: 28px;
+  white-space: nowrap;
 }
 /* ----------- */
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 800px) {
   .serviceAllDataContainer {
-    width: 94%;
+    padding: 0 15px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
@@ -56,5 +57,21 @@
     font-size: 0.8rem;
     line-height: 22px;
     margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1100px) {
+  .serviceAllDataContainer {
+    padding: 0 15px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1550px) {
+  .serviceAllDataContainer {
+    padding: 0 15px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
   }
 }
