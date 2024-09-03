@@ -10,36 +10,42 @@ import { FaUpwork } from "react-icons/fa6";
 import { PiInstagramLogoLight } from "react-icons/pi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
+// import image
+import Logo from "../../assets/icons/navBar/gadget-gallery-logo.png";
+
 export default function Footer() {
   const footerData = [
     {
-      name: "Quick Link",
+      name: "about us",
       items: [
-        { itemsName: " My Account", utl: "/" },
-        { itemsName: "My Cart", utl: "/" },
-        { itemsName: " Wishlist", utl: "/" },
-        { itemsName: "Gift Card", utl: "/" },
-        { itemsName: "Need Help?", utl: "/" },
+        { itemsName: "about us", utl: "/" },
+        { itemsName: "news & blog", utl: "/" },
+        { itemsName: "brands", utl: "/" },
+        { itemsName: "press center", utl: "/" },
+        { itemsName: "advertising", utl: "/" },
+        { itemsName: "investors", utl: "/" },
       ],
     },
     {
-      name: "Information",
+      name: "support",
       items: [
-        { itemsName: " About us", utl: "/" },
-        { itemsName: "contact", utl: "/" },
-        { itemsName: " blogs", utl: "/" },
-        { itemsName: "size chart", utl: "/" },
-        { itemsName: "FAQ", utl: "/" },
+        { itemsName: "Support Center", utl: "/" },
+        { itemsName: "Manage", utl: "/" },
+        { itemsName: "Service", utl: "/" },
+        { itemsName: "Haul Away", utl: "/" },
+        { itemsName: "Security Center", utl: "/" },
+        { itemsName: "Contact", utl: "/" },
       ],
     },
     {
-      name: "Quick Link",
+      name: "order",
       items: [
-        { itemsName: "Privacy Policy", utl: "/" },
-        { itemsName: "Refund Policy", utl: "/" },
-        { itemsName: "Terms of Service", utl: "/" },
-        { itemsName: "Shipping Policy", utl: "/" },
-        { itemsName: "Contact Information", utl: "/" },
+        { itemsName: "Check Order", utl: "/" },
+        { itemsName: "Delivery & Pickup", utl: "/" },
+        { itemsName: "Returns", utl: "/" },
+        { itemsName: "Exchanges", utl: "/" },
+        { itemsName: "Developers", utl: "/" },
+        { itemsName: "Gift Cards", utl: "/" },
       ],
     },
   ];
@@ -67,7 +73,9 @@ export default function Footer() {
     <section className={styles.footerAllDataContainer}>
       <div className={styles.footerDataContainer}>
         <div className={styles.footerAboutContainer}>
-          <h2 className={styles.footerHeaderText}>About Us.</h2>
+          <div>
+            <Image src={Logo} alt="nav logo" />
+          </div>
           <p className={styles.footerAboutSubText}>
             Gadgets gallery E-Commerce is a dynamic and innovative online retail
             platform that offers a wide range of products to customers

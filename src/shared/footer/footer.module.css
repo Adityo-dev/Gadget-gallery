@@ -1,11 +1,11 @@
 .footerAllDataContainer {
-  background-color: #ebebeb;
+  background-color: #f4f4f4;
   margin-top: 50px;
 }
 
 .footerDataContainer {
-  padding: 80px 0;
-  width: 60%;
+  padding: 80px 30px;
+  max-width: 1600px;
   margin: 0 auto;
   display: flex;
 }
@@ -36,7 +36,7 @@
 }
 
 .contactIcons:hover {
-  color: #0a85d1;
+  color: #0068c8;
 }
 
 .footerCheckoutContainer {
@@ -67,18 +67,18 @@
   text-decoration: none;
   color: #111111;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: normal;
   text-transform: capitalize;
   transition: all 0.3s;
 }
 
 .footerItemsData:hover {
-  color: #0a85d1;
+  color: #0068c8;
   margin-left: 5px;
 }
 
 .footerHeaderText {
-  font-size: 20px;
+  font-size: 1.5rem;
   color: #111111;
   margin-bottom: 25px;
   text-transform: capitalize;
