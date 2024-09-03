@@ -366,7 +366,7 @@ const NavigationBar = () => {
           </Link>
           <div className={styles.searchFieldContainer}>
             <p className={styles.allCategories}>
-              <span>all categories</span>{" "}
+              <span>all categories</span>
               <TfiAngleDown className={styles.angleDownIcon} />
             </p>
             <input
@@ -393,7 +393,13 @@ const NavigationBar = () => {
                       {item?.info?.icon}
                     </p>
                     <p className={styles.centerNavRightDataText}>
-                      <span>{item?.info?.title}</span>
+                      <span
+                        className={`${
+                          ind > 0 ? styles.centerNavRightText : ""
+                        }`}
+                      >
+                        {item?.info?.title}
+                      </span>
                       <br />
                       <span className={styles.centerNavHelpNumber}>
                         {item?.info?.helpNumber}
