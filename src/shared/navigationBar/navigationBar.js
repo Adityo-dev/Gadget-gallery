@@ -330,7 +330,9 @@ const NavigationBar = () => {
               <div className={styles.topNavInfoContainer}>
                 <p>{item?.topNavData?.language?.[0]}</p>
                 <p>{item?.topNavData?.typeOfMoney?.[0]}</p>
-                <p>Free Shipping On All Orders Over $100</p>
+                <p className={styles.topNavFreeShipping}>
+                  Free Shipping On All Orders Over $100
+                </p>
               </div>
 
               <div className={styles.topNavInfoContainer}>
@@ -386,7 +388,11 @@ const NavigationBar = () => {
                 {data?.centerNavData?.map((item, ind) => (
                   <Link
                     href={item?.info?.url}
-                    className={styles.centerNavRightDataInfoContainer}
+                    className={`${
+                      ind > 0
+                        ? styles.centerNavRightDataInfoContainer
+                        : styles.centerNavRightDataInfoContainerNone
+                    }`}
                     key={ind}
                   >
                     <p className={styles.centerNavRightDataIcon}>
@@ -401,6 +407,7 @@ const NavigationBar = () => {
                         {item?.info?.title}
                       </span>
                       <br />
+
                       <span className={styles.centerNavHelpNumber}>
                         {item?.info?.helpNumber}
                       </span>
@@ -420,7 +427,7 @@ const NavigationBar = () => {
             <div className={styles.shopCategoriesAllTextContainer}>
               <div className={styles.shopCategoriesTextAndIconContainer}>
                 <LuAlignJustify className={styles.alignJustifyIcon} />
-                <p>Shop Categories</p>
+                <p className={styles.shopCategoriesText}>Shop Categories</p>
               </div>
               <TfiAngleDown className={styles.arrowDownIcon} />
               {/* shop categories Data  */}
