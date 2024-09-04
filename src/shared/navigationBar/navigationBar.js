@@ -321,138 +321,167 @@ const navData = [
 
 const NavigationBar = () => {
   return (
-    <main className={styles.navigationBarAllDataContainer}>
-      {/* Navigation bar Top section data */}
-      <section className={styles.topNavAllDataContainer}>
-        <div className={styles.topNavDataContainer}>
-          {navData.map((item, ind) => (
-            <div className={styles.topNavInfoContainer} key={ind}>
-              <div className={styles.topNavInfoContainer}>
-                <p>{item?.topNavData?.language?.[0]}</p>
-                <p>{item?.topNavData?.typeOfMoney?.[0]}</p>
-                <p className={styles.topNavFreeShipping}>
-                  Free Shipping On All Orders Over $100
-                </p>
-              </div>
+    <>
+      {/* data phone 750px  */}
 
-              <div className={styles.topNavInfoContainer}>
-                <FcElectricity className={styles.electricIcon} />
+      {/* data 750px up */}
+      <main className={styles.navigationBarAllDataContainer}>
+        {/* Navigation bar Top section data */}
+        <section className={styles.topNavAllDataContainer}>
+          <div className={styles.topNavDataContainer}>
+            {navData.map((item, ind) => (
+              <div className={styles.topNavInfoContainer} key={ind}>
+                <div className={styles.topNavInfoContainer}>
+                  <p>{item?.topNavData?.language?.[0]}</p>
+                  <p>{item?.topNavData?.typeOfMoney?.[0]}</p>
+                  <p className={styles.topNavFreeShipping}>
+                    Free Shipping On All Orders Over $100
+                  </p>
+                </div>
 
-                {item?.topNavData?.navCategoryList?.map((categoryList, ind) => (
-                  <Link
-                    key={ind}
-                    href={categoryList?.pathName}
-                    className={`${
-                      ind === 0
-                        ? styles.categoryListHighlightText
-                        : styles.categoryListText
-                    }`}
-                  >
-                    {categoryList?.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-      {/* Navigation bar Center section data */}
-      <section>
-        <div className={styles.centerNavAllDataContainer}>
-          <Link href={"/"}>
-            <Image
-              className={styles.gadgetGalleryLogo}
-              src={ggLogo}
-              alt="gadgets gallery logo"
-            />
-          </Link>
-          <div className={styles.searchFieldContainer}>
-            <p className={styles.allCategories}>
-              <span>all categories</span>
-              <TfiAngleDown className={styles.angleDownIcon} />
-            </p>
-            <input
-              className={styles.searchField}
-              type="search"
-              id="search"
-              name="search"
-              placeholder="Search for products"
-            />
+                <div className={styles.topNavInfoContainer}>
+                  <FcElectricity className={styles.electricIcon} />
 
-            <button className={styles.searchButton}>search</button>
-          </div>
-
-          <div>
-            {navData.map((data, ind) => (
-              <div className={styles.centerNavRightDataContainer} key={ind}>
-                {data?.centerNavData?.map((item, ind) => (
-                  <Link
-                    href={item?.info?.url}
-                    className={`${
-                      ind > 0
-                        ? styles.centerNavRightDataInfoContainer
-                        : styles.centerNavRightDataInfoContainerNone
-                    }`}
-                    key={ind}
-                  >
-                    <p className={styles.centerNavRightDataIcon}>
-                      {item?.info?.icon}
-                    </p>
-                    <p className={styles.centerNavRightDataText}>
-                      <span
+                  {item?.topNavData?.navCategoryList?.map(
+                    (categoryList, ind) => (
+                      <Link
+                        key={ind}
+                        href={categoryList?.pathName}
                         className={`${
-                          ind > 0 ? styles.centerNavRightText : ""
+                          ind === 0
+                            ? styles.categoryListHighlightText
+                            : styles.categoryListText
                         }`}
                       >
-                        {item?.info?.title}
-                      </span>
-                      <br />
-
-                      <span className={styles.centerNavHelpNumber}>
-                        {item?.info?.helpNumber}
-                      </span>
-                    </p>
-                  </Link>
-                ))}
-                <p></p>
+                        {categoryList?.name}
+                      </Link>
+                    )
+                  )}
+                </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className={styles.bottomNavHrLine}>
-        <div className={styles.bottomNavAllDataContainer}>
-          <div className={styles.shopCategoriesALlDataContainer}>
-            <div className={styles.shopCategoriesAllTextContainer}>
-              <div className={styles.shopCategoriesTextAndIconContainer}>
-                <LuAlignJustify className={styles.alignJustifyIcon} />
-                <p className={styles.shopCategoriesText}>Shop Categories</p>
-              </div>
-              <TfiAngleDown className={styles.arrowDownIcon} />
-              {/* shop categories Data  */}
-              <div className={styles.shopCategoriesALlDataInfoContainer}>
-                {navData.map((bottomNav, ind) => (
-                  <div key={ind}>
-                    {bottomNav?.bottomNavData?.shopCategories.map(
-                      (categoryData, ind) => (
-                        <Link
-                          href={`${
-                            categoryData?.url === "shop"
-                              ? "/"
-                              : /product-category/
-                          }${categoryData?.url}`}
-                          className={styles.navCategoryListHrLineAndCategory}
-                          key={ind}
+        {/* Navigation bar Center section data */}
+        <section>
+          <div className={styles.centerNavAllDataContainer}>
+            <Link href={"/"}>
+              <Image
+                className={styles.gadgetGalleryLogo}
+                src={ggLogo}
+                alt="gadgets gallery logo"
+              />
+            </Link>
+            <div className={styles.searchFieldContainer}>
+              <p className={styles.allCategories}>
+                <span>all categories</span>
+                <TfiAngleDown className={styles.angleDownIcon} />
+              </p>
+              <input
+                className={styles.searchField}
+                type="search"
+                id="search"
+                name="search"
+                placeholder="Search for products"
+              />
+              <button className={styles.searchButton}>search</button>
+            </div>
+            <div>
+              {navData.map((data, ind) => (
+                <div className={styles.centerNavRightDataContainer} key={ind}>
+                  {data?.centerNavData?.map((item, ind) => (
+                    <Link
+                      href={item?.info?.url}
+                      className={`${
+                        ind > 0
+                          ? styles.centerNavRightDataInfoContainer
+                          : styles.centerNavRightDataInfoContainerNone
+                      }`}
+                      key={ind}
+                    >
+                      <p className={styles.centerNavRightDataIcon}>
+                        {item?.info?.icon}
+                      </p>
+                      <p className={styles.centerNavRightDataText}>
+                        <span
+                          className={`${
+                            ind > 0 ? styles.centerNavRightText : ""
+                          }`}
                         >
-                          <p className={styles.navCategoryListItemContainer}>
-                            <span className={styles.categoryDataIcon}>
-                              {categoryData?.icon}
-                            </span>
-                            <span className={styles.categoryDataName}>
-                              {categoryData?.categoryName}
-                            </span>
-                          </p>
+                          {item?.info?.title}
+                        </span>
+                        <br />
+
+                        <span className={styles.centerNavHelpNumber}>
+                          {item?.info?.helpNumber}
+                        </span>
+                      </p>
+                    </Link>
+                  ))}
+                  <p></p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* nav bar bottom section data */}
+        <section className={styles.bottomNavHrLine}>
+          <div className={styles.bottomNavAllDataContainer}>
+            <div className={styles.shopCategoriesALlDataContainer}>
+              <div className={styles.shopCategoriesAllTextContainer}>
+                <div className={styles.shopCategoriesTextAndIconContainer}>
+                  <LuAlignJustify className={styles.alignJustifyIcon} />
+                  <p className={styles.shopCategoriesText}>Shop Categories</p>
+                </div>
+                <TfiAngleDown className={styles.arrowDownIcon} />
+                {/* shop categories Data  */}
+                <div className={styles.shopCategoriesALlDataInfoContainer}>
+                  {navData.map((bottomNav, ind) => (
+                    <div key={ind}>
+                      {bottomNav?.bottomNavData?.shopCategories.map(
+                        (categoryData, ind) => (
+                          <Link
+                            href={`${
+                              categoryData?.url === "shop"
+                                ? "/"
+                                : /product-category/
+                            }${categoryData?.url}`}
+                            className={styles.navCategoryListHrLineAndCategory}
+                            key={ind}
+                          >
+                            <p className={styles.navCategoryListItemContainer}>
+                              <span className={styles.categoryDataIcon}>
+                                {categoryData?.icon}
+                              </span>
+                              <span className={styles.categoryDataName}>
+                                {categoryData?.categoryName}
+                              </span>
+                            </p>
+                          </Link>
+                        )
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                {navData?.map((bottomNav, ind) => (
+                  <div
+                    className={styles.bottomNavListAllDataContainer}
+                    key={ind}
+                  >
+                    {bottomNav?.bottomNavData?.navListItems.map(
+                      (navListData, ind) => (
+                        <Link
+                          key={ind}
+                          href={`${ind > 0 ? /product-category/ : ""}${
+                            navListData?.url
+                          }`}
+                        >
+                          <p>{navListData?.categoryName}</p>
                         </Link>
                       )
                     )}
@@ -461,38 +490,22 @@ const NavigationBar = () => {
               </div>
             </div>
 
-            <div>
-              {navData?.map((bottomNav, ind) => (
-                <div className={styles.bottomNavListAllDataContainer} key={ind}>
-                  {bottomNav?.bottomNavData?.navListItems.map(
-                    (navListData, ind) => (
-                      <Link
-                        key={ind}
-                        href={`${ind > 0 ? /product-category/ : ""}${
-                          navListData?.url
-                        }`}
-                      >
-                        <p>{navListData?.categoryName}</p>
-                      </Link>
-                    )
-                  )}
-                </div>
-              ))}
+            <div className={styles.navCategoryRightList}>
+              <Link href={"/wishlist"}>
+                <TfiHeart className={styles.bottomNavRightHeartIcon} />
+              </Link>
+              <p className={styles.navCategoryListRightItemHrLine}></p>
+              <Link
+                className={styles.bottomNavRightTodayDealText}
+                href={"/shop"}
+              >
+                Today&apos;s Deal
+              </Link>
             </div>
           </div>
-
-          <div className={styles.navCategoryRightList}>
-            <Link href={"/wishlist"}>
-              <TfiHeart className={styles.bottomNavRightHeartIcon} />
-            </Link>
-            <p className={styles.navCategoryListRightItemHrLine}></p>
-            <Link className={styles.bottomNavRightTodayDealText} href={"/shop"}>
-              Today&apos;s Deal
-            </Link>
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 };
 
