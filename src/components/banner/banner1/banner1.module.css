@@ -19,6 +19,7 @@
 
 .banner1RightContainer {
   width: 100%;
+  height: 450px;
   grid-column: 3/-1;
   border-radius: 10px;
   overflow: hidden;
@@ -244,5 +245,77 @@
   .banner1AllDataContainer {
     padding: 0 30px;
     gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1500px) {
+  .banner1AllDataContainer {
+    width: 100%;
+    padding: 0 30px;
+    gap: 20px;
+  }
+
+  .banner1LeftContainer {
+    width: 100%;
+    height: 350px;
+    padding: 0 0 30px 30px;
+  }
+
+  .banner1RightContainer {
+    width: 100%;
+    height: 350px;
+  }
+
+  .banner1LeftAllInfoContainer {
+    grid-template-columns: repeat(2, 55%);
+    gap: 0px;
+  }
+
+  .banner1RightAllInfoContainer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
+  }
+
+  .bannerInfoRightContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner1LeftHeaderTitle {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #dd2831;
+    margin-bottom: 3px;
+  }
+
+  .banner1RightHeaderTitle {
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+
+  .banner1LeftTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+  }
+
+  .banner1RightTitle {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .banner1LeftSubTitle {
+    font-size: 0.8rem;
+    margin-bottom: 25px;
+  }
+
+  .banner1RightSubTitle {
+    font-size: 0.8rem;
+    margin-top: 7px;
   }
 }
