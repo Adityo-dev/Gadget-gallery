@@ -8,10 +8,9 @@
 }
 
 .wishlistAndHome {
-  width: 80%;
+  max-width: 1600px;
   margin: 0 auto;
-  max-width: 1550px;
-  padding: 25px 0;
+  padding: 25px 30px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -26,12 +25,12 @@
 }
 
 .wishlistAllDataContainer {
-  width: 80%;
+  max-width: 1600px;
   margin: 0 auto;
-  max-width: 1550px;
   margin-top: 30px;
   border-bottom: 1px solid #ebebeb;
   padding-bottom: 25px;
+  padding: 0 30px;
 }
 
 .productCategoryContainer {
@@ -64,14 +63,13 @@
 
 /*  */
 .wishlistProductDataContainer {
-  width: 80%;
+  max-width: 1600px;
   margin: 0 auto;
-  max-width: 1550px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #ebebeb;
-  padding: 25px 0;
+  padding: 25px 30px;
 }
 
 .wishlistProductImageAndNameContainer {
