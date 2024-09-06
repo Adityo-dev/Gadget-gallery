@@ -55,6 +55,6 @@
   height: 15rem;
 }
 
-/* .textareaField:focus {
+.textareaField:focus {
   border: 1px solid #0068c8;
-} */
+}
