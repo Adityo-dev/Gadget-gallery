@@ -13,7 +13,7 @@
   height: 450px;
   grid-column: 1/3;
   border-radius: 10px;
-  padding-left: 100px;
+  padding-left: 5rem;
   overflow: hidden;
 }
 
@@ -85,6 +85,7 @@
   font-weight: 500;
   text-align: center;
   white-space: pre-line;
+  margin-bottom: 10px;
 }
 
 .banner1LeftSubTitle {
@@ -120,6 +121,10 @@
     width: 100%;
     height: 400px;
     padding: 0px;
+  }
+
+  .banner1RightContainer {
+    /* height: 400px; */
   }
 
   .banner1LeftAllInfoContainer {
@@ -182,18 +187,23 @@
 
   .banner1LeftContainer {
     padding: 0px;
-    height: 380px;
+    height: 370px;
   }
 
   .banner1RightContainer {
-    height: 380px;
+    height: 370px;
   }
 
   .banner1LeftAllInfoContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 0;
     text-align: center;
+    padding-top: 30px;
+  }
+
+  .banner1RightAllInfoContainer {
     padding-top: 30px;
   }
 
@@ -202,35 +212,22 @@
     padding: 0 30px;
   }
 
-  .banner1LeftHeaderTitle {
-    font-size: 0.8rem;
-    margin-bottom: 6px;
-  }
-
+  .banner1LeftHeaderTitle,
   .banner1RightHeaderTitle {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin-bottom: 6px;
   }
 
-  .banner1LeftTitle {
-    font-size: 26px;
-    font-weight: 600;
-  }
-
+  .banner1LeftTitle,
   .banner1RightTitle {
-    font-size: 26px;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 500;
   }
 
-  .banner1LeftSubTitle {
-    font-size: 0.8rem;
-    margin-bottom: 25px;
-  }
-
+  .banner1LeftSubTitle,
   .banner1RightSubTitle {
     font-size: 0.8rem;
-    font-weight: 500;
-    margin-top: 12px;
+    margin-bottom: 25px;
   }
 
   .btnShopNow {
@@ -239,7 +236,7 @@
   }
 
   .banner1RightImage {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
   }
 }
 
