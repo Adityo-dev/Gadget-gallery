@@ -10,8 +10,8 @@ export default function NotFound({ params }) {
       <div className={styles.notFoundAllDataContainer}>
         <h1 className={styles.notFoundNumber}>404</h1>
         <h4 className={styles.notFoundTitle}>
-          The page you&apos;re looking for doesn&apos;t exist or <br /> probably
-          moved somewhere...
+          The page you&apos;re looking for doesn&apos;t exist or
+          <br className={styles.notFoundTitleBr} /> probably moved somewhere...
         </h4>
         <p className={styles.notFoundSubTitle}>
           Please back to homepage or check our offer

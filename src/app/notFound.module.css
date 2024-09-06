@@ -3,12 +3,13 @@
 }
 
 .notFoundAllDataContainer {
+  max-width: 1600px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
   align-items: center;
-  padding: 6.5rem 0;
+  padding: 6.5rem 30px;
   text-align: center;
 }
 
@@ -43,4 +44,81 @@
   background-color: #fff;
   color: #1a74c9;
   padding: 16px 50px;
+}
+
+@media screen and (max-width: 500px) {
+  .notFoundAllDataContainer {
+    padding: 4rem 0;
+    gap: 15px;
+  }
+
+  .notFoundNumber {
+    font-size: 5rem;
+  }
+
+  .notFoundTitle {
+    font-size: 1rem;
+  }
+
+  .notFoundSubTitle {
+    margin: 10px 0;
+  }
+
+  .goBackBtn {
+    padding: 16px 30px;
+  }
+
+  .notFoundTitleBr {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 1000px) {
+  .notFoundAllDataContainer {
+    padding: 4rem 0;
+  }
+
+  .notFoundNumber {
+    font-size: 9rem;
+  }
+
+  .notFoundTitle {
+    font-size: 1.2rem;
+  }
+
+  .notFoundSubTitle {
+    margin: 10px 0;
+  }
+
+  .goBackBtn {
+    padding: 16px 30px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .notFoundAllDataContainer {
+    padding: 4rem 15px;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1300px) {
+  .notFoundAllDataContainer {
+    padding: 4.5rem 0;
+  }
+
+  .notFoundNumber {
+    font-size: 10rem;
+  }
+
+  .notFoundTitle {
+    font-size: 1.5rem;
+  }
+
+  .notFoundSubTitle {
+    margin: 10px 0;
+  }
+
+  .goBackBtn {
+    padding: 16px 40px;
+  }
 }
