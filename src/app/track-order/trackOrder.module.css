@@ -1,0 +1,96 @@
+.allDataContainer {
+  max-width: 1600px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.trackOrder {
+  margin-top: 2rem;
+  font-size: 1.875rem;
+}
+
+.allInfoContainer {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 3rem;
+  text-transform: capitalize;
+}
+
+.infoSubTitle {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.inputFieldContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.inputField {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  outline: none;
+  transition: all 0.3s;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.inputField:focus {
+  border: 1px solid #0068c8;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0 5rem 0;
+}
+
+/* responsive css */
+
+@media screen and (max-width: 1000px) {
+  .trackOrder {
+    margin-top: 2rem;
+    font-size: 1.875rem;
+  }
+
+  .allInfoContainer {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .infoSubTitle {
+    font-size: 0.85rem;
+    line-height: 1.3rem;
+  }
+
+  .inputFieldContainer {
+    margin-top: 1.5rem;
+  }
+
+  .inputField {
+    padding: 1rem;
+    margin-top: 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    margin: 1rem 0 2rem 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .allDataContainer {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1500px) {
+  .allInfoContainer {
+    width: 70%;
+    margin-top: 2rem;
+  }
+}

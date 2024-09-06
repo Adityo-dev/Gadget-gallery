@@ -31,11 +31,11 @@ const navData = [
       language: ["english", "bangla"],
       typeOfMoney: ["BDT", "USD", "EUR"],
       navCategoryList: [
-        { name: "flash sale", pathName: "" },
-        { name: "track order", pathName: "" },
-        { name: "about", pathName: "" },
-        { name: "contact", pathName: "" },
-        { name: "blog", pathName: "" },
+        { name: "flash sale", pathName: "/flash-sale" },
+        { name: "track order", pathName: "/track-order" },
+        { name: "about", pathName: "/about" },
+        { name: "contact", pathName: "/contact" },
+        { name: "blog", pathName: "/blog" },
       ],
     },
 
