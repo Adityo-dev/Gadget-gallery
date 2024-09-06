@@ -1,0 +1,60 @@
+.allDataContainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 30px;
+  margin-top: 4rem;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+
+.subTitle {
+  margin: 10px 0 20px 0;
+}
+
+.inputFieldContainer {
+  padding-right: 30px;
+}
+
+.nameAadEmailContainer {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.inputField,
+.textareaField {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  outline: none;
+  transition: all 0.3s;
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  outline: none;
+  background-color: #f4f4f4;
+}
+
+.inputField:focus {
+  border: 1px solid #0068c8;
+}
+
+.textareaField {
+  height: 15rem;
+}
+
+.textareaField:focus {
+  border: 1px solid #0068c8;
+}
