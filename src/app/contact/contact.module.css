@@ -77,3 +77,69 @@
 .textareaField:focus {
   border: 1px solid #0068c8;
 }
+
+@media screen and (max-width: 800px) {
+  .allDataContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 15px;
+  }
+
+  .inputFieldContainer {
+    padding-right: 0;
+  }
+
+  .nameAadEmailContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .inputField,
+  .textareaField {
+    width: 100%;
+    padding: 1rem 1.25rem;
+  }
+}
+
+@media screen and (min-width: 551px) and (max-width: 1000px) {
+  .allDataContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .inputFieldContainer {
+    padding-right: 0;
+  }
+
+  .nameAadEmailContainer {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .inputField,
+  .textareaField {
+    width: 100%;
+    padding: 1rem 1.25rem;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1550px) {
+  .allDataContainer {
+    grid-template-columns: 45%, 55%;
+    gap: 2rem;
+  }
+
+  .nameAadEmailContainer {
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .inputField,
+  .textareaField {
+    width: 100%;
+    padding: 1rem 1.25rem;
+  }
+}
