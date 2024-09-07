@@ -8,6 +8,17 @@ const Contact = () => {
         <p className={styles.subTitle}>
           We are at your disposal 7 days a week!
         </p>
+
+        <p className={styles.location}>
+          <span>29 SE 2nd Ave,</span>
+          <span> Miami, Florida 33131,</span>
+          <span>dhaka</span>
+        </p>
+
+        <div className={styles.contactInfo}>
+          <p className={styles.gmailId}>gadgetgallery03@gmail.com</p>
+          <p className={styles.phoneNum}>+8801770365981</p>
+        </div>
       </div>
 
       <div className={styles.inputFieldContainer}>

@@ -4,7 +4,7 @@
   padding: 0 30px;
   display: grid;
   grid-template-columns: 40% 60%;
-  gap: 30px;
+  gap: 2.2rem;
   margin-top: 4rem;
 }
 
@@ -22,6 +22,25 @@
 
 .subTitle {
   margin: 10px 0 20px 0;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* .gmailId {
+} */
+
+.phoneNum {
+  font-weight: 700;
 }
 
 .inputFieldContainer {
