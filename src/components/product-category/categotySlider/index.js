@@ -31,10 +31,12 @@ const ProductCategorySlider = () => {
     infinite: true,
     speed: 500,
     autoplay: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 5000,
     arrows: false,
     slidesToShow: 6,
     slidesToScroll: 1,
+    swipeToSlide: true,
+    touchMove: true,
     responsive: [
       {
         breakpoint: 1200,
