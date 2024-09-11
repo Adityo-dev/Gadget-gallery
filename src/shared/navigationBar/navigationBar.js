@@ -11,6 +11,7 @@ import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { FaRegUser } from "react-icons/fa6";
 import { LuShoppingCart } from "react-icons/lu";
 import { TfiAngleDown } from "react-icons/tfi";
+import { TfiAngleRight } from "react-icons/tfi";
 import { LuAlignJustify } from "react-icons/lu";
 import { TfiHeart } from "react-icons/tfi";
 
@@ -451,14 +452,26 @@ const NavigationBar = () => {
                             className={styles.navCategoryListHrLineAndCategory}
                             key={ind}
                           >
-                            <p className={styles.navCategoryListItemContainer}>
-                              <span className={styles.categoryDataIcon}>
-                                {categoryData?.icon}
-                              </span>
-                              <span className={styles.categoryDataName}>
-                                {categoryData?.categoryName}
-                              </span>
-                            </p>
+                            <div
+                              className={
+                                styles.navCategoryListItemAllDataContainer
+                              }
+                            >
+                              <p
+                                className={styles.navCategoryListItemContainer}
+                              >
+                                <span className={styles.categoryDataIcon}>
+                                  {categoryData?.icon}
+                                </span>
+                                <span className={styles.categoryDataName}>
+                                  {categoryData?.categoryName}
+                                </span>
+                              </p>
+
+                              <TfiAngleRight
+                                className={styles.angleRightIcon}
+                              />
+                            </div>
                           </Link>
                         )
                       )}

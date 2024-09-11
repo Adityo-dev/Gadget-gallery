@@ -71,17 +71,21 @@ const ProductCategorySlider = () => {
         <Slider {...settings}>
           {productCategoryData.map((category, ind) => (
             <div className={styles.productCategoryDataContainer} key={ind}>
-              <Link
-                href={`/product-category/${category?.pathName}`}
-                className={styles.productCategoryDataInfo}
-              >
-                <Image
-                  className={styles.productCategoryIcon}
-                  src={category?.icon}
-                  alt="product-category-icon"
-                />
-                <p className={styles.productCategoryTitle}>{category?.title}</p>
-              </Link>
+              <div className={styles.productCategoryDataInfo}>
+                <Link
+                  className={styles.productCategoryInfo}
+                  href={`/product-category/${category?.pathName}`}
+                >
+                  <Image
+                    className={styles.productCategoryIcon}
+                    src={category?.icon}
+                    alt="product-category-icon"
+                  />
+                  <p className={styles.productCategoryTitle}>
+                    {category?.title}
+                  </p>
+                </Link>
+              </div>
             </div>
           ))}
         </Slider>

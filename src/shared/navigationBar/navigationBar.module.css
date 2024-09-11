@@ -177,7 +177,7 @@
 
 .arrowDownIcon {
   margin-right: 30px;
-  padding: 0 2px;
+  padding: 0 1.5px;
 }
 
 /* bottom Nav List All Data Container */
@@ -239,12 +239,23 @@
   color: #0068c8;
 }
 
+.navCategoryListItemAllDataContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px 0 0;
+  border-top: 1px solid #ebebeb;
+}
+
+.angleRightIcon {
+  font-size: 0.7rem;
+}
+
 .navCategoryListItemContainer {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 7px 25px;
-  border-top: 1px solid #ebebeb;
 }
 
 .categoryDataIcon {
