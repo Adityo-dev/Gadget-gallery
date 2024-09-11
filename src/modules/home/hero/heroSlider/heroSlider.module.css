@@ -1,12 +1,12 @@
 .sliderDataContainer {
   max-width: 1530px;
-  height: 33rem;
+  height: 32rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-  padding-left: 6.25rem;
+  padding: 0 2.5rem 0 6.25rem;
   cursor: pointer;
 }
 
@@ -73,11 +73,11 @@
 }
 
 .sliderImageContainer {
-  width: 55%;
+  width: 45%;
 }
 
 .sliderImage {
-  width: 90%;
+  width: 100%;
   height: 100%;
 }
 
@@ -151,9 +151,21 @@
   }
 }
 
+@media screen and (max-width: 389px) {
+  .sliderDataContainer {
+    height: 74vh;
+  }
+}
+
+@media screen and (min-width: 389px) and (max-width: 450px) {
+  .sliderDataContainer {
+    height: 83vh;
+  }
+}
+
 @media screen and (min-width: 750px) and (max-width: 950px) {
   .sliderDataContainer {
-    height: 22rem;
+    height: 20rem;
     padding: 0 3rem;
     margin: 0 15px;
   }
@@ -195,16 +207,11 @@
   .sliderImageContainer {
     width: 55%;
   }
-
-  .sliderImage {
-    width: 100%;
-    height: 100%;
-  }
 }
 
 @media screen and (min-width: 800px) and (max-width: 950px) {
   .sliderDataContainer {
-    height: 25rem;
+    height: 22.5rem;
     padding: 0 4rem;
     margin: 0 30px;
   }
@@ -242,20 +249,11 @@
       text-shadow: 0 0 5px #ffffffcc;
     }
   }
-
-  .sliderImageContainer {
-    width: 55%;
-  }
-
-  .sliderImage {
-    width: 100%;
-    height: 100%;
-  }
 }
 
 @media screen and (min-width: 950px) and (max-width: 1200px) {
   .sliderDataContainer {
-    height: 28rem;
+    height: 23.5rem;
     padding: 0 5rem;
     margin: 0 30px;
   }
@@ -297,15 +295,17 @@
   .sliderImageContainer {
     width: 55%;
   }
+}
 
-  .sliderImage {
-    width: 100%;
-    height: 100%;
+@media screen and (min-width: 950px) and (max-width: 1050px) {
+  .sliderDataContainer {
+    height: 22.5rem;
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1600px) {
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
   .sliderDataContainer {
+    height: 28rem;
     padding: 0 5.5rem;
     margin: 0 30px;
   }
@@ -341,7 +341,19 @@
   }
 
   .sliderImage {
-    width: 90%;
+    width: 100%;
     height: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .sliderDataContainer {
+    height: 29rem;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1500px) {
+  .sliderDataContainer {
+    height: 31rem;
   }
 }
