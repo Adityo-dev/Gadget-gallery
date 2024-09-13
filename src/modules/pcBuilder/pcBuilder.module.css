@@ -4,10 +4,23 @@
   padding: 0 1.875rem;
 }
 
+.pcBuilderSection {
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
+  padding: 1.25rem 0;
+}
+
 .headerLogoAndActionsContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #ebebeb;
+  padding: 0 1.875rem;
+}
+
+.logo {
+  width: 8.75rem;
+  height: 100%;
 }
 
 .allActions {
@@ -29,4 +42,79 @@
 .actionsName {
   font-size: 1rem;
   font-weight: 600;
+}
+
+/*  */
+.pcBuilderContainer2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+  margin: 1.875rem 0;
+}
+
+.pcBuilderTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0068c8;
+  margin-bottom: 0.625rem;
+}
+
+.hideUnselectedItems {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: gray;
+}
+
+.wattageAndPriceContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+}
+
+.wattageInfo {
+  position: relative;
+  text-align: center;
+  background-color: #fff;
+  border: 1px dashed black;
+  border-radius: 5px;
+  padding: 0.625rem 2.5rem;
+}
+
+.priceInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+  background-color: #0068c8;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.625rem 2.5rem;
+}
+
+.totalWattage,
+.totalPrice {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.betaTag {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.75rem;
+  color: #0068c8;
+}
+
+.estimatedWattage {
+  font-size: 0.75rem;
+  color: gray;
+}
+
+.totalItems {
+  font-size: 0.85rem;
 }

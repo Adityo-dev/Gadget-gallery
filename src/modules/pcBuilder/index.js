@@ -36,11 +36,10 @@ const actions = [
 const PcBuilderPage = () => {
   return (
     <main className={styles.allDataContainer}>
-      <section>
+      <section className={styles.pcBuilderSection}>
         <div className={styles.headerLogoAndActionsContainer}>
-          <div>
-            <Image src={logo} alt="" />
-          </div>
+          <Image className={styles.logo} src={logo} alt="" />
+
           <div className={styles.allActions}>
             {actions.map((data, ind) => (
               <div className={styles.actionsNameAndIcon} key={ind}>
@@ -48,6 +47,36 @@ const PcBuilderPage = () => {
                 <span className={styles.actionsName}>{data?.name}</span>
               </div>
             ))}
+          </div>
+        </div>
+
+        <div className={styles.pcBuilderContainer2}>
+          <div className={styles.pcBuilderHeader2}>
+            <p className={styles.pcBuilderTitle}>
+              PC Builder - Build Your Own Computer - Star Tech
+            </p>
+            <div className={styles.hideUnselectedItems}>
+              <input type="checkbox" id="vehicle" name="vehicle" value="hide" />
+              <label for="vehicle">Hide those that are not selected</label>
+            </div>
+          </div>
+          <div className={styles.wattageAndPriceContainer}>
+            <button className={styles.wattageInfo}>
+              <p className={styles.totalWattage}>
+                <span>150</span>W
+              </p>
+              <p className={styles.estimatedWattage}>Estimated Wattage</p>
+
+              <span className={styles.betaTag}>BETA</span>
+            </button>
+            <button className={styles.priceInfo}>
+              <p className={styles.totalPrice}>
+                <span>103,250</span> ৳
+              </p>
+              <p className={styles.totalItems}>
+                <span>3</span> Items
+              </p>
+            </button>
           </div>
         </div>
       </section>
