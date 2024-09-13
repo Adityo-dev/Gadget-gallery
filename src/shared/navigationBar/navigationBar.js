@@ -512,7 +512,7 @@ const NavigationBar = () => {
                 className={styles.bottomNavRightTodayDealText}
                 href={"/shop"}
               >
-                Today&apos;s Deal
+                Pc Builder
               </Link>
             </div>
           </div>
