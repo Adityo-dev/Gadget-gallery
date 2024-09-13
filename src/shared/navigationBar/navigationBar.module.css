@@ -205,8 +205,13 @@
   height: 50px;
 }
 
-.bottomNavRightTodayDealText {
+.bottomNavRightPcBuilder {
   font-weight: 600;
+  color: #fff;
+  background-color: #0068c8;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-transform: capitalize;
 }
 
 /* >>>> */
@@ -358,10 +363,6 @@
     height: 50px;
   }
 
-  .bottomNavRightTodayDealText {
-    font-weight: 600;
-  }
-
   /* >>>> */
   .shopCategoriesALlDataInfoContainer {
     width: 280px;
@@ -454,7 +455,7 @@
     border-right: none;
   }
 
-  .bottomNavRightTodayDealText {
+  .bottomNavRightPcBuilder {
     font-size: 0.9rem;
   }
 }

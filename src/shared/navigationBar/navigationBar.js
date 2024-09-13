@@ -509,8 +509,8 @@ const NavigationBar = () => {
               </Link>
               <p className={styles.navCategoryListRightItemHrLine}></p>
               <Link
-                className={styles.bottomNavRightTodayDealText}
-                href={"/shop"}
+                className={styles.bottomNavRightPcBuilder}
+                href={"/pc_builder"}
               >
                 Pc Builder
               </Link>

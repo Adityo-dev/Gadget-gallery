@@ -1,0 +1,32 @@
+.allDataContainer {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1.875rem;
+}
+
+.headerLogoAndActionsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.allActions {
+  display: flex;
+  gap: 1.875rem;
+  align-items: center;
+}
+
+.actionsNameAndIcon {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionsIcon {
+  font-size: 1.2rem;
+  color: #0068c8;
+}
+
+.actionsName {
+  font-size: 1rem;
+  font-weight: 600;
+}
