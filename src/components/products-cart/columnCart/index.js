@@ -10,29 +10,46 @@ const ColumnCart = ({ cartData }) => {
         <Link href={`/shop/${cartData?.title}`}>
           <div className={styles.cartImage}>
             <Image
-              className={styles.cartImage}
+              className={`${styles.cartImage} ${
+                cartData?.soldOut == true ? styles.soldOutImage : ""
+              }`}
               src={cartData?.image}
               alt={cartData?.name}
             />
           </div>
         </Link>
-        <div className={styles.hotAndDiscountContainer}>
-          <p
-            className={
-              cartData?.discount
-                ? styles.productDiscount
-                : styles.productDiscountNone
-            }
-          >
-            -{cartData?.discount}%
-          </p>
-          <p
-            className={
-              cartData?.hot === true ? styles.productHot : styles.productHotNone
-            }
-          >
-            {cartData?.hot ? "Hot" : ""}
-          </p>
+
+        <div>
+          {cartData?.soldOut == true ? (
+            <p
+              className={
+                cartData?.soldOut === true ? styles.soldOut : styles.soldOutNone
+              }
+            >
+              {cartData?.soldOut ? "Sold Out" : ""}
+            </p>
+          ) : (
+            <div className={styles.hotAndDiscountContainer}>
+              <p
+                className={
+                  cartData?.discount
+                    ? styles.productDiscount
+                    : styles.productDiscountNone
+                }
+              >
+                -{cartData?.discount}%
+              </p>
+              <p
+                className={
+                  cartData?.hot === true
+                    ? styles.productHot
+                    : styles.productHotNone
+                }
+              >
+                {cartData?.hot ? "Hot" : ""}
+              </p>
+            </div>
+          )}
         </div>
       </div>
 

@@ -76,6 +76,7 @@ const bestSellersData = [
         oldPrice: "949.99",
         discount: "26",
         url: "",
+        soldOut: true,
       },
       {
         image: smartPhone2,
