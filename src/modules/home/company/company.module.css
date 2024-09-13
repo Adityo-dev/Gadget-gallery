@@ -1,28 +1,37 @@
 .companyAllDataContainer {
-  width: 80%;
+  max-width: 1600px;
+  padding: 0 30px;
   margin: 0 auto;
-  max-width: 1550px;
 }
 
 .companyImage {
-  width: 160px;
-  height: 40px;
+  width: 100%;
+  height: 35px;
   opacity: 0.2;
   transition: all 200ms ease;
   cursor: pointer;
+  padding-right: 50px;
 }
 
 .companyImage:hover {
   opacity: 1;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1550px) {
   .companyAllDataContainer {
-    width: 94%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .companyAllDataContainer {
+    width: 100%;
+    padding: 0 15px;
   }
 
   .companyImage {
-    width: 80px;
+    width: 100%;
     height: 30px;
+    padding: 0 20px;
   }
 }

@@ -8,7 +8,13 @@ const ColumnCart = ({ cartData }) => {
     <main className={styles.cartAllDataContainer}>
       <div>
         <Link href={`/shop/${cartData?.title}`}>
-          <Image className={styles.cartImage} src={cartData?.image} alt="" />
+          <div className={styles.cartImage}>
+            <Image
+              className={styles.cartImage}
+              src={cartData?.image}
+              alt={cartData?.name}
+            />
+          </div>
         </Link>
         <div className={styles.hotAndDiscountContainer}>
           <p

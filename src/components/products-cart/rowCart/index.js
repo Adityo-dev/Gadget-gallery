@@ -7,7 +7,11 @@ const RowCart = ({ cartData }) => {
     <div className={styles.cartDataContainer}>
       <div className={styles.productImageContainer}>
         <Link href={`/shop/${cartData?.title}`}>
-          <Image className={styles.productImage} src={cartData?.image} alt="" />
+          <Image
+            className={styles.productImage}
+            src={cartData?.image}
+            alt={cartData?.name}
+          />
         </Link>
         <div className={styles.hotAndDiscountContainer}>
           <p
@@ -43,7 +47,6 @@ const RowCart = ({ cartData }) => {
           <span className={styles.productsCurrentPrice}>
             ${cartData?.currentPrice}
           </span>
-
           <del className={styles.productsOldPrice}>${cartData?.oldPrice}</del>
         </p>
       </div>
