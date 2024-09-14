@@ -4,24 +4,41 @@ import Link from "next/link";
 
 // import image
 import logo from "../../assets/icons/navBar/gadget-gallery-logo.png";
+import cpu from "../../assets/icons/pc-builder-icon/cpu.png";
+import cpu_cooler from "../../assets/icons/pc-builder-icon/cpu.png";
+import motherboard from "../../assets/icons/pc-builder-icon//motherboard.png";
+import ram from "../../assets/icons/pc-builder-icon/ram.png";
+import storage from "../../assets/icons/pc-builder-icon/hard-disk.png";
+import graphics_card from "../../assets/icons/pc-builder-icon/graphic-card.png";
+import power_supply from "../../assets/icons/pc-builder-icon/power-supply.png";
+import casing from "../../assets/icons/pc-builder-icon/computer-case.png";
+import monitor from "../../assets/icons/pc-builder-icon/monitor.png";
+import casing_cooler from "../../assets/icons/pc-builder-icon/cooler.png";
+import keyboard from "../../assets/icons/pc-builder-icon/keyboard.png";
+import mouse from "../../assets/icons/pc-builder-icon/mouse.png";
+import anti_virus from "../../assets/icons/pc-builder-icon/security-check.png";
+import headphone from "../../assets/icons/pc-builder-icon/headphones.png";
+import ups from "../../assets/icons/pc-builder-icon/cpu.png";
 
 // import icon
-import { FaSave } from "react-icons/fa";
+import { LuShoppingCart } from "react-icons/lu";
+import { PiShareFatLight } from "react-icons/pi";
+import { IoSaveOutline } from "react-icons/io5";
 import { BsPrinter } from "react-icons/bs";
-import { IoIosShareAlt } from "react-icons/io";
+import { PiScreencast } from "react-icons/pi";
 
 const actions = [
   {
     name: "Add to Cart",
-    icon: <FaSave />,
+    icon: <LuShoppingCart />,
   },
   {
     name: "Share",
-    icon: <IoIosShareAlt />,
+    icon: <PiShareFatLight />,
   },
   {
     name: "Save PC",
-    icon: <FaSave />,
+    icon: <IoSaveOutline />,
   },
   {
     name: "Print",
@@ -29,7 +46,127 @@ const actions = [
   },
   {
     name: "Screenshot",
-    icon: <FaSave />,
+    icon: <PiScreencast />,
+  },
+];
+
+const pcBuilderData = [
+  {
+    category: "Core Components",
+    items: [
+      {
+        name: "Processor",
+        product: "Intel Core i7 13700K",
+        description: "16 Cores, 5.4GHz",
+        logo: cpu,
+      },
+      {
+        name: "Motherboard",
+        product: "MSI Z790 Tomahawk",
+        description: "ATX, LGA 1700",
+        logo: motherboard,
+      },
+      {
+        name: "Graphics Card",
+        product: "NVIDIA GeForce RTX 4080",
+        description: "16GB GDDR6X",
+        logo: graphics_card,
+      },
+      {
+        name: "CPU Cooler",
+        product: "Corsair H100i RGB",
+        description: "240mm Liquid Cooler",
+        logo: cpu_cooler,
+      },
+      {
+        name: "RAM-1",
+        product: "Corsair Vengeance 16GB",
+        description: "DDR5, 5200MHz",
+        logo: ram,
+      },
+      {
+        name: "RAM-2",
+        product: "G.SKILL Trident Z 16GB",
+        description: "DDR5, 6000MHz",
+        logo: ram,
+      },
+      {
+        name: "SSD",
+        product: "Samsung 980 Pro 1TB",
+        description: "NVMe M.2",
+        logo: storage,
+      },
+      {
+        name: "HDD",
+        product: "Seagate Barracuda 2TB",
+        description: "7200RPM, SATA",
+        logo: storage,
+      },
+      {
+        name: "Power Supply",
+        product: "Corsair RM850x",
+        description: "850W, 80+ Gold",
+        logo: power_supply,
+      },
+      {
+        name: "Casing",
+        product: "NZXT H510",
+        description: "Mid Tower ATX",
+        logo: casing,
+      },
+    ],
+  },
+  {
+    category: "Peripherals & Others",
+    items: [
+      {
+        name: "Monitor",
+        product: "LG UltraGear 27GL850",
+        description: "144Hz, 1ms, 27-inch",
+        logo: monitor,
+      },
+      {
+        name: "Case Fan",
+        product: "Noctua NF-A12x25",
+        description: "120mm PWM Fan",
+        logo: casing_cooler,
+      },
+      {
+        name: "UPS",
+        product: "APC Back-UPS 600VA",
+        description: "Battery Backup",
+        logo: ups,
+      },
+      {
+        name: "Antivirus",
+        product: "Bitdefender Total Security",
+        description: "1 Year License",
+        logo: anti_virus,
+      },
+    ],
+  },
+  {
+    category: "Accessories",
+    items: [
+      {
+        name: "Mouse",
+        product: "Logitech G502 Hero",
+        description: "Wired, 25K DPI",
+        logo: mouse,
+      },
+      {
+        name: "Keyboard",
+        product: "Corsair K95 RGB",
+        description: "Mechanical, Cherry MX Brown",
+        logo: keyboard,
+      },
+      {
+        name: "Headphone",
+        product: "HyperX Cloud II",
+        description: "7.1 Surround Sound",
+        logo: headphone,
+      },
+    ],
   },
 ];
 
@@ -78,6 +215,34 @@ const PcBuilderPage = () => {
               </p>
             </button>
           </div>
+        </div>
+
+        <div className={styles.pcBuilderItemsALlDataContainer}>
+          {pcBuilderData.map((data, ind) => (
+            <div key={ind}>
+              <p className={styles.categoryName}>{data?.category}</p>
+              {data.items.map((item, ind) => (
+                <div className={styles.pcBuilderItemsDataContainer} key={ind}>
+                  <div className={styles.pcBuilderItemsContainer}>
+                    <Image
+                      className={styles.pcBuilderItemsLogo}
+                      src={item.logo}
+                      alt=""
+                    />
+
+                    <div className={styles.itemsNameAndProductName}>
+                      <p>{item.name}</p>
+                      <p>{item.product}</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <button className={styles.chooseBtn}>choose</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
     </main>

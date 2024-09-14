@@ -119,3 +119,58 @@
 .totalItems {
   font-size: 0.85rem;
 }
+
+/*  */
+
+.pcBuilderItemsALlDataContainer {
+  padding: 0 5rem;
+}
+
+.categoryName {
+  background-color: gray;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.313rem;
+  border-radius: 0.313rem;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+
+.pcBuilderItemsDataContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ebebeb;
+  margin-top: 1rem;
+  border-radius: 0.313rem;
+  padding: 1rem;
+}
+
+.pcBuilderItemsContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pcBuilderItemsLogo {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.itemsNameAndProductName {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chooseBtn {
+  font-size: 1.2rem;
+  background-color: #0068c8;
+  font-weight: 500;
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 0.313rem;
+  cursor: pointer;
+  text-transform: capitalize;
+}
