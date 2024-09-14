@@ -59,60 +59,71 @@ const pcBuilderData = [
         product: "Intel Core i7 13700K",
         description: "16 Cores, 5.4GHz",
         logo: cpu,
+        price: "45000",
       },
       {
         name: "Motherboard",
         product: "MSI Z790 Tomahawk",
         description: "ATX, LGA 1700",
         logo: motherboard,
+        price: "40000",
       },
       {
         name: "Graphics Card",
         product: "NVIDIA GeForce RTX 4080",
         description: "16GB GDDR6X",
         logo: graphics_card,
+        price: "150000",
       },
+
       {
         name: "CPU Cooler",
         product: "Corsair H100i RGB",
         description: "240mm Liquid Cooler",
         logo: cpu_cooler,
+        price: "12000",
       },
       {
         name: "RAM-1",
         product: "Corsair Vengeance 16GB",
         description: "DDR5, 5200MHz",
         logo: ram,
+        price: "8000",
       },
       {
         name: "RAM-2",
         product: "G.SKILL Trident Z 16GB",
         description: "DDR5, 6000MHz",
         logo: ram,
+        price: "10000",
       },
       {
         name: "SSD",
         product: "Samsung 980 Pro 1TB",
         description: "NVMe M.2",
         logo: storage,
+        price: "15000",
       },
       {
         name: "HDD",
         product: "Seagate Barracuda 2TB",
         description: "7200RPM, SATA",
         logo: storage,
+        price: "6000",
       },
       {
         name: "Power Supply",
         product: "Corsair RM850x",
         description: "850W, 80+ Gold",
         logo: power_supply,
+        price: "13000",
       },
       {
         name: "Casing",
         product: "NZXT H510",
         description: "Mid Tower ATX",
         logo: casing,
+        price: "7000",
       },
     ],
   },
@@ -124,24 +135,28 @@ const pcBuilderData = [
         product: "LG UltraGear 27GL850",
         description: "144Hz, 1ms, 27-inch",
         logo: monitor,
+        price: "35000",
       },
       {
         name: "Case Fan",
         product: "Noctua NF-A12x25",
         description: "120mm PWM Fan",
         logo: casing_cooler,
+        price: "2500",
       },
       {
         name: "UPS",
         product: "APC Back-UPS 600VA",
         description: "Battery Backup",
         logo: ups,
+        price: "5000",
       },
       {
         name: "Antivirus",
         product: "Bitdefender Total Security",
         description: "1 Year License",
         logo: anti_virus,
+        price: "2000",
       },
     ],
   },
@@ -153,18 +168,21 @@ const pcBuilderData = [
         product: "Logitech G502 Hero",
         description: "Wired, 25K DPI",
         logo: mouse,
+        price: "4000",
       },
       {
         name: "Keyboard",
         product: "Corsair K95 RGB",
         description: "Mechanical, Cherry MX Brown",
         logo: keyboard,
+        price: "15000",
       },
       {
         name: "Headphone",
         product: "HyperX Cloud II",
         description: "7.1 Surround Sound",
         logo: headphone,
+        price: "10000",
       },
     ],
   },
@@ -190,7 +208,7 @@ const PcBuilderPage = () => {
         <div className={styles.pcBuilderContainer2}>
           <div className={styles.pcBuilderHeader2}>
             <p className={styles.pcBuilderTitle}>
-              PC Builder - Build Your Own Computer - Star Tech
+              PC Builder - Build Your Own Computer - gadget gallery
             </p>
             <div className={styles.hideUnselectedItems}>
               <input type="checkbox" id="vehicle" name="vehicle" value="hide" />
@@ -230,13 +248,14 @@ const PcBuilderPage = () => {
                       alt=""
                     />
 
-                    <div className={styles.itemsNameAndProductName}>
-                      <p>{item.name}</p>
-                      <p>{item.product}</p>
-                    </div>
+                    <p className={styles.itemsNameAndProductName}>
+                      <span>{item.name}</span>
+                      <span>{item.product}</span>
+                    </p>
                   </div>
 
-                  <div>
+                  <div className={styles.chooseBtnAndPriceContainer}>
+                    <p className={styles.itemsPrice}>{item?.price}৳</p>
                     <button className={styles.chooseBtn}>choose</button>
                   </div>
                 </div>

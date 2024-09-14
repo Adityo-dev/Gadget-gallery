@@ -59,6 +59,7 @@
   font-weight: 600;
   color: #0068c8;
   margin-bottom: 0.625rem;
+  text-transform: capitalize;
 }
 
 .hideUnselectedItems {
@@ -129,8 +130,8 @@
 .categoryName {
   background-color: gray;
   color: #fff;
-  font-size: 1rem;
-  padding: 0.313rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.313rem;
   text-transform: uppercase;
   margin-top: 2rem;
@@ -157,10 +158,32 @@
   height: 4.5rem;
 }
 
+.itemsInfoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .itemsNameAndProductName {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.chooseBtnAndPriceContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.itemsPrice {
+  border-right: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  height: 3.2rem;
+  padding-right: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .chooseBtn {
