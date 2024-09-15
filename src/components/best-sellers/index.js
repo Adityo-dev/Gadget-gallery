@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Tab } from "@headlessui/react";
 // import components
 import ColumnCart from "../products-cart/columnCart";
+import DynamicButton from "../button";
 // import image
 // smart Phone
 import smartPhone0 from "../../assets/images/products/smart-phone/0.png";
@@ -51,7 +52,6 @@ import phoneBanner from "../../assets/images/banner/banner-16.png";
 import laptopBanner from "../../assets/images/banner/banner-18.png";
 import watchBanner from "../../assets/images/banner/banner-17.png";
 import accessoriesBanner from "../../assets/images/banner/banner-11.jpg";
-import DynamicButton from "../button";
 
 const bestSellersData = [
   {
@@ -482,7 +482,12 @@ export default function BestSellers() {
           <h2 className={styles.bestSellersTitleText}>Best Sellers</h2>
           <div className={styles.tabBtnContainer}>
             {bestSellersData?.map((data, ind) => (
-              <Tab className={styles.tabBtn} key={ind}>
+              <Tab
+                className={({ selected }) =>
+                  `${styles.tabBtn} ${selected ? styles.selectedBtn : ""}`
+                }
+                key={ind}
+              >
                 {data?.categoryName}
               </Tab>
             ))}

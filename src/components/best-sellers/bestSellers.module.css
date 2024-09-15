@@ -29,6 +29,7 @@
 
 .tabBtn {
   border: none;
+  outline: none;
   background-color: transparent;
   font-size: 1.02rem;
   font-weight: 600;
@@ -38,6 +39,10 @@
 }
 
 .tabBtn:hover {
+  color: #0068c8;
+}
+
+.selectedBtn {
   color: #0068c8;
 }
 
