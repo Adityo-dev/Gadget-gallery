@@ -41,12 +41,6 @@
   text-wrap: nowrap;
 }
 
-.productDiscountNone,
-.productHotNone,
-.soldOutNone {
-  display: none;
-}
-
 .productHot {
   width: 40px;
   background-color: #dd2831;

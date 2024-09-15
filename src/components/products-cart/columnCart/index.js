@@ -4,67 +4,62 @@ import Link from "next/link";
 import CartButton from "../cartBtn";
 
 const ColumnCart = ({ cartData }) => {
+  const {
+    image,
+    name,
+    title,
+    currentPrice,
+    oldPrice,
+    discount,
+    soldOut,
+    hot,
+    url,
+  } = cartData;
   return (
     <main className={styles.cartAllDataContainer}>
       <div>
-        <Link href={`/shop/${cartData?.title}`}>
+        <Link href={`/shop/${title}`}>
           <div className={styles.cartImage}>
             <Image
               className={`${styles.cartImage} ${
-                cartData?.soldOut == true ? styles.soldOutImage : ""
+                soldOut == true ? styles.soldOutImage : ""
               }`}
-              src={cartData?.image}
-              alt={cartData?.name}
+              src={image}
+              alt={name}
             />
           </div>
         </Link>
 
         <div>
-          {cartData?.soldOut == true ? (
-            <p
-              className={
-                cartData?.soldOut === true ? styles.soldOut : styles.soldOutNone
-              }
-            >
-              {cartData?.soldOut ? "Sold Out" : ""}
+          {soldOut == true ? (
+            <p className={soldOut === true ? styles.soldOut : ""}>
+              {"Sold Out"}
             </p>
           ) : (
             <div className={styles.hotAndDiscountContainer}>
-              <p
-                className={
-                  cartData?.discount
-                    ? styles.productDiscount
-                    : styles.productDiscountNone
-                }
-              >
-                -{cartData?.discount}%
-              </p>
-              <p
-                className={
-                  cartData?.hot === true
-                    ? styles.productHot
-                    : styles.productHotNone
-                }
-              >
-                {cartData?.hot ? "Hot" : ""}
-              </p>
+              {discount && (
+                <p className={styles.productDiscount}>-{discount}%</p>
+              )}
+              {hot && <p className={styles.productHot}>{"Hot"}</p>}
             </div>
           )}
         </div>
       </div>
 
       <div className={styles.cartInfoContainer}>
-        <Link href={cartData?.url} className={styles.productName}>
-          {cartData?.name}
+        <Link href={url} className={styles.productName}>
+          {name}
         </Link>
-        <Link href={`/shop/${cartData?.title}`} className={styles.productTitle}>
-          {cartData?.title}
+        <Link href={`/shop/${title}`} className={styles.productTitle}>
+          {title}
         </Link>
         <p className={styles.productsPriceContainer}>
-          <span className={styles.productsCurrentPrice}>
-            ${cartData?.currentPrice}
-          </span>
-          <del className={styles.productsOldPrice}>${cartData?.oldPrice}</del>
+          {currentPrice && (
+            <span className={styles.productsCurrentPrice}>${currentPrice}</span>
+          )}
+          {oldPrice && (
+            <del className={styles.productsOldPrice}>${oldPrice}</del>
+          )}
         </p>
       </div>
 
