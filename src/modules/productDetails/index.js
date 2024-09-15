@@ -11,6 +11,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaSquarePinterest } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import ProductCounter from "@/components/productCounter";
+import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
 
 const ProductDetails = ({ data }) => {
   let searchId = data.split("%").join(" ");
@@ -31,9 +32,6 @@ const ProductDetails = ({ data }) => {
         "Hard Drive: 256GB SSD",
         "Screen Size: 13.3 inches",
       ],
-
-      // productDetails2:
-      //   "Package includes Xbox Series S 1TB console, 1 Xbox Wireless Controller, High Speed HDMI cable.",
 
       color: ["white", "red", "black"],
       productService: [
@@ -58,20 +56,17 @@ const ProductDetails = ({ data }) => {
       ],
     },
   ];
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    { label: "Shop", href: "/shop" },
+    { label: `${searchValue}`, href: "/shop" },
+  ];
+
   return (
     <main>
-      <div className={styles.productDetailsAndHomeContainer}>
-        <div className={styles.productDetailsAndHome}>
-          <Link className={styles.home} href={"/"}>
-            Home
-          </Link>
-          /
-          <Link className={styles.shop} href={"/shop"}>
-            shop
-          </Link>
-          /<p className={styles.productDetails}>{searchValue}</p>
-        </div>
-      </div>
+      <section>
+        <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
+      </section>
 
       <section className={styles.productDetailsALlDataContainer}>
         <div>

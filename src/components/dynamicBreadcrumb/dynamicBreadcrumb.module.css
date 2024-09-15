@@ -1,0 +1,27 @@
+.dynamicBreadcrumbContainer {
+  background-color: #f5f5f5;
+}
+
+.dynamicBreadcrumb {
+  max-width: 1600px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 25px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.linkData {
+  color: #848484;
+  text-transform: capitalize;
+  text-wrap: nowrap;
+}
+
+.linkData:hover {
+  text-decoration: underline;
+}
+
+.productCategory {
+  text-transform: capitalize;
+}

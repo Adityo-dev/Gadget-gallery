@@ -1,13 +1,11 @@
-.allDataContainer {
+.pcBuilderSection {
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 1.875rem;
-}
-
-.pcBuilderSection {
   border: 1px solid #ebebeb;
   border-radius: 5px;
   padding: 1.25rem 0;
+  margin-top: 3rem;
 }
 
 .headerLogoAndActionsContainer {

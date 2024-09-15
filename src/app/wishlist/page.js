@@ -1,6 +1,7 @@
 import styles from "./wishlist.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
 
 // import image
 import image from "../../assets/images/products/games/4.png";
@@ -9,18 +10,17 @@ import image from "../../assets/images/products/games/4.png";
 import { GoCheck } from "react-icons/go";
 import { RxCross1 } from "react-icons/rx";
 
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "wishlist", href: "/wishlist" },
+];
+
 const Wishlist = () => {
   return (
     <section className={styles.wishlistAllInfoAllDataContainer}>
-      <div className={styles.wishlistAndHomeContainer}>
-        <div className={styles.wishlistAndHome}>
-          <Link className={styles.home} href={"/"}>
-            Home
-          </Link>
-          /<p className={styles.wishlist}>Wishlist</p>
-        </div>
-      </div>
-
+      <section>
+        <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
+      </section>
       <div className={styles.wishlistAllDataContainer}>
         <h1 className={styles.myWishlistText}>my wishlist</h1>
 

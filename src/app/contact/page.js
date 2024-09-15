@@ -1,9 +1,19 @@
 import GoogleMap from "@/components/googleMap";
 import styles from "./contact.module.css";
+import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
+
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "contact", href: "/contact" },
+];
 
 const Contact = () => {
   return (
     <>
+      <section>
+        <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
+      </section>
+
       <section className={styles.allDataContainer}>
         <div className={styles.infoContainer}>
           <h2 className={styles.title}>Do you have some questions?</h2>

@@ -25,18 +25,14 @@ const ProductCategory = ({ productCategoryData }) => {
       <h3 className={styles.productName}>{productName}</h3>
       <div className={styles.productCategoryDataContainer}>
         {productCategory.map((data, ind) => (
-          <Link
-            href={`/product-category/${productName}/${data.pathName}`}
-            className={styles.productCategoryInfoContainer}
-            key={ind}
-          >
+          <div className={styles.productCategoryInfoContainer} key={ind}>
             <Image
               className={styles.productCategoryIcon}
               src={data.icon}
               alt=""
             />
             <p className={styles.productCategoryName}>{data.title}</p>
-          </Link>
+          </div>
         ))}
       </div>
     </>

@@ -1,11 +1,20 @@
 import DynamicButton from "@/components/button";
 import styles from "./trackOrder.module.css";
+import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
+
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "track order", href: "/track-order" },
+];
 
 const TrackOrder = () => {
   return (
-    <main className={styles.allDataContainer}>
-      <div></div>
+    <>
       <section>
+        <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
+      </section>
+
+      <section className={styles.allDataContainer}>
         <h2 className={styles.trackOrder}>Track Order</h2>
 
         <div className={styles.allInfoContainer}>
@@ -39,7 +48,7 @@ const TrackOrder = () => {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 };
 

@@ -248,7 +248,10 @@ const productCategory = [
 const DynamicProductCategory = ({ params }) => {
   return (
     <>
-      <DynamicProductDetailsDisplay productName={params.slug} />
+      <DynamicProductDetailsDisplay
+        productName={params.slug}
+        products={productCategory}
+      />
     </>
   );
 };

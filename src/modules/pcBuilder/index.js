@@ -1,6 +1,7 @@
 import styles from "./pcBuilder.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
 
 // import image
 import logo from "../../assets/icons/navBar/gadget-gallery-logo.png";
@@ -188,9 +189,18 @@ const pcBuilderData = [
   },
 ];
 
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "build your pc", href: "/shop" },
+];
+
 const PcBuilderPage = () => {
   return (
-    <main className={styles.allDataContainer}>
+    <>
+      <section>
+        <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
+      </section>
+
       <section className={styles.pcBuilderSection}>
         <div className={styles.headerLogoAndActionsContainer}>
           <Image className={styles.logo} src={logo} alt="" />
@@ -264,7 +274,7 @@ const PcBuilderPage = () => {
           ))}
         </div>
       </section>
-    </main>
+    </>
   );
 };
 
