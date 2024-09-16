@@ -1,6 +1,9 @@
+"use client";
 import styles from "./columnCart.module.css";
 import Image from "next/image";
 import Link from "next/link";
+
+// import components
 import CartButton from "../cartBtn";
 
 const ColumnCart = ({ cartData }) => {
@@ -15,6 +18,7 @@ const ColumnCart = ({ cartData }) => {
     hot,
     url,
   } = cartData;
+
   return (
     <main className={styles.cartAllDataContainer}>
       <div>
@@ -64,7 +68,7 @@ const ColumnCart = ({ cartData }) => {
       </div>
 
       <div className={styles.cartButton}>
-        <CartButton />
+        <CartButton cartData={cartData} />
       </div>
     </main>
   );

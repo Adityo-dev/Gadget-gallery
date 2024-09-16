@@ -14,3 +14,93 @@
 .cartBtn:hover {
   background-color: #dae0e6;
 }
+
+/* modal  */
+.modalContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 950px;
+  height: 500px;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.modalInfoContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 30px;
+}
+
+.modalCloseIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #000000;
+  color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+.name {
+  font-size: 1rem;
+  color: #848484;
+  text-transform: capitalize;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: normal;
+  text-transform: capitalize;
+  margin: 0.7rem 0;
+}
+
+.ratingReviewAndStockContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  text-transform: capitalize;
+}
+
+.ratingStar {
+  font-size: 1.2rem;
+}
+
+.stock {
+  border: 1px solid #0fb232;
+  color: #0fb232;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.currentPrice {
+  color: #dd2831;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.oldPrice {
+  color: #848484;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.discount {
+  font-size: 1rem;
+  margin-left: 5px;
+}

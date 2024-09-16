@@ -13,9 +13,19 @@ import image1 from "../../assets/images/products/games/11.png";
 import image2 from "../../assets/images/products/games/2.png";
 import image3 from "../../assets/images/products/games/5.png";
 
-const imageData = [image, image1, image2, image3];
+function ProductDetailsSlider({ cartData }) {
+  // const {
+  //   image,
+  //   name,
+  //   title,
+  //   currentPrice,
+  //   oldPrice,
+  //   discount,
+  //   soldOut,
+  //   hot,
+  //   url,
+  // } = cartData;
 
-function ProductDetailsSlider() {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   let sliderRef1 = useRef(null);
@@ -34,6 +44,8 @@ function ProductDetailsSlider() {
     initialSlide: 0,
     infinite: false,
   };
+
+  const imageData = [image, image1, image2, image3];
 
   return (
     <div>

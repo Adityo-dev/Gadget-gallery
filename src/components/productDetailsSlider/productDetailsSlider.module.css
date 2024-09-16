@@ -9,7 +9,7 @@
 .firstImage {
   width: 85%;
   margin: 0 auto;
-  height: 500px;
+  height: 80%;
   padding: 20px 50px;
   object-fit: cover;
   background-position: center;
@@ -28,7 +28,7 @@
 
 .secondImage {
   width: 100%;
-  height: 150px;
+  height: 100%;
   background-color: #fff;
   border: 1px solid #dfdfdf;
   padding: 10px;
@@ -37,10 +37,8 @@
   object-fit: cover;
 }
 
-@media only screen and (max-width: 1550px) {
+@media only screen and (max-width: 1179px) {
   .firstImage {
-    width: 100%;
-    height: 100%;
     padding: 0px;
   }
 
@@ -55,11 +53,6 @@
   }
 
   .secondImage {
-    width: 100%;
-    height: 100%;
     padding: 0;
   }
 }
-
-/* @media screen and (min-width: 800px) and (max-width: 1200px) {
-} */
