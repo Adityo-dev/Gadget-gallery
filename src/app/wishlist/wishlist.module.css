@@ -7,7 +7,6 @@
   max-width: 1600px;
   margin: 0 auto;
   margin-top: 30px;
-  border-bottom: 1px solid #ebebeb;
   padding-bottom: 25px;
   padding: 0 30px;
 }
@@ -47,8 +46,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-top: 1px solid #ebebeb;
   border-bottom: 1px solid #ebebeb;
   padding: 25px 30px;
+  margin-top: 1.5rem;
 }
 
 .wishlistProductImageAndNameContainer {

@@ -252,11 +252,13 @@ const PcBuilderPage = () => {
               {data.items.map((item, ind) => (
                 <div className={styles.pcBuilderItemsDataContainer} key={ind}>
                   <div className={styles.pcBuilderItemsContainer}>
-                    <Image
-                      className={styles.pcBuilderItemsLogo}
-                      src={item.logo}
-                      alt=""
-                    />
+                    <div className={styles.pcBuilderItemsLogoContainer}>
+                      <Image
+                        className={styles.pcBuilderItemsLogo}
+                        src={item.logo}
+                        alt=""
+                      />
+                    </div>
 
                     <p className={styles.itemsNameAndProductName}>
                       <span>{item.name}</span>

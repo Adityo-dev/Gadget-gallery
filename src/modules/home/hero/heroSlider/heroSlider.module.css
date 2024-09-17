@@ -7,7 +7,7 @@
   align-items: center;
   border-radius: 10px;
   padding: 0 2.5rem 0 6.25rem;
-  cursor: pointer;
+  cursor: col-resize;
 }
 
 .sliderInfoContainer {
