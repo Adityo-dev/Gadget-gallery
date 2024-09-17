@@ -169,9 +169,9 @@ const navData = [
           url: "speakers",
         },
         {
-          categoryName: "Kid Electronic",
+          categoryName: "accessories",
           icon: <TbAperture />,
-          url: "kid-electronic",
+          url: "accessories",
         },
         {
           categoryName: "Tech Gift",
@@ -188,7 +188,7 @@ const navData = [
 
         {
           categoryName: "laptop",
-          url: "laptop",
+          url: "laptops",
           subCategories: [
             {
               subCategoriesName: "Computers & Tablets",

@@ -12,9 +12,7 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import DynamicBreadcrumb from "../dynamicBreadcrumb";
 
-const DynamicProductDetailsDisplay = ({ productData, products }) => {
-  const pageName = productData;
-
+const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(90000);
 
@@ -31,7 +29,7 @@ const DynamicProductDetailsDisplay = ({ productData, products }) => {
 
       <section className={styles.productCategoryDetailsAllDataContainer}>
         <div>
-          <ProductCategory productCategoryData={pageName} />
+          <ProductCategory productCategoryData={DynamicPageName} />
         </div>
 
         <div className={styles.productCategoryDetailsCartAndAsideContainer}>
