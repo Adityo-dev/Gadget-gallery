@@ -18,10 +18,10 @@ import television_icon from "../../../assets/icons/product-category-icon/icon-te
 
 const productCategoryData = [
   { icon: laptops_icon, title: "laptops", pathName: "laptops" },
-  { icon: games_icon, title: "games", pathName: "games" },
-  { icon: phone_icon, title: "smartphones", pathName: "smartphones" },
+  { icon: games_icon, title: "games", pathName: "gaming" },
+  { icon: phone_icon, title: "smartphones", pathName: "smartphone" },
   { icon: television_icon, title: "television", pathName: "television" },
-  { icon: headphone_icon, title: "headphone", pathName: "headphone" },
+  { icon: headphone_icon, title: "headphone", pathName: "headphones" },
   { icon: speaker_icon, title: "speakers", pathName: "speakers" },
 ];
 

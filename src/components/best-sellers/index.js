@@ -148,7 +148,7 @@ const bestSellersData = [
       image: phoneBanner,
       subTitle: "best selling collection",
       title: "big sale",
-      url: "",
+      url: "/product-category/smartphone",
     },
   },
   {
@@ -255,7 +255,7 @@ const bestSellersData = [
       image: laptopBanner,
       subTitle: "up to 20% up",
       title: "best gift",
-      url: "",
+      url: "/product-category/laptops",
     },
   },
   {
@@ -362,7 +362,7 @@ const bestSellersData = [
       image: watchBanner,
       subTitle: "up to 20% up",
       title: "best gift",
-      url: "",
+      url: "/product-category/watches",
     },
   },
   {
@@ -469,7 +469,7 @@ const bestSellersData = [
       image: accessoriesBanner,
       subTitle: "buy 1 get 1 free",
       title: "don't miss!",
-      url: "",
+      url: "/product-category/accessories",
     },
   },
 ];

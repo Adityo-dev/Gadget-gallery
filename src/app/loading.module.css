@@ -1,0 +1,7 @@
+.loadingContainer {
+  max-width: 100%;
+  height: 80vh;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+}
