@@ -18,7 +18,7 @@ export default function LimitedTimeDeal() {
             </p>
           </div>
           <div className={styles.timerContainer}>
-            <Timer initialHours={72} />
+            <Timer initialHours={22} />
           </div>
         </div>
         <div className={styles.limitedDealProductInfoContainer}>
