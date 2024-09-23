@@ -13,7 +13,7 @@
 .limitedDealInfoContainer {
   grid-column: 1/2;
   border: 0.188rem solid #0068c8;
-  padding: 1.875rem;
+  padding: 4rem 1.875rem 3rem 1.875rem;
   border-radius: 0.625rem;
   text-align: center;
 }
@@ -46,4 +46,6 @@
 
 .limitedDealProductInfoContainer {
   grid-column: 2/-1;
+  border: 2px solid #e1dcdc;
+  border-radius: 0.625rem;
 }

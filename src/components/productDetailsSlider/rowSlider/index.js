@@ -1,6 +1,7 @@
 "use client";
 import styles from "./rowSlider.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -32,6 +33,7 @@ function ProductDetailsRowSlider({ cartData }) {
     verticalSwiping: true,
     focusOnSelect: true,
     infinite: false,
+    arrows: false,
   };
 
   var settingsMainImage = {
@@ -56,6 +58,7 @@ function ProductDetailsRowSlider({ cartData }) {
           asNavFor={nav1}
           ref={(slider) => (sliderRef2 = slider)}
           {...settingsThumbnails}
+          className={styles.secondImageAllContainer}
         >
           {imageData.map((img, ind) => (
             <div className={styles.secondImageContainer} key={ind}>
@@ -73,9 +76,9 @@ function ProductDetailsRowSlider({ cartData }) {
           {...settingsMainImage}
         >
           {imageData.map((img, ind) => (
-            <div key={ind}>
+            <Link href={""} key={ind}>
               <Image className={styles.firstImage} src={img} alt="" />
-            </div>
+            </Link>
           ))}
         </Slider>
       </div>

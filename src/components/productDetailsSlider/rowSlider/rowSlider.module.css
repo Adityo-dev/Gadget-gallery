@@ -1,26 +1,28 @@
 .rowSliderDataContainer {
   display: flex;
-  align-items: flex-start;
 }
 
 .thumbnailSliderContainer {
-  width: 80px;
-  margin-right: 20px;
+  width: 68px;
 }
 
 .mainImageContainer {
-  width: calc(100% - 50px);
+  width: calc(100% - 70px);
 }
 
 .firstImage {
-  width: 100%;
+  width: 80%;
   height: auto;
   object-fit: contain;
   padding: 20px;
 }
 
+.secondImageAllContainer {
+  padding: 12px 0;
+}
+
 .secondImageContainer {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   cursor: pointer;
 }
 
@@ -31,4 +33,5 @@
   padding: 5px;
   border-radius: 5px;
   object-fit: cover;
+  cursor: pointer;
 }
