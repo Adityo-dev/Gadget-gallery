@@ -7,7 +7,7 @@
 .dealAllInfoDataContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.875rem;
+  gap: 1.25rem;
 }
 
 .limitedDealInfoContainer {
@@ -46,7 +46,4 @@
 
 .limitedDealProductInfoContainer {
   grid-column: 2/-1;
-  border: 2px solid #e1dcdc;
-  border-radius: 0.625rem;
-  padding: 1.875rem;
 }

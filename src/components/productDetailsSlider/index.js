@@ -43,6 +43,15 @@ function ProductDetailsSlider({ cartData }) {
     slidesToScroll: 1,
     initialSlide: 0,
     infinite: false,
+    arrows: false,
+  };
+
+  var settings2 = {
+    dots: false,
+    fade: true,
+    waitForAnimate: true,
+    lazyLoad: "progressive",
+    arrows: false,
   };
 
   const imageData = [image, image1, image2, image3];
@@ -53,6 +62,7 @@ function ProductDetailsSlider({ cartData }) {
         className={styles.firstImageContainer}
         asNavFor={nav2}
         ref={(slider) => (sliderRef1 = slider)}
+        {...settings2}
       >
         {imageData.map((image, ind) => (
           <div key={ind}>

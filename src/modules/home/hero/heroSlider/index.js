@@ -55,7 +55,7 @@ function HeroSlider() {
     lazyLoad: "progressive",
     slidesToShow: 1,
     slidesToScroll: 1,
-    waitForAnimate: false,
+    waitForAnimate: true,
   };
   return (
     <div>

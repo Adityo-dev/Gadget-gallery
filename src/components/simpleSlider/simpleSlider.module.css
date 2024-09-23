@@ -1,0 +1,17 @@
+.dealAllDataContainer {
+  padding-left: 20px;
+}
+
+.dealDataContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 2px solid #e1dcdc;
+  border-radius: 0.625rem;
+  padding: 1.875rem;
+}
+
+.dealProductImageContainer {
+  width: 50%;
+  height: 100%;
+}

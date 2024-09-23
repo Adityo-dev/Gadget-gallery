@@ -4,7 +4,7 @@ import Link from "next/link";
 // import rating component
 import * as React from "react";
 import Rating from "@mui/material/Rating";
-import ProductDetailsSlider from "@/components/productDetailsSlider";
+
 // import icon
 import { ImFacebook2 } from "react-icons/im";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -12,6 +12,7 @@ import { FaSquarePinterest } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import ProductCounter from "@/components/productCounter";
 import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
+import ProductDetailsColumnSlider from "@/components/productDetailsSlider";
 
 const ProductDetails = ({ data }) => {
   let searchId = data.split("%").join(" ");
@@ -70,7 +71,7 @@ const ProductDetails = ({ data }) => {
 
       <section className={styles.productDetailsALlDataContainer}>
         <div>
-          <ProductDetailsSlider />
+          <ProductDetailsColumnSlider />
         </div>
         <div>
           {productDetailsData.map((data, ind) => (
