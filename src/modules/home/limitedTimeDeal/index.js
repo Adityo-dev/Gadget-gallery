@@ -40,7 +40,7 @@ const dealData = [
     image: smartPhone2,
     name: "Prepaid Phones",
     title: "Apple iPhone 14 Pro Max (256 GB) – White Titanium",
-    rating: "0",
+    rating: "",
     currentPrice: "519.09",
     oldPrice: "805.19",
     discount: "36",
