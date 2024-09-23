@@ -1,0 +1,35 @@
+.timerContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.timerInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.time {
+  width: 5rem;
+  height: 100%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: #0068c8;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+}
+
+.text {
+  color: #a8a5a5;
+  text-transform: capitalize;
+}
+
+.timeIsUp {
+  color: #0068c8;
+  text-transform: uppercase;
+  font-weight: 600;
+}
