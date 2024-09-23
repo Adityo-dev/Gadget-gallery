@@ -456,7 +456,7 @@ const bestSellersData = [
         image: accessories7,
         name: "accessories",
         title: "USB-C Premium Multiport Adapter with HDMI",
-        rating: "1",
+        rating: "5",
         currentPrice: "79.77",
         oldPrice: "120.54",
         discount: "34",
