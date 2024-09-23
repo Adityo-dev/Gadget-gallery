@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import ProductDetailsRowSlider from "@/components/productDetailsSlider/rowSlider";
-import BasicRating from "../rating";
+import DynamicRating from "../rating";
 // slider data
 
 function SimpleSlider({ dealData }) {
@@ -51,7 +51,7 @@ function SimpleSlider({ dealData }) {
                 <Link href={""} className={styles.productTitle}>
                   {data?.title}
                 </Link>
-                <BasicRating rating={data?.rating} />
+                <DynamicRating rating={data?.rating} />
                 <p className={styles.productsPriceContainer}>
                   {data?.currentPrice && (
                     <span className={styles.productsCurrentPrice}>

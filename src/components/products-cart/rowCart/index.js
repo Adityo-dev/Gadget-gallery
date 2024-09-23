@@ -1,3 +1,4 @@
+import DynamicRating from "@/components/rating";
 import styles from "./rowCart.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,6 +14,7 @@ const RowCart = ({ cartData }) => {
     soldOut,
     hot,
     url,
+    rating,
   } = cartData;
 
   return (
@@ -53,6 +55,7 @@ const RowCart = ({ cartData }) => {
         >
           {title}
         </Link>
+        <DynamicRating rating={rating} />
         <p className={styles.productsPriceContainer}>
           {currentPrice && (
             <span className={styles.productsCurrentPrice}>${currentPrice}</span>

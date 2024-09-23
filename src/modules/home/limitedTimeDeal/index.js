@@ -5,15 +5,26 @@ import Timer from "@/components/timer";
 import SimpleSlider from "@/components/simpleSlider";
 
 // smart Phone
-import smartPhone0 from "../../../assets/images/products/smart-phone/0.png";
-import smartPhone1 from "../../../assets/images/products/smart-phone/1.png";
-import smartPhone2 from "../../../assets/images/products/smart-phone/2.png";
-import smartPhone3 from "../../../assets/images/products/smart-phone/3.png";
-import smartPhone4 from "../../../assets/images/products/smart-phone/4.png";
+import product0 from "../../../assets/images/products/smart-phone/0.png";
+import product0_1 from "../../../assets/images/products/smart-phone/0.1.png";
+import product0_2 from "../../../assets/images/products/smart-phone/0.2.png";
+import product0_3 from "../../../assets/images/products/smart-phone/0.3.png";
+import product1 from "../../../assets/images/products/smart-phone/1.png";
+import product1_1 from "../../../assets/images/products/smart-phone/1.1.png";
+import product1_2 from "../../../assets/images/products/smart-phone/1.2.png";
+import product1_3 from "../../../assets/images/products/smart-phone/1.3.png";
+import product2 from "../../../assets/images/products/laptop/4.png";
+import product2_1 from "../../../assets/images/products/laptop/8.png";
+import product2_2 from "../../../assets/images/products/laptop/6.png";
+import product2_3 from "../../../assets/images/products/laptop/10.png";
+import product3 from "../../../assets/images/products/camera/6.png";
+import product3_1 from "../../../assets/images/products/camera/1.png";
+import product3_2 from "../../../assets/images/products/camera/3.png";
+import product3_3 from "../../../assets/images/products/camera/4.png";
 
 const dealData = [
   {
-    image: [smartPhone1, smartPhone0, smartPhone2, smartPhone3],
+    image: [product0_1, product0_3, product0_2, product0],
     name: "samsung galaxy",
     title: "Samsung Galaxy S23 Ultra, Factory Unlocked, 512GB",
     rating: "4.5",
@@ -22,10 +33,32 @@ const dealData = [
     discount: "26",
     soldOut: false,
     hot: true,
-    url: "",
   },
   {
-    image: [smartPhone0, smartPhone1, smartPhone2, smartPhone3],
+    image: [product3, product3_1, product3_2, product3_3],
+    name: "Camera & Lenses",
+    title: "Action Camera with 5 3K60 Ultra HD Video",
+    rating: "2",
+    currentPrice: "129.74",
+    oldPrice: "",
+    discount: "",
+    soldOut: false,
+    hot: true,
+  },
+
+  {
+    image: [product2, product2_1, product2_2, product2_3],
+    name: "Laptops",
+    title: "Laptop 14″ 8-core CPU, M2 2022, 8GB | 256GB, New",
+    rating: "",
+    currentPrice: "1359.00",
+    oldPrice: "1584.00",
+    discount: "14",
+    soldOut: false,
+    hot: true,
+  },
+  {
+    image: [product1, product1_1, product1_2, product1_3],
     name: "iPhone",
     title: "Apple iPhone 15 Pro Max, 512GB, Unlocked",
     rating: "5",
@@ -34,29 +67,6 @@ const dealData = [
     discount: "7",
     soldOut: true,
     hot: false,
-    url: "",
-  },
-  {
-    image: [smartPhone2, smartPhone1, smartPhone0, smartPhone3],
-    name: "Prepaid Phones",
-    title: "Apple iPhone 14 Pro Max (256 GB) – White Titanium",
-    rating: "",
-    currentPrice: "519.09",
-    oldPrice: "805.19",
-    discount: "36",
-    soldOut: false,
-    hot: false,
-    url: "",
-  },
-  {
-    image: [smartPhone3, smartPhone1, smartPhone2, smartPhone0],
-    name: "iPhone",
-    title: "Apple iPhone 11 Pro Max Triple Camera",
-    rating: "5",
-    currentPrice: "425.00",
-    oldPrice: "525.00",
-    discount: "10",
-    url: "",
   },
 ];
 
