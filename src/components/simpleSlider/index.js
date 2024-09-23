@@ -27,7 +27,7 @@ function SimpleSlider({ dealData }) {
           <div key={ind}>
             <div className={styles.dealDataContainer}>
               <div className={styles.dealProductImageContainer}>
-                <ProductDetailsRowSlider />
+                <ProductDetailsRowSlider cartData={data} />
               </div>
 
               <div className={styles.cartInfoContainer}>

@@ -7,13 +7,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// image imports
-import image from "../../../assets/images/products/games/0.png";
-import image1 from "../../../assets/images/products/games/11.png";
-import image2 from "../../../assets/images/products/games/2.png";
-import image3 from "../../../assets/images/products/games/5.png";
-
 function ProductDetailsRowSlider({ cartData }) {
+  const { image, title } = cartData;
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   let sliderRef1 = useRef(null);
@@ -48,8 +43,6 @@ function ProductDetailsRowSlider({ cartData }) {
     infinite: false,
   };
 
-  const imageData = [image, image1, image2, image3];
-
   return (
     <div className={styles.rowSliderDataContainer}>
       {/* Thumbnail Slider */}
@@ -60,7 +53,7 @@ function ProductDetailsRowSlider({ cartData }) {
           {...settingsThumbnails}
           className={styles.secondImageAllContainer}
         >
-          {imageData.map((img, ind) => (
+          {image.map((img, ind) => (
             <div className={styles.secondImageContainer} key={ind}>
               <Image className={styles.secondImage} src={img} alt="" />
             </div>
@@ -75,8 +68,8 @@ function ProductDetailsRowSlider({ cartData }) {
           ref={(slider) => (sliderRef1 = slider)}
           {...settingsMainImage}
         >
-          {imageData.map((img, ind) => (
-            <Link href={""} key={ind}>
+          {image.map((img, ind) => (
+            <Link href={`shop/${title}`} key={ind}>
               <Image className={styles.firstImage} src={img} alt="" />
             </Link>
           ))}

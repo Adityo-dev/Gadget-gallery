@@ -13,7 +13,7 @@ import smartPhone4 from "../../../assets/images/products/smart-phone/4.png";
 
 const dealData = [
   {
-    image: smartPhone0,
+    image: [smartPhone1, smartPhone0, smartPhone2, smartPhone3],
     name: "samsung galaxy",
     title: "Samsung Galaxy S23 Ultra, Factory Unlocked, 512GB",
     rating: "4.5",
@@ -25,7 +25,7 @@ const dealData = [
     url: "",
   },
   {
-    image: smartPhone1,
+    image: [smartPhone0, smartPhone1, smartPhone2, smartPhone3],
     name: "iPhone",
     title: "Apple iPhone 15 Pro Max, 512GB, Unlocked",
     rating: "5",
@@ -37,7 +37,7 @@ const dealData = [
     url: "",
   },
   {
-    image: smartPhone2,
+    image: [smartPhone2, smartPhone1, smartPhone0, smartPhone3],
     name: "Prepaid Phones",
     title: "Apple iPhone 14 Pro Max (256 GB) – White Titanium",
     rating: "",
@@ -49,7 +49,7 @@ const dealData = [
     url: "",
   },
   {
-    image: smartPhone3,
+    image: [smartPhone3, smartPhone1, smartPhone2, smartPhone0],
     name: "iPhone",
     title: "Apple iPhone 11 Pro Max Triple Camera",
     rating: "5",
