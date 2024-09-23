@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./limitedTimeDeal.module.css";
 // import components
 import Timer from "@/components/timer";
+import SimpleSlider from "@/components/slider/simpleSlider";
 
 export default function LimitedTimeDeal() {
   return (
@@ -17,11 +18,11 @@ export default function LimitedTimeDeal() {
             </p>
           </div>
           <div className={styles.timerContainer}>
-            <Timer initialHours={500} />
+            <Timer initialHours={72} />
           </div>
         </div>
         <div className={styles.limitedDealProductInfoContainer}>
-          <h1>HI</h1>
+          <SimpleSlider />
         </div>
       </section>
     </main>

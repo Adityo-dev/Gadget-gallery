@@ -1,0 +1,23 @@
+/* .customDots {
+  list-style: none;
+  display: flex !important;
+  justify-content: center;
+}
+
+.customDot {
+  background-color: #ddd;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  font-size: 12px;
+}
+
+.customDots .slickActive .customDot {
+  background-color: #333;
+  color: #fff;
+} */
