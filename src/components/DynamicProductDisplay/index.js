@@ -11,6 +11,7 @@ import * as React from "react";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import DynamicBreadcrumb from "../dynamicBreadcrumb";
+import DynamicProductFiltering from "../dynamicProductFiltering";
 
 const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
   const [minPrice, setMinPrice] = useState(0);
@@ -52,6 +53,8 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
                 />
               </div>
             </div>
+            <br />
+            <DynamicProductFiltering />
           </div>
 
           <div className={styles.productCategoryDetailsCartContainer}>
