@@ -4,6 +4,13 @@
   padding: 0 30px;
 }
 
+.pageName {
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 30px 0;
+}
+
 .productCategoryDetailsCartAndAsideContainer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

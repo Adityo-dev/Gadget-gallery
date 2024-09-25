@@ -9,11 +9,11 @@
 
 .arrowSliderContainer:hover .prevArrowContainer {
   opacity: 1;
-  left: -50px;
+  left: -20px;
 }
 .arrowSliderContainer:hover .nextArrowContainer {
   opacity: 1;
-  right: -50px;
+  right: -20px;
 }
 
 /* ---------------- */
@@ -22,7 +22,7 @@
   width: 40px;
   height: 40px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   border: 1px solid #e0dede;
   border-radius: 5px;
   padding: 6px;
@@ -30,6 +30,7 @@
   transition: all 0.3s;
   z-index: 100;
   opacity: 0;
+  background-color: #f5f5f5;
 }
 
 .prevArrowContainer {

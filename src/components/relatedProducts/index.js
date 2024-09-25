@@ -199,7 +199,7 @@ function RelatedProducts() {
   return (
     <div className={styles.relatedProductsContainer}>
       <h1 className={styles.title}>Related Products</h1>
-      <ArrowSlider arrowData={relatedProducts} />
+      <ArrowSlider relatedProducts={relatedProducts} />
     </div>
   );
 }

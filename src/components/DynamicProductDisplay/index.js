@@ -13,6 +13,48 @@ import Stack from "@mui/material/Stack";
 import DynamicBreadcrumb from "../dynamicBreadcrumb";
 import DynamicProductFiltering from "../dynamicProductFiltering";
 
+// import icon
+import games_icon from "../../assets/icons/product-category-icon/icon-games.png";
+import headphone_icon from "../../assets/icons/product-category-icon/icon-headphone.png";
+import laptops_icon from "../../assets/icons/product-category-icon/icon-laptops.png";
+import phone_icon from "../../assets/icons/product-category-icon/icon-phone.png";
+import speaker_icon from "../../assets/icons/product-category-icon/icon-speaker.png";
+import television_icon from "../../assets/icons/product-category-icon/icon-television.png";
+import ArrowSlider from "../arrowSlider";
+
+const productCategory = [
+  {
+    icon: laptops_icon,
+    title: "laptops",
+    backgroundColor: "#DAEBE9",
+  },
+  {
+    icon: games_icon,
+    title: "games",
+    backgroundColor: "#EBDDE8",
+  },
+  {
+    icon: phone_icon,
+    title: "smartphones",
+    backgroundColor: "#F2E1D7",
+  },
+  {
+    icon: television_icon,
+    title: "television",
+    backgroundColor: "#E9E5EF",
+  },
+  {
+    icon: headphone_icon,
+    title: "headphone",
+    backgroundColor: "#EEEAE0",
+  },
+  {
+    icon: speaker_icon,
+    title: "speakers",
+    backgroundColor: "#F2F5DE",
+  },
+];
+
 const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(90000);
@@ -29,8 +71,9 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
       </section>
 
       <section className={styles.productCategoryDetailsAllDataContainer}>
+        <h1 className={styles.pageName}>{DynamicPageName}</h1>
         <div>
-          <ProductCategory productCategoryData={DynamicPageName} />
+          <ArrowSlider categoryData={productCategory} />
         </div>
 
         <div className={styles.productCategoryDetailsCartAndAsideContainer}>
