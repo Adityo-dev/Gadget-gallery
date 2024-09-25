@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/shared/navigationBar/navigationBar";
 import Footer from "@/shared/footer/footer";
+import LiveChat from "@/components/liveChat/liveChat";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <NavigationBar />
         {children}
         <Footer />
+        <LiveChat />
       </body>
     </html>
   );
