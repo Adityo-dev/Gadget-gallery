@@ -1,3 +1,9 @@
+.productDetailsAllDataInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
 .productDetailsALlDataContainer {
   max-width: 1600px;
   margin: 0 auto;

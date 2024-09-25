@@ -1,0 +1,51 @@
+.arrowSliderContainer {
+  position: relative;
+  transition: all 0.3s;
+}
+
+.arrowSliderInfoContainer {
+  padding: 0 12px;
+}
+
+.arrowSliderContainer:hover .prevArrowContainer {
+  opacity: 1;
+  left: -50px;
+}
+.arrowSliderContainer:hover .nextArrowContainer {
+  opacity: 1;
+  right: -50px;
+}
+
+/* ---------------- */
+.prevArrowContainer,
+.nextArrowContainer {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  border: 1px solid #e0dede;
+  border-radius: 5px;
+  padding: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 100;
+  opacity: 0;
+}
+
+.prevArrowContainer {
+  left: 20px;
+}
+
+.nextArrowContainer {
+  right: 20px;
+}
+
+.prevArrowContainer:hover {
+  background-color: #0a85d1;
+  color: #ffffff;
+}
+
+.nextArrowContainer:hover {
+  background-color: #0a85d1;
+  color: #ffffff;
+}

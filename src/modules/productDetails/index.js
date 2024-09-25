@@ -13,6 +13,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import ProductCounter from "@/components/productCounter";
 import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
 import ProductDetailsColumnSlider from "@/components/productDetailsSlider";
+import RelatedProducts from "@/components/relatedProducts";
 
 const ProductDetails = ({ data }) => {
   let searchId = data.split("%").join(" ");
@@ -64,7 +65,7 @@ const ProductDetails = ({ data }) => {
   ];
 
   return (
-    <main>
+    <main className={styles.productDetailsAllDataInfoContainer}>
       <section>
         <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
       </section>
@@ -174,6 +175,9 @@ const ProductDetails = ({ data }) => {
             </div>
           ))}
         </div>
+      </section>
+      <section>
+        <RelatedProducts />
       </section>
     </main>
   );
