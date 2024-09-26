@@ -201,79 +201,86 @@ const PcBuilderPage = () => {
         <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
       </section>
 
-      <section className={styles.pcBuilderSection}>
-        <div className={styles.headerLogoAndActionsContainer}>
-          <Image className={styles.logo} src={logo} alt="" />
+      <section className={styles.pcBuilderAllDataContainer}>
+        <div className={styles.pcBuilderSection}>
+          <div className={styles.headerLogoAndActionsContainer}>
+            <Image className={styles.logo} src={logo} alt="" />
 
-          <div className={styles.allActions}>
-            {actions.map((data, ind) => (
-              <div className={styles.actionsNameAndIcon} key={ind}>
-                <span className={styles.actionsIcon}>{data?.icon}</span>
-                <span className={styles.actionsName}>{data?.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className={styles.pcBuilderContainer2}>
-          <div className={styles.pcBuilderHeader2}>
-            <p className={styles.pcBuilderTitle}>
-              PC Builder - Build Your Own Computer - gadget gallery
-            </p>
-            <div className={styles.hideUnselectedItems}>
-              <input type="checkbox" id="vehicle" name="vehicle" value="hide" />
-              <label for="vehicle">Hide those that are not selected</label>
-            </div>
-          </div>
-          <div className={styles.wattageAndPriceContainer}>
-            <button className={styles.wattageInfo}>
-              <p className={styles.totalWattage}>
-                <span>150</span>W
-              </p>
-              <p className={styles.estimatedWattage}>Estimated Wattage</p>
-
-              <span className={styles.betaTag}>BETA</span>
-            </button>
-            <button className={styles.priceInfo}>
-              <p className={styles.totalPrice}>
-                <span>103,250</span> ৳
-              </p>
-              <p className={styles.totalItems}>
-                <span>3</span> Items
-              </p>
-            </button>
-          </div>
-        </div>
-
-        <div className={styles.pcBuilderItemsALlDataContainer}>
-          {pcBuilderData.map((data, ind) => (
-            <div key={ind}>
-              <p className={styles.categoryName}>{data?.category}</p>
-              {data.items.map((item, ind) => (
-                <div className={styles.pcBuilderItemsDataContainer} key={ind}>
-                  <div className={styles.pcBuilderItemsContainer}>
-                    <div className={styles.pcBuilderItemsLogoContainer}>
-                      <Image
-                        className={styles.pcBuilderItemsLogo}
-                        src={item.logo}
-                        alt=""
-                      />
-                    </div>
-
-                    <p className={styles.itemsNameAndProductName}>
-                      <span>{item.name}</span>
-                      <span>{item.product}</span>
-                    </p>
-                  </div>
-
-                  <div className={styles.chooseBtnAndPriceContainer}>
-                    <p className={styles.itemsPrice}>{item?.price}৳</p>
-                    <button className={styles.chooseBtn}>choose</button>
-                  </div>
+            <div className={styles.allActions}>
+              {actions.map((data, ind) => (
+                <div className={styles.actionsNameAndIcon} key={ind}>
+                  <span className={styles.actionsIcon}>{data?.icon}</span>
+                  <span className={styles.actionsName}>{data?.name}</span>
                 </div>
               ))}
             </div>
-          ))}
+          </div>
+
+          <div className={styles.pcBuilderContainer2}>
+            <div className={styles.pcBuilderHeader2}>
+              <p className={styles.pcBuilderTitle}>
+                PC Builder - Build Your Own Computer - gadget gallery
+              </p>
+              <div className={styles.hideUnselectedItems}>
+                <input
+                  type="checkbox"
+                  id="vehicle"
+                  name="vehicle"
+                  value="hide"
+                />
+                <label for="vehicle">Hide those that are not selected</label>
+              </div>
+            </div>
+            <div className={styles.wattageAndPriceContainer}>
+              <button className={styles.wattageInfo}>
+                <p className={styles.totalWattage}>
+                  <span>150</span>W
+                </p>
+                <p className={styles.estimatedWattage}>Estimated Wattage</p>
+
+                <span className={styles.betaTag}>BETA</span>
+              </button>
+              <button className={styles.priceInfo}>
+                <p className={styles.totalPrice}>
+                  <span>103,250</span> ৳
+                </p>
+                <p className={styles.totalItems}>
+                  <span>3</span> Items
+                </p>
+              </button>
+            </div>
+          </div>
+
+          <div className={styles.pcBuilderItemsALlDataContainer}>
+            {pcBuilderData.map((data, ind) => (
+              <div key={ind}>
+                <p className={styles.categoryName}>{data?.category}</p>
+                {data.items.map((item, ind) => (
+                  <div className={styles.pcBuilderItemsDataContainer} key={ind}>
+                    <div className={styles.pcBuilderItemsContainer}>
+                      <div className={styles.pcBuilderItemsLogoContainer}>
+                        <Image
+                          className={styles.pcBuilderItemsLogo}
+                          src={item.logo}
+                          alt=""
+                        />
+                      </div>
+
+                      <p className={styles.itemsNameAndProductName}>
+                        <span>{item.name}</span>
+                        <span>{item.product}</span>
+                      </p>
+                    </div>
+
+                    <div className={styles.chooseBtnAndPriceContainer}>
+                      <p className={styles.itemsPrice}>{item?.price}৳</p>
+                      <button className={styles.chooseBtn}>choose</button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

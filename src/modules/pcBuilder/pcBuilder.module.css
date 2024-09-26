@@ -1,10 +1,13 @@
-.pcBuilderSection {
+.pcBuilderAllDataContainer {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 0 1.875rem;
+  padding: 0 30px;
+}
+
+.pcBuilderSection {
   border: 1px solid #ebebeb;
   border-radius: 5px;
-  padding: 1.25rem 0;
+  padding: 1rem 0;
   margin-top: 3rem;
 }
 
@@ -17,14 +20,15 @@
 }
 
 .logo {
-  width: 8.75rem;
+  width: 8rem;
   height: 100%;
+  margin-bottom: 1rem;
 }
 
 .allActions {
   display: flex;
-  gap: 1.875rem;
   align-items: center;
+  gap: 1.875rem;
 }
 
 .actionsNameAndIcon {
@@ -48,7 +52,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5rem;
+  padding: 0 4rem;
   margin: 1.875rem 0;
 }
 
@@ -120,9 +124,8 @@
 }
 
 /*  */
-
 .pcBuilderItemsALlDataContainer {
-  padding: 0 5rem;
+  padding: 0 4rem;
 }
 
 .categoryName {
@@ -164,12 +167,6 @@
   height: 100%;
 }
 
-.itemsInfoContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .itemsNameAndProductName {
   display: flex;
   flex-direction: column;
@@ -197,9 +194,16 @@
   background-color: #0068c8;
   font-weight: 500;
   color: #fff;
-  border: none;
+  border: 1px solid #fff;
   padding: 1rem 2.5rem;
   border-radius: 0.313rem;
   cursor: pointer;
   text-transform: capitalize;
+  transition: all 0.3s;
+}
+
+.chooseBtn:hover {
+  background-color: #fff;
+  color: #000000;
+  border: 1px solid #0068c8;
 }
