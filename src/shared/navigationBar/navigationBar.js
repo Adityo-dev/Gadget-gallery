@@ -45,7 +45,7 @@ const navData = [
         info: {
           icon: <TfiHeadphoneAlt />,
           title: "need help?",
-          helpNumber: "+8801770365981",
+          helpNumber: "+8801770******",
           url: "/",
         },
       },

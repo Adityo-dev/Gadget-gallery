@@ -53,20 +53,20 @@ export default function Footer() {
   const contactIcons = [
     {
       icon: <BiLogoFacebook />,
-      url: "https://www.facebook.com/koushik.barmon.79",
+      url: "https://www.facebook.com/mmrecoybot",
     },
     {
       icon: <RiLinkedinLine />,
-      url: "https://www.linkedin.com/in/koushik-barmon/",
+      url: "https://www.linkedin.com/in/mmrecoybot/",
     },
-    { icon: <IoLogoGithub />, url: "https://github.com/Adityo-dev" },
+    { icon: <IoLogoGithub />, url: "https://github.com" },
     {
       icon: <FaUpwork />,
-      url: "https://www.upwork.com/freelancers/~0112b624003cbb514f",
+      url: "https://www.upwork.com/freelancers/~01278000880483ffa5",
     },
     {
       icon: <PiInstagramLogoLight />,
-      url: "https://www.instagram.com/adittyo_dev/",
+      url: "https://www.instagram.com",
     },
   ];
   return (
