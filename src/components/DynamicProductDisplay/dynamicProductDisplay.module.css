@@ -79,6 +79,8 @@
 /* _______________ */
 
 .productCategoryDetailsCartContainer {
+  width: 100%;
+  height: 100vh;
   grid-column: 2/-1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
