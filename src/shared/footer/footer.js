@@ -59,15 +59,15 @@ export default function Footer() {
       icon: <RiLinkedinLine />,
       url: "https://www.linkedin.com/in/mmrecoybot/",
     },
-    { icon: <IoLogoGithub />, url: "https://github.com" },
+    // { icon: <IoLogoGithub />, url: "https://github.com" },
     {
       icon: <FaUpwork />,
       url: "https://www.upwork.com/freelancers/~01278000880483ffa5",
     },
-    {
-      icon: <PiInstagramLogoLight />,
-      url: "https://www.instagram.com",
-    },
+    // {
+    //   icon: <PiInstagramLogoLight />,
+    //   url: "https://www.instagram.com",
+    // },
   ];
   return (
     <section className={styles.footerAllDataContainer}>
