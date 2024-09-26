@@ -61,27 +61,7 @@ const productCategory = [
   },
 ];
 
-// Sample filter data fetch function
-const fetchFilterData = async () => {
-  return {
-    colors: [
-      { id: "red", label: "Red" },
-      { id: "blue", label: "Blue" },
-      { id: "green", label: "Green" },
-    ],
-    models: [
-      { id: "model1", label: "Model 1" },
-      { id: "model2", label: "Model 2" },
-    ],
-    stock: [
-      { id: "inStock", label: "In Stock" },
-      { id: "outOfStock", label: "Out of Stock" },
-    ],
-  };
-};
-
 const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
-  // Calculate min and max prices from products array
   const initialMinPrice = Math.min(
     ...products.map((product) => product.currentPrice)
   );
@@ -89,7 +69,6 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
     ...products.map((product) => product.currentPrice)
   );
 
-  // Set initial min and max price states
   const [minPrice, setMinPrice] = useState(initialMinPrice);
   const [maxPrice, setMaxPrice] = useState(initialMaxPrice);
   const [filterData, setFilterData] = useState({});
@@ -100,9 +79,25 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
     { label: "Shop", href: "/shop" },
   ];
 
+  const fetchFilterData = async (products) => {
+    const colors = [...new Set(products.map((product) => product.color))];
+    const models = [...new Set(products.map((product) => product.model))];
+    const stock = [...new Set(products.map((product) => product.stock))];
+    const types = [...new Set(products.map((product) => product.type))];
+    const brands = [...new Set(products.map((product) => product.brand))];
+
+    return {
+      colors: colors.map((color) => ({ id: color, label: color })),
+      brands: brands.map((brand) => ({ id: brand, label: brand })),
+      models: models.map((model) => ({ id: model, label: model })),
+      types: types.map((type) => ({ id: type, label: type })),
+      stock: stock.map((stockItem) => ({ id: stockItem, label: stockItem })),
+    };
+  };
+
   useEffect(() => {
     const loadData = async () => {
-      const data = await fetchFilterData();
+      const data = await fetchFilterData(products);
       setFilterData(data);
 
       const initialCheckedItems = {};
@@ -112,18 +107,13 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
       setCheckedItems(initialCheckedItems);
     };
     loadData();
-  }, []);
+  }, [products]);
 
   const handleToggle = (category, value) => {
     const currentChecked = checkedItems[category];
-    const currentIndex = currentChecked.indexOf(value);
-    const newChecked = [...currentChecked];
-
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
+    const newChecked = currentChecked.includes(value)
+      ? currentChecked.filter((item) => item !== value)
+      : [...currentChecked, value];
 
     setCheckedItems({
       ...checkedItems,
@@ -131,35 +121,41 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
     });
   };
 
-  // Function to filter products based on the selected filters
   const filterProducts = () => {
     return products.filter((product) => {
-      const { currentPrice, color, model, stock } = product;
+      const { currentPrice, color, model, stock, type, brand } = product;
 
-      // Filter by price range
       const isWithinPriceRange =
         currentPrice >= minPrice && currentPrice <= maxPrice;
-
-      // Filter by selected colors
       const selectedColors = checkedItems.colors || [];
       const matchesColor = selectedColors.length
         ? selectedColors.includes(color)
         : true;
-
-      // Filter by selected models
       const selectedModels = checkedItems.models || [];
       const matchesModel = selectedModels.length
         ? selectedModels.includes(model)
         : true;
-
-      // Filter by stock status
       const selectedStock = checkedItems.stock || [];
       const matchesStock = selectedStock.length
         ? selectedStock.includes(stock)
         : true;
+      const selectedTypes = checkedItems.types || [];
+      const matchesType = selectedTypes.length
+        ? selectedTypes.includes(type)
+        : true;
+      const selectedBrands = checkedItems.brands || [];
+      const matchesBrand = selectedBrands.length
+        ? selectedBrands.includes(brand)
+        : true; // Checking brand matches
 
-      // Return product if all conditions match
-      return isWithinPriceRange && matchesColor && matchesModel && matchesStock;
+      return (
+        isWithinPriceRange &&
+        matchesColor &&
+        matchesModel &&
+        matchesStock &&
+        matchesType &&
+        matchesBrand
+      );
     });
   };
 
@@ -179,7 +175,6 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
               return (
                 <ListItemButton
                   key={item.id}
-                  role="listitem"
                   onClick={() => handleToggle(filterKey, item.id)}
                 >
                   <ListItemIcon>
@@ -216,23 +211,21 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
           <div className={styles.productCategoryDetailsAsideContainer}>
             <div className={styles.priceRangeContainer}>
               <p className={styles.priceRangeTitle}>Price Range</p>
-              <p className={styles.hrLine} />
               <div className={styles.priceRangeInputContainer}>
                 <input
                   className={styles.priceRangeInput}
-                  type="text"
+                  type="number"
                   value={minPrice}
                   onChange={(e) => setMinPrice(Number(e.target.value))}
                 />
                 <input
                   className={styles.priceRangeInput}
-                  type="text"
+                  type="number"
                   value={maxPrice}
                   onChange={(e) => setMaxPrice(Number(e.target.value))}
                 />
               </div>
             </div>
-            <br />
             <main>
               <div>
                 {Object.keys(filterData).map((key) =>
@@ -247,23 +240,21 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
 
           <div className={styles.productCategoryDetailsCartContainer}>
             {filterProducts().map((data, ind) => (
-              <div key={ind}>
-                <ColumnCart cartData={data} />
-              </div>
+              <ColumnCart key={ind} cartData={data} />
             ))}
           </div>
         </div>
       </section>
 
       <div className={styles.productPaginationContainer}>
-        {products.length < 20 ? (
-          <div>
-            <Stack spacing={2}>
-              <Pagination count={5} variant="outlined" shape="rounded" />
-            </Stack>
-          </div>
-        ) : (
-          ""
+        {products.length > 20 && (
+          <Stack spacing={2}>
+            <Pagination
+              count={Math.ceil(products.length / 20)}
+              variant="outlined"
+              shape="rounded"
+            />
+          </Stack>
         )}
       </div>
     </>
