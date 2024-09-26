@@ -24,6 +24,8 @@
   border-right: 1px solid #e1e1e1;
 }
 
+/* _______________ */
+
 .priceRangeContainer {
   width: 100%;
   background-color: #f4f4f4;
@@ -61,6 +63,21 @@
 .priceRangeInput:focus {
   border-color: #0068c8;
 }
+
+.filteringDataContainer {
+  background-color: #f4f4f4;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+.filteringInfoContainer {
+  width: 100%;
+  max-height: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+/* _______________ */
 
 .productCategoryDetailsCartContainer {
   grid-column: 2/-1;

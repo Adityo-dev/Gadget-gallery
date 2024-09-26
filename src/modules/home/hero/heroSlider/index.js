@@ -51,6 +51,7 @@ function HeroSlider() {
     infinite: true,
     speed: 500,
     autoplay: true,
+    arrows: false,
     autoplaySpeed: 7000,
     lazyLoad: "progressive",
     slidesToShow: 1,

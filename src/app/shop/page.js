@@ -40,6 +40,7 @@ const shop = [
     discount: "26",
     soldOut: false,
     hot: true,
+    color: "blue",
     url: "",
   },
   {
@@ -52,6 +53,7 @@ const shop = [
     discount: "",
     soldOut: false,
     hot: true,
+    color: "blue",
     url: "",
   },
   {
@@ -74,6 +76,7 @@ const shop = [
     discount: "",
     soldOut: false,
     hot: true,
+    color: "blue",
     url: "",
   },
   {
@@ -86,6 +89,7 @@ const shop = [
     discount: "3",
     soldOut: false,
     hot: true,
+    color: "red",
     url: "",
   },
   {
@@ -98,6 +102,7 @@ const shop = [
     discount: "4",
     soldOut: false,
     hot: false,
+    color: "red",
     url: "",
   },
   {
@@ -110,6 +115,7 @@ const shop = [
     discount: "20",
     soldOut: false,
     hot: true,
+    color: "red",
     url: "",
   },
   {
@@ -122,6 +128,7 @@ const shop = [
     discount: "42",
     soldOut: false,
     hot: true,
+    color: "red",
     url: "",
   },
   {
@@ -134,6 +141,7 @@ const shop = [
     discount: "",
     soldOut: false,
     hot: true,
+    color: "red",
     url: "",
   },
   {
@@ -146,6 +154,7 @@ const shop = [
     discount: "31",
     soldOut: false,
     hot: true,
+    color: "red",
     url: "",
   },
   {
@@ -157,6 +166,7 @@ const shop = [
     oldPrice: "1795.00",
     discount: "15",
     hot: true,
+    color: "red",
     url: "",
   },
   {
@@ -168,6 +178,7 @@ const shop = [
     oldPrice: "1795.00",
     discount: "",
     hot: true,
+    color: "red",
     url: "",
   },
   {
@@ -180,6 +191,7 @@ const shop = [
     discount: "14",
     soldOut: false,
     hot: true,
+    color: "red",
     url: "",
   },
   {
@@ -192,6 +204,7 @@ const shop = [
     discount: "",
     soldOut: false,
     hot: true,
+    color: "red",
     url: "",
   },
   {
@@ -204,6 +217,7 @@ const shop = [
     discount: "",
     soldOut: false,
     hot: false,
+    color: "red",
     url: "",
   },
   {
@@ -216,6 +230,7 @@ const shop = [
     discount: "",
     soldOut: false,
     hot: true,
+    color: "red",
     url: "",
   },
   {
@@ -228,6 +243,7 @@ const shop = [
     discount: "",
     soldOut: false,
     hot: true,
+    color: "red",
     url: "",
   },
   {
@@ -240,6 +256,7 @@ const shop = [
     discount: "34",
     soldOut: false,
     hot: false,
+    color: "red",
     url: "",
   },
   {
@@ -252,6 +269,7 @@ const shop = [
     discount: "",
     soldOut: false,
     hot: true,
+    color: "blue",
     url: "",
   },
 ];
