@@ -1,0 +1,21 @@
+.brandAllDataContainer {
+  max-width: 1600px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.brandDataContainer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.brandInfo {
+  width: 260px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #04121f1a;
+  border-radius: 12px;
+  align-items: center;
+  margin: 6px;
+}

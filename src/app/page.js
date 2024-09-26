@@ -8,7 +8,7 @@ import BestSellers from "@/components/best-sellers";
 import ProductBanner2 from "@/components/banner/banner2";
 import ProductBanner3 from "@/components/banner/banner3";
 import TrendingProducts from "@/components/trending-products";
-import Company from "@/modules/home/company";
+import Brand from "@/modules/home/brand";
 import Newsletter from "@/modules/home/newsletter";
 import Service from "@/modules/home/service";
 
@@ -24,7 +24,7 @@ export default function Home() {
         <ProductBanner3 />
       </div>
       <TrendingProducts />
-      <Company />
+      <Brand />
       <Newsletter />
       <Service />
     </main>
