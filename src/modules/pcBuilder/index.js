@@ -61,6 +61,7 @@ const pcBuilderData = [
         description: "16 Cores, 5.4GHz",
         logo: cpu,
         price: "45000",
+        pathName: "processor",
       },
       {
         name: "Motherboard",
@@ -68,6 +69,7 @@ const pcBuilderData = [
         description: "ATX, LGA 1700",
         logo: motherboard,
         price: "40000",
+        pathName: "motherboard",
       },
       {
         name: "Graphics Card",
@@ -75,6 +77,7 @@ const pcBuilderData = [
         description: "16GB GDDR6X",
         logo: graphics_card,
         price: "150000",
+        pathName: "graphics-card",
       },
 
       {
@@ -83,6 +86,7 @@ const pcBuilderData = [
         description: "240mm Liquid Cooler",
         logo: cpu_cooler,
         price: "12000",
+        pathName: "cpu-cooler",
       },
       {
         name: "RAM-1",
@@ -90,6 +94,7 @@ const pcBuilderData = [
         description: "DDR5, 5200MHz",
         logo: ram,
         price: "8000",
+        pathName: "ram",
       },
       {
         name: "RAM-2",
@@ -97,6 +102,7 @@ const pcBuilderData = [
         description: "DDR5, 6000MHz",
         logo: ram,
         price: "10000",
+        pathName: "ram",
       },
       {
         name: "SSD",
@@ -104,6 +110,7 @@ const pcBuilderData = [
         description: "NVMe M.2",
         logo: storage,
         price: "15000",
+        pathName: "ssd",
       },
       {
         name: "HDD",
@@ -111,6 +118,7 @@ const pcBuilderData = [
         description: "7200RPM, SATA",
         logo: storage,
         price: "6000",
+        pathName: "hdd",
       },
       {
         name: "Power Supply",
@@ -118,6 +126,7 @@ const pcBuilderData = [
         description: "850W, 80+ Gold",
         logo: power_supply,
         price: "13000",
+        pathName: "power-supply",
       },
       {
         name: "Casing",
@@ -125,6 +134,7 @@ const pcBuilderData = [
         description: "Mid Tower ATX",
         logo: casing,
         price: "7000",
+        pathName: "casing",
       },
     ],
   },
@@ -137,6 +147,7 @@ const pcBuilderData = [
         description: "144Hz, 1ms, 27-inch",
         logo: monitor,
         price: "35000",
+        pathName: "monitor",
       },
       {
         name: "Case Fan",
@@ -144,6 +155,7 @@ const pcBuilderData = [
         description: "120mm PWM Fan",
         logo: casing_cooler,
         price: "2500",
+        pathName: "case-fan",
       },
       {
         name: "UPS",
@@ -151,6 +163,7 @@ const pcBuilderData = [
         description: "Battery Backup",
         logo: ups,
         price: "5000",
+        pathName: "ups",
       },
       {
         name: "Antivirus",
@@ -158,6 +171,7 @@ const pcBuilderData = [
         description: "1 Year License",
         logo: anti_virus,
         price: "2000",
+        pathName: "antivirus",
       },
     ],
   },
@@ -170,6 +184,7 @@ const pcBuilderData = [
         description: "Wired, 25K DPI",
         logo: mouse,
         price: "4000",
+        pathName: "mouse",
       },
       {
         name: "Keyboard",
@@ -177,6 +192,7 @@ const pcBuilderData = [
         description: "Mechanical, Cherry MX Brown",
         logo: keyboard,
         price: "15000",
+        pathName: "keyboard",
       },
       {
         name: "Headphone",
@@ -184,6 +200,7 @@ const pcBuilderData = [
         description: "7.1 Surround Sound",
         logo: headphone,
         price: "10000",
+        pathName: "headphone",
       },
     ],
   },
@@ -191,7 +208,7 @@ const pcBuilderData = [
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
-  { label: "build your pc", href: "/shop" },
+  { label: "build your pc", href: "/pc_builder" },
 ];
 
 const PcBuilderPage = () => {
@@ -274,7 +291,9 @@ const PcBuilderPage = () => {
 
                     <div className={styles.chooseBtnAndPriceContainer}>
                       <p className={styles.itemsPrice}>{item?.price}৳</p>
-                      <button className={styles.chooseBtn}>choose</button>
+                      <Link href={`pc_builder/${item?.pathName}`}>
+                        <button className={styles.chooseBtn}>choose</button>
+                      </Link>
                     </div>
                   </div>
                 ))}

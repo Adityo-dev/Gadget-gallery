@@ -17,7 +17,8 @@ import RelatedProducts from "@/components/relatedProducts";
 
 const ProductDetails = ({ data }) => {
   let searchId = data.split("%").join(" ");
-  let searchValue = searchId.split("20").join(" ");
+  let searchId2 = data.split("2").join(" ");
+  let searchValue = searchId2.split("20").join(" ");
 
   const productDetailsData = [
     {
