@@ -1,19 +1,25 @@
+"use client";
 import styles from "./cart.module.css";
-import Image from "next/image";
-import Link from "next/link";
 import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
-
-const breadcrumbItems = [
-  { label: "Home", href: "/" },
-  { label: "Shopping cart", href: "/cart" },
-];
+import { useCart } from "../context/CartContext";
 
 const Cart = () => {
+  const { cartItems, removeFromCart } = useCart();
+
   return (
     <div>
-      <section>
-        <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
-      </section>
+      <DynamicBreadcrumb />
+      <h2>Your Cart</h2>
+      {cartItems.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        cartItems.map((item) => (
+          <div key={item.id}>
+            <p>{item.title}</p>
+            <button onClick={() => removeFromCart(item.id)}>Remove</button>
+          </div>
+        ))
+      )}
     </div>
   );
 };

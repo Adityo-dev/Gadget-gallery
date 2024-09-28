@@ -3,6 +3,7 @@ import "./globals.css";
 import NavigationBar from "@/shared/navigationBar/navigationBar";
 import Footer from "@/shared/footer/footer";
 import LiveChat from "@/components/liveChat/liveChat";
+import { CartProvider } from "./context/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,10 +16,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavigationBar />
-        {children}
-        <Footer />
-        <LiveChat />
+        <CartProvider>
+          <NavigationBar />
+          {children}
+          <Footer />
+          <LiveChat />
+        </CartProvider>
       </body>
     </html>
   );

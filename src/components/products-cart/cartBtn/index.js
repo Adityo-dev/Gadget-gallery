@@ -1,3 +1,4 @@
+"use client";
 import styles from "./cartBtn.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -18,6 +19,7 @@ import Tooltip from "@mui/material/Tooltip";
 import Modal from "@mui/material/Modal";
 // import rating
 import Rating from "@mui/material/Rating";
+import { useCart } from "@/app/context/CartContext";
 
 export default function CartButton({ cartData }) {
   const {
@@ -45,8 +47,12 @@ export default function CartButton({ cartData }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  // add to cart
+  const { addToCart } = useCart();
+
   return (
     <div>
+      <button onClick={() => addToCart(cartData)}>Add to catr</button>
       {cartBtnData.map((data, ind) => (
         <Tooltip
           style={{ display: "flex" }}
