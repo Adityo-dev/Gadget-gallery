@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 // import components
 import ProductDetailsSlider from "@/components/productDetailsSlider";
+import { useCart } from "@/components/context/CartContext";
+import { useWishlist } from "@/components/context/WishlistContext";
 
 // import icon
 import { GiShoppingCart } from "react-icons/gi";
@@ -19,7 +21,6 @@ import Tooltip from "@mui/material/Tooltip";
 import Modal from "@mui/material/Modal";
 // import rating
 import Rating from "@mui/material/Rating";
-import { useCart } from "@/app/context/CartContext";
 
 export default function CartButton({ cartData }) {
   const {
@@ -47,8 +48,10 @@ export default function CartButton({ cartData }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  // add to cart
+  // add to Cart
   const { addToCart } = useCart();
+  // add to Wishlist
+  const { addToWishlist } = useWishlist();
 
   return (
     <div>
@@ -63,10 +66,12 @@ export default function CartButton({ cartData }) {
           <button
             className={styles.cartBtn}
             onClick={() => {
-              if (ind === 2) {
-                handleOpen();
-              } else if (ind === 0) {
+              if (ind === 0) {
                 addToCart(cartData);
+              } else if (ind === 1) {
+                addToWishlist(cartData);
+              } else if (ind === 2) {
+                handleOpen();
               }
             }}
           >

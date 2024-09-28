@@ -6,7 +6,7 @@ import Link from "next/link";
 import emptyCart from "../../assets/images/other/emptyCart.png";
 // import components
 import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../../components/context/CartContext";
 import TransparentButton from "@/components/buttonGroup/transparentButton";
 
 const Cart = () => {

@@ -99,10 +99,15 @@
   font-size: 20px;
 }
 
-.wishlistInStock {
+.wishlistInStock,
+.wishlistInStockRed {
   font-size: 1rem;
   color: #297e29;
   font-weight: 600;
+}
+
+.wishlistInStockRed {
+  color: #ff0000;
 }
 
 .wishlistProductPriceBtnAmdStockContainer {
