@@ -52,7 +52,6 @@ export default function CartButton({ cartData }) {
 
   return (
     <div>
-      <button onClick={() => addToCart(cartData)}>Add to catr</button>
       {cartBtnData.map((data, ind) => (
         <Tooltip
           style={{ display: "flex" }}
@@ -63,7 +62,13 @@ export default function CartButton({ cartData }) {
         >
           <button
             className={styles.cartBtn}
-            onClick={ind === 2 ? handleOpen : null}
+            onClick={() => {
+              if (ind === 2) {
+                handleOpen();
+              } else if (ind === 0) {
+                addToCart(cartData);
+              }
+            }}
           >
             {data?.icon}
           </button>

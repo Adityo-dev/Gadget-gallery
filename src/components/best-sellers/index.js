@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Tab } from "@headlessui/react";
 // import components
 import ColumnCart from "../products-cart/columnCart";
-import DynamicButton from "../button";
+import DynamicButton from "../buttonGroup/normalButton";
 // import image
 // smart Phone
 import smartPhone0 from "../../assets/images/products/smart-phone/0.png";

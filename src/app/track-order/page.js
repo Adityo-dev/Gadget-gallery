@@ -1,4 +1,4 @@
-import DynamicButton from "@/components/button";
+import DynamicButton from "@/components/buttonGroup/normalButton";
 import styles from "./trackOrder.module.css";
 import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
 

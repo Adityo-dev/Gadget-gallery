@@ -6,7 +6,7 @@ import Link from "next/link";
 import banner1 from "../../../assets/images/banner/banner-1.png";
 import banner2 from "../../../assets/images/banner/banner-2.png";
 
-import DynamicButton from "@/components/button";
+import DynamicButton from "@/components/buttonGroup/normalButton";
 
 const productBanner1Data = [
   {

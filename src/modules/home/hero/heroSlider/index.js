@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import imageSlider1 from "../../../../assets/images/home/hero/slide1-ipad.png";
 import imageSlider2 from "../../../../assets/images/home/hero/slide1-iphone.png";
 import imageSlider3 from "../../../../assets/images/home/hero/slide1-watches.png";
-import DynamicButton from "@/components/button";
+import DynamicButton from "@/components/buttonGroup/normalButton";
 
 const sliderData = [
   {
