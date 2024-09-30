@@ -25,31 +25,137 @@
 
 /*  */
 
-.productCartContainer {
+.cartAllDataInfoDetailsContainer {
+  display: flex;
+  gap: 30px;
+  margin-top: 1.5rem;
+}
+
+.cartDataContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.productCategoryContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3%;
+  margin-bottom: 25px;
+}
+
+.productNameContainer {
+  width: 42%;
+}
+
+.productPriceAndStorkContainer {
+  width: 57%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.productName,
+.productPrice,
+.productStorkStatus {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/*  */
+.wishlistProductDataContainer {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: space-between;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  padding: 25px 0;
+}
+
+.wishlistProductImageAndNameContainer {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wishlistProductImage {
+  width: 110px;
+  height: 100px;
+}
+
+.wishlistProductName {
+  font-size: 1rem;
+  line-height: 25px;
+  text-transform: capitalize;
+}
+
+.wishlistPriceAndInStockContainer {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.imageAndNameContainer {
-  display: flex;
-  align-items: center;
-}
-
-.productImage {
-  width: 110px;
-  height: 100px;
-}
-
-.productName {
+.currentPrice,
+.wishlistInStockRed {
   font-size: 1rem;
-  line-height: 25px;
-  text-transform: capitalize;
-  width: 70%;
+  font-weight: 600;
 }
 
-.productPriceAndRemoveContainer {
+.wishlistProductPriceBtnAmdStockContainer {
   display: flex;
-  align-items: center;
-  gap: 2.5rem;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.crossIcon {
+  font-size: 20px;
+  color: #848484;
+  cursor: pointer;
+}
+
+/* checkout All Data Container */
+
+.checkoutAllDataContainer {
+  width: 500px;
+  height: 100%;
+  border: 2px solid #0068c8;
+  border-radius: 10px;
+  padding: 30px;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cartTotals {
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.shoppingInfoContainer,
+.allTotalPriceContainer,
+.subTotalAndAllPrice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shoppingCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shoppingTotal,
+.shoppingTotalPrice {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.checkoutHrLine {
+  border-top: 1px solid #ebebeb;
 }

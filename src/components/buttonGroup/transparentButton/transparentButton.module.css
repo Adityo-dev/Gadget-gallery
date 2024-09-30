@@ -1,6 +1,6 @@
 .transparentButton {
   background-color: #0068c8;
-  min-width: 190px;
+  width: 100%;
   padding: 12px 42px;
   border-radius: 5px;
   border: 1px solid #0068c8;
