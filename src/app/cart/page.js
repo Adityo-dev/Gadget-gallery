@@ -2,6 +2,7 @@
 import styles from "./cart.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useState } from "react";
 // import image
 import emptyCart from "../../assets/images/other/emptyCart.png";
 // import components
@@ -18,6 +19,16 @@ const breadcrumbItems = [
 
 const Cart = () => {
   const { cartItems, removeFromCart } = useCart();
+
+  // product counter
+  const [count, setCount] = useState(0);
+
+  const increment = () => setCount(count + 1);
+  const decrement = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
 
   return (
     <main>
@@ -48,7 +59,7 @@ const Cart = () => {
               </div>
 
               {cartItems.map((item, ind) => (
-                <div key={item.id}>
+                <div key={ind}>
                   <div className={styles.wishlistProductDataContainer}>
                     <div
                       className={styles.wishlistProductImageAndNameContainer}
@@ -72,14 +83,33 @@ const Cart = () => {
                         <p className={styles.currentPrice}>
                           ${item?.currentPrice}
                         </p>
-                        <p className={styles.currentPrice}>
-                          ${item?.currentPrice}
-                        </p>
+                        <div className={styles.currentPrice}>
+                          <div className={styles.cartCounterContainer}>
+                            <button
+                              className={styles.cartCounterBtn}
+                              onClick={decrement}
+                            >
+                              -
+                            </button>
+                            <span className={styles.cartCounterCounter}>
+                              {count}
+                            </span>
+                            <butt
+                              className={styles.cartCounterBtn}
+                              onClick={increment}
+                            >
+                              +
+                            </butt>
+                          </div>
+                        </div>
                         <p className={styles.wishlistInStockRed}>
                           ${item?.currentPrice}
                         </p>
                         <p>
-                          <RxCross1 className={styles.crossIcon} />
+                          <RxCross1
+                            className={styles.crossIcon}
+                            onClick={() => removeFromCart(item.title)}
+                          />
                         </p>
                       </div>
                     </div>

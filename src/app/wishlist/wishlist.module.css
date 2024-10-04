@@ -3,12 +3,16 @@
   min-height: 50vh;
 }
 
-.wishlistAllDataContainer {
+.wishlistAllInfoDataSectionContainer {
   max-width: 1600px;
   margin: 0 auto;
-  margin-top: 30px;
-  padding-bottom: 25px;
   padding: 0 30px;
+  margin-top: 30px;
+}
+
+.wishlistAllDataContainer {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .productCategoryContainer {
@@ -39,17 +43,18 @@
   text-transform: capitalize;
 }
 
+.wishlistEmpty {
+  font-size: 1rem;
+  margin-top: 3rem;
+}
+
 /*  */
 .wishlistProductDataContainer {
-  max-width: 1600px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #ebebeb;
   border-bottom: 1px solid #ebebeb;
-  padding: 25px 30px;
-  margin-top: 1.5rem;
+  padding: 25px 0;
 }
 
 .wishlistProductImageAndNameContainer {

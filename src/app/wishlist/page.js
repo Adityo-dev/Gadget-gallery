@@ -17,36 +17,32 @@ const breadcrumbItems = [
 const Wishlist = () => {
   const { wishlistItems, removeFromWishlist } = useWishlist();
 
-  // Check if wishlist items are correctly passed
-  console.log("Wishlist Items:", wishlistItems); // Debugging
-
   return (
     <section className={styles.wishlistAllInfoAllDataContainer}>
       <section>
         <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
       </section>
 
-      <section>
+      <section className={styles.wishlistAllInfoDataSectionContainer}>
+        <div className={styles.wishlistAllDataContainer}>
+          <h1 className={styles.myWishlistText}>My Wishlist</h1>
+
+          <div className={styles.productCategoryContainer}>
+            <p className={styles.productName}>Product Name</p>
+            <p className={styles.productPriceAndStorkContainer}>
+              <span className={styles.productPrice}>Unit Price</span>
+              <span className={styles.productStorkStatus}>Stock Status</span>
+            </p>
+          </div>
+        </div>
         {wishlistItems.length === 0 ? (
-          <p>Your wishlist is empty.</p>
+          <p className={styles.wishlistEmpty}>
+            No products added to the wishlist
+          </p>
         ) : (
           wishlistItems.map((item) => (
             <div key={item.id}>
               <div>
-                <div className={styles.wishlistAllDataContainer}>
-                  <h1 className={styles.myWishlistText}>My Wishlist</h1>
-
-                  <div className={styles.productCategoryContainer}>
-                    <p className={styles.productName}>Product Name</p>
-                    <p className={styles.productPriceAndStorkContainer}>
-                      <span className={styles.productPrice}>Unit Price</span>
-                      <span className={styles.productStorkStatus}>
-                        Stock Status
-                      </span>
-                    </p>
-                  </div>
-                </div>
-
                 <div className={styles.wishlistProductDataContainer}>
                   <div className={styles.wishlistProductImageAndNameContainer}>
                     <Image
@@ -65,7 +61,9 @@ const Wishlist = () => {
                         <span className={styles.currentPrice}>
                           ${item?.currentPrice}
                         </span>
-                        <del className={styles.oldPrice}>${item?.oldPrice}</del>
+                        <del className={styles.oldPrice}>
+                          $<span>{item?.oldPrice}</span>
+                        </del>
                       </p>
                       <p
                         className={
@@ -83,7 +81,10 @@ const Wishlist = () => {
                       <button className={styles.wishlistAddToCartBtn}>
                         Select options
                       </button>
-                      <RxCross1 className={styles.crossIcon} />
+                      <RxCross1
+                        className={styles.crossIcon}
+                        onClick={() => removeFromWishlist(item.title)}
+                      />
                     </div>
                   </div>
                 </div>

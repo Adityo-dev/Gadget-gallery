@@ -48,7 +48,7 @@ export default function CartButton({ cartData }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  // add to Cart
+  // add to shopping Cart
   const { addToCart } = useCart();
   // add to Wishlist
   const { addToWishlist } = useWishlist();
