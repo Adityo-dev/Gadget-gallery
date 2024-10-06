@@ -1,33 +1,37 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+
+import { createContext, useContext, useReducer } from "react";
+import reducer from "../reducer/CartReducer";
 
 const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+const initialState = {
+  cart: [],
+  // total_item: "",
+  // total_amount: "",
+  // shopping_fee: 50000,
+};
 
-  const addToCart = (item) => {
-    setCartItems((prevItems) => [...prevItems, item]);
+const CartProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const addToCart = (name, title, product) => {
+    dispatch({ type: "ADD_TO_CART", payload: { name, title, product } });
   };
 
-  const removeFromCart = (title) => {
-    setCartItems((prevItems) =>
-      prevItems.filter((item) => item.title !== title)
-    );
+  const removeCart = (id) => {
+    dispatch({ type: "REMOVE_CART", payload: id });
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ ...state, addToCart, removeCart }}>
       {children}
     </CartContext.Provider>
   );
 };
 
-// Correctly defining the hook
-export const useCart = () => {
-  const context = useContext(CartContext);
-  if (!context) {
-    throw new Error("useCart must be used within a CartProvider");
-  }
-  return context;
+const useCartContext = () => {
+  return useContext(CartContext);
 };
+
+export { CartProvider, useCartContext };

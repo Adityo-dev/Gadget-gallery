@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import emptyCart from "../../assets/images/other/emptyCart.png";
 // import components
 import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
-import { useCart } from "../../components/context/CartContext";
+import { useCartContext } from "../../components/context/CartContext";
 import TransparentButton from "@/components/buttonGroup/transparentButton";
 // import icon
 import { RxCross1 } from "react-icons/rx";
@@ -18,10 +18,10 @@ const breadcrumbItems = [
 ];
 
 const Cart = () => {
-  const { cartItems, removeFromCart } = useCart();
+  const { cart, removeCart } = useCartContext();
 
   // product counter
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const increment = () => setCount(count + 1);
   const decrement = () => {
@@ -38,7 +38,7 @@ const Cart = () => {
 
       <section className={styles.cartMainDataContainer}>
         <h2>Shopping Cart</h2>
-        {cartItems.length === 0 ? (
+        {cart.length === 0 ? (
           <div className={styles.emptyCartContainer}>
             <Image className={styles.emptyCartImage} src={emptyCart} alt="" />
             <p className={styles.emptyTitle}>Your cart is currently empty.</p>
@@ -58,7 +58,7 @@ const Cart = () => {
                 </div>
               </div>
 
-              {cartItems.map((item, ind) => (
+              {cart.map((item, ind) => (
                 <div key={ind}>
                   <div className={styles.wishlistProductDataContainer}>
                     <div
@@ -69,9 +69,7 @@ const Cart = () => {
                         src={item?.image}
                         alt="Product"
                       />
-                      <p className={styles.wishlistProductName}>
-                        {item?.title}
-                      </p>
+                      <p className={styles.wishlistProductName}>{item?.name}</p>
                     </div>
 
                     <div
@@ -80,9 +78,7 @@ const Cart = () => {
                       }
                     >
                       <div className={styles.wishlistPriceAndInStockContainer}>
-                        <p className={styles.currentPrice}>
-                          ${item?.currentPrice}
-                        </p>
+                        <p className={styles.currentPrice}>${item?.price}</p>
                         <div className={styles.currentPrice}>
                           <div className={styles.cartCounterContainer}>
                             <button
@@ -103,12 +99,12 @@ const Cart = () => {
                           </div>
                         </div>
                         <p className={styles.wishlistInStockRed}>
-                          ${item?.currentPrice}
+                          ${count * item?.price}
                         </p>
                         <p>
                           <RxCross1
                             className={styles.crossIcon}
-                            onClick={() => removeFromCart(item.title)}
+                            onClick={() => removeCart(item?.id)}
                           />
                         </p>
                       </div>

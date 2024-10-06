@@ -3,7 +3,7 @@ import "./globals.css";
 import NavigationBar from "@/shared/navigationBar/navigationBar";
 import Footer from "@/shared/footer/footer";
 import LiveChat from "@/components/liveChat/liveChat";
-import { CartProvider } from "../components/context/CartContext";
+import { CartProvider } from "@/components/context/CartContext";
 import { WishlistProvider } from "@/components/context/WishlistContext";
 
 const inter = Inter({ subsets: ["latin"] });

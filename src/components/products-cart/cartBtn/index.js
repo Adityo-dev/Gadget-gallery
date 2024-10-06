@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 // import components
 import ProductDetailsSlider from "@/components/productDetailsSlider";
-import { useCart } from "@/components/context/CartContext";
+import { useCartContext } from "@/components/context/CartContext";
 import { useWishlist } from "@/components/context/WishlistContext";
 
 // import icon
@@ -49,7 +49,7 @@ export default function CartButton({ cartData }) {
   const handleClose = () => setOpen(false);
 
   // add to shopping Cart
-  const { addToCart } = useCart();
+  const { addToCart } = useCartContext();
   // add to Wishlist
   const { addToWishlist } = useWishlist();
 
@@ -67,7 +67,7 @@ export default function CartButton({ cartData }) {
             className={styles.cartBtn}
             onClick={() => {
               if (ind === 0) {
-                addToCart(cartData);
+                addToCart(name, title, cartData);
               } else if (ind === 1) {
                 addToWishlist(cartData);
               } else if (ind === 2) {
