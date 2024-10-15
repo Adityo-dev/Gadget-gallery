@@ -284,10 +284,6 @@
     font-weight: 600;
   }
 
-  .productName:hover {
-    color: #0068c8;
-  }
-
   .productTitle {
     font-size: 1.2rem;
     line-height: 26px;
