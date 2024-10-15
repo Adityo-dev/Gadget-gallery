@@ -11,6 +11,7 @@ import { useCartContext } from "../../components/context/CartContext";
 import TransparentButton from "@/components/buttonGroup/transparentButton";
 // import icon
 import { RxCross1 } from "react-icons/rx";
+import YouMayBeInterested from "@/components/youMayBeInterested";
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
@@ -45,102 +46,112 @@ const Cart = () => {
             <TransparentButton btnName={"Return to shop"} btnUrl={"/shop"} />
           </div>
         ) : (
-          <section className={styles.cartAllDataInfoDetailsContainer}>
-            <div className={styles.cartDataContainer}>
-              <div className={styles.productCategoryContainer}>
-                <div className={styles.productNameContainer}>
-                  <p className={styles.productName}>Product</p>
+          <>
+            <section className={styles.cartAllDataInfoDetailsContainer}>
+              <div className={styles.cartDataContainer}>
+                <div className={styles.productCategoryContainer}>
+                  <div className={styles.productNameContainer}>
+                    <p className={styles.productName}>Product</p>
+                  </div>
+                  <div className={styles.productPriceAndStorkContainer}>
+                    <p className={styles.productPrice}>Price</p>
+                    <p className={styles.productPrice}>Quantity</p>
+                    <p className={styles.productStorkStatus}>Subtotal</p>
+                  </div>
                 </div>
-                <div className={styles.productPriceAndStorkContainer}>
-                  <p className={styles.productPrice}>Price</p>
-                  <p className={styles.productPrice}>Quantity</p>
-                  <p className={styles.productStorkStatus}>Subtotal</p>
-                </div>
-              </div>
 
-              {cart.map((item, ind) => (
-                <div key={ind}>
-                  <div className={styles.wishlistProductDataContainer}>
-                    <div
-                      className={styles.wishlistProductImageAndNameContainer}
-                    >
-                      <Image
-                        className={styles.wishlistProductImage}
-                        src={item?.image}
-                        alt="Product"
-                      />
-                      <p className={styles.wishlistProductName}>{item?.name}</p>
-                    </div>
+                {cart.map((item, ind) => (
+                  <div key={ind}>
+                    <div className={styles.wishlistProductDataContainer}>
+                      <div
+                        className={styles.wishlistProductImageAndNameContainer}
+                      >
+                        <Image
+                          className={styles.wishlistProductImage}
+                          src={item?.image}
+                          alt="Product"
+                        />
+                        <p className={styles.wishlistProductName}>
+                          {item?.name}
+                        </p>
+                      </div>
 
-                    <div
-                      className={
-                        styles.wishlistProductPriceBtnAmdStockContainer
-                      }
-                    >
-                      <div className={styles.wishlistPriceAndInStockContainer}>
-                        <p className={styles.currentPrice}>${item?.price}</p>
-                        <div className={styles.currentPrice}>
-                          <div className={styles.cartCounterContainer}>
-                            <button
-                              className={styles.cartCounterBtn}
-                              onClick={decrement}
-                            >
-                              -
-                            </button>
-                            <span className={styles.cartCounterCounter}>
-                              {count}
-                            </span>
-                            <butt
-                              className={styles.cartCounterBtn}
-                              onClick={increment}
-                            >
-                              +
-                            </butt>
+                      <div
+                        className={
+                          styles.wishlistProductPriceBtnAmdStockContainer
+                        }
+                      >
+                        <div
+                          className={styles.wishlistPriceAndInStockContainer}
+                        >
+                          <p className={styles.currentPrice}>${item?.price}</p>
+                          <div className={styles.currentPrice}>
+                            <div className={styles.cartCounterContainer}>
+                              <button
+                                className={styles.cartCounterBtn}
+                                onClick={decrement}
+                              >
+                                -
+                              </button>
+                              <span className={styles.cartCounterCounter}>
+                                {count}
+                              </span>
+                              <butt
+                                className={styles.cartCounterBtn}
+                                onClick={increment}
+                              >
+                                +
+                              </butt>
+                            </div>
                           </div>
+                          <p className={styles.wishlistInStockRed}>
+                            ${count * item?.price}
+                          </p>
+                          <p>
+                            <RxCross1
+                              className={styles.crossIcon}
+                              onClick={() => removeCart(item?.id)}
+                            />
+                          </p>
                         </div>
-                        <p className={styles.wishlistInStockRed}>
-                          ${count * item?.price}
-                        </p>
-                        <p>
-                          <RxCross1
-                            className={styles.crossIcon}
-                            onClick={() => removeCart(item?.id)}
-                          />
-                        </p>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
 
-            <div className={styles.checkoutAllDataContainer}>
-              <h3 className={styles.cartTotals}>Cart totals</h3>
-              <p className={styles.subTotalAndAllPrice}>
-                <span className={styles.shoppingTotal}>subtotal</span>
-                <span className={styles.shoppingTotalPrice}>$71500</span>
-              </p>
-              <span className={styles.checkoutHrLine} />
-              <div className={styles.shoppingInfoContainer}>
-                <p className={styles.shoppingTotal}>Shopping</p>
-                <p className={styles.shoppingCategory}>
-                  <span>free Shopping</span>
-                  <span>local pickup: $3.00</span>
-                  <span>flat rate: $10.00</span>
+              <div className={styles.checkoutAllDataContainer}>
+                <h3 className={styles.cartTotals}>Cart totals</h3>
+                <p className={styles.subTotalAndAllPrice}>
+                  <span className={styles.shoppingTotal}>subtotal</span>
+                  <span className={styles.shoppingTotalPrice}>$71500</span>
                 </p>
+                <span className={styles.checkoutHrLine} />
+                <div className={styles.shoppingInfoContainer}>
+                  <p className={styles.shoppingTotal}>Shopping</p>
+                  <p className={styles.shoppingCategory}>
+                    <span>free Shopping</span>
+                    <span>local pickup: $3.00</span>
+                    <span>flat rate: $10.00</span>
+                  </p>
+                </div>
+                <span className={styles.checkoutHrLine} />
+                <div className={styles.allTotalPriceContainer}>
+                  <p className={styles.shoppingTotal}>total</p>
+                  <p className={styles.shoppingTotalPrice}>$71500</p>
+                </div>
+                <TransparentButton
+                  className={styles.btn}
+                  btnName={"Proceed to checkout"}
+                  btnUrl={"/checkout"}
+                />
               </div>
-              <span className={styles.checkoutHrLine} />
-              <div className={styles.allTotalPriceContainer}>
-                <p className={styles.shoppingTotal}>total</p>
-                <p className={styles.shoppingTotalPrice}>$71500</p>
-              </div>
-              <TransparentButton
-                className={styles.btn}
-                btnName={"Proceed to checkout"}
-                btnUrl={"/checkout"}
-              />
+            </section>
+
+            <div className={styles.youMayBeInterestedContainer}>
+              <YouMayBeInterested />
             </div>
-          </section>
+          </>
         )}
       </section>
     </main>

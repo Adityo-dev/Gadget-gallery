@@ -49,3 +49,40 @@
   border: 2px solid #e1dcdc;
   border-radius: 0.625rem;
 }
+
+/* @media screen and (min-width: 700px) and (max-width: 1000px) { */
+@media screen and (max-width: 1000px) {
+  .dealAllInfoDataContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .limitedDealInfoContainer {
+    grid-column: 1/-1;
+    padding: 4rem 1.875rem 3rem 1.875rem;
+  }
+
+  .dealTopTitle {
+    font-size: 0.93rem;
+  }
+
+  .dealTitle {
+    font-size: 1.563rem;
+    font-weight: 800;
+    margin: 0.75rem 0;
+  }
+
+  .dealSubTitle {
+    font-size: 0.93rem;
+  }
+
+  .timerContainer {
+    margin-top: 2rem;
+  }
+
+  .limitedDealProductInfoContainer {
+    grid-column: 1/-1;
+    border: 2px solid #e1dcdc;
+    border-radius: 0.625rem;
+  }
+}

@@ -24,7 +24,7 @@ import product3_3 from "../../../assets/images/products/camera/4.png";
 
 const dealData = [
   {
-    image: [product0_1, product0_3, product0_2, product0],
+    image: [product0_1, product0_3, product0_2, product0, product0, product0],
     name: "samsung galaxy",
     title: "Samsung Galaxy S23 Ultra, Factory Unlocked, 512GB",
     rating: "4.5",

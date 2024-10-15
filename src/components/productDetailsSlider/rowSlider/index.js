@@ -27,7 +27,7 @@ function ProductDetailsRowSlider({ cartData }) {
     vertical: true,
     verticalSwiping: true,
     focusOnSelect: true,
-    infinite: false,
+    infinite: true,
     arrows: false,
   };
 

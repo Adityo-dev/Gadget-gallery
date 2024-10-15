@@ -1,5 +1,4 @@
 "use client";
-
 import { createContext, useContext, useReducer } from "react";
 import reducer from "../reducer/CartReducer";
 
@@ -7,9 +6,6 @@ const CartContext = createContext();
 
 const initialState = {
   cart: [],
-  // total_item: "",
-  // total_amount: "",
-  // shopping_fee: 50000,
 };
 
 const CartProvider = ({ children }) => {
