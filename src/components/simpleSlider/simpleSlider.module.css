@@ -261,14 +261,11 @@
     width: 60px;
     padding: 5px 5px;
     font-size: 0.7rem;
-    color: #fff;
     border-radius: 0 5px 5px 5px;
-    text-wrap: nowrap;
   }
 
   .productHot {
     width: 50px;
-    background-color: #dd2831;
   }
 
   .soldOut {
