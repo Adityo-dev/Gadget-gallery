@@ -282,7 +282,7 @@
   .productName {
     font-size: 1rem;
     font-weight: 600;
-    color: #848484;
+
     text-transform: capitalize;
     transition: all 0.3s;
   }
