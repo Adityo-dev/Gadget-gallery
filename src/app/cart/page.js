@@ -81,11 +81,17 @@ const Cart = () => {
                           styles.wishlistProductPriceBtnAmdStockContainer
                         }
                       >
+                        <div className={styles.productSmContainer}>
+                          <p className={styles.productPriceSm}>Price</p>
+                          <p className={styles.productQuantitySm}>Quantity</p>
+                          <p className={styles.productSubTotalSm}>Subtotal</p>
+                        </div>
                         <div
                           className={styles.wishlistPriceAndInStockContainer}
                         >
                           <p className={styles.currentPrice}>${item?.price}</p>
-                          <div className={styles.currentPrice}>
+
+                          <div className={styles.cartCounterSmContainer}>
                             <div className={styles.cartCounterContainer}>
                               <button
                                 className={styles.cartCounterBtn}
@@ -104,9 +110,11 @@ const Cart = () => {
                               </butt>
                             </div>
                           </div>
+
                           <p className={styles.wishlistInStockRed}>
                             ${count * item?.price}
                           </p>
+
                           <p>
                             <RxCross1
                               className={styles.crossIcon}

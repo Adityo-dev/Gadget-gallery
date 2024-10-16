@@ -182,3 +182,130 @@
 .youMayBeInterestedContainer {
   margin-top: 5rem;
 }
+
+.productPriceSm,
+.productQuantitySm,
+.productSubTotalSm {
+  display: none;
+}
+
+@media screen and (max-width: 1179px) {
+  .cartAllDataInfoDetailsContainer {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 1.5rem;
+  }
+
+  /* checkout All Data Container */
+  .checkoutAllDataContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .cartMainDataContainer {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cartDataContainer {
+    width: 100%;
+    height: 100%;
+  }
+
+  .productCategoryContainer {
+    display: none;
+  }
+
+  /*  */
+  .wishlistProductDataContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border: 1px solid #ebebeb;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .wishlistProductImageAndNameContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .wishlistProductImage {
+    width: 100%;
+    max-width: 110px;
+    height: 100px;
+  }
+
+  .wishlistProductName {
+    font-size: 1rem;
+    line-height: 25px;
+    text-transform: capitalize;
+  }
+
+  .productSmContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .wishlistPriceAndInStockContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .currentPrice,
+  .wishlistInStockRed {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .wishlistProductPriceBtnAmdStockContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .crossIcon {
+    position: absolute;
+    top: 15px;
+    right: 12px;
+    font-size: 1.1rem;
+  }
+
+  /* product counter  */
+
+  .cartCounterContainer {
+    width: 70px;
+  }
+
+  .cartCounterBtn {
+    font-size: 1rem;
+    padding: 3px 10px;
+  }
+
+  .productPriceSm,
+  .productQuantitySm,
+  .productSubTotalSm {
+    display: block;
+  }
+
+  .productQuantitySm,
+  .cartCounterSmContainer {
+    width: 100%;
+    border-top: 1px dotted #ededed;
+    border-bottom: 1px dotted #ededed;
+    padding: 0.6rem 0;
+  }
+  .productQuantitySm {
+    padding: 0.77rem 0;
+  }
+}
