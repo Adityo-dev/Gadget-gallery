@@ -25,6 +25,7 @@ import { IoWatchOutline } from "react-icons/io5";
 import { PiSpeakerHifi } from "react-icons/pi";
 import { TbAperture } from "react-icons/tb";
 import { GoGift } from "react-icons/go";
+import { IoSearchOutline } from "react-icons/io5";
 
 const navData = [
   {
@@ -50,10 +51,21 @@ const navData = [
         },
       },
       {
+        info: {
+          icon: <IoSearchOutline />,
+          title: "search",
+          url: "",
+        },
+      },
+
+      {
         info: { icon: <FaRegUser />, title: "my account", url: "/" },
       },
       {
         info: { icon: <LuShoppingCart />, title: "my cart", url: "/cart" },
+      },
+      {
+        info: { icon: <LuAlignJustify />, title: "my cart", url: "" },
       },
     ],
 
@@ -398,6 +410,10 @@ const NavigationBar = () => {
                         ind > 0
                           ? styles.centerNavRightDataInfoContainer
                           : styles.centerNavRightDataInfoContainerNone
+                      } ${
+                        ind === 1 || ind === 4
+                          ? styles.centerNavRightDataInfoContainerLgNone
+                          : ""
                       }`}
                       key={ind}
                     >

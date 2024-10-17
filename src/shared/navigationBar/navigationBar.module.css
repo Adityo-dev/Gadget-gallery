@@ -116,9 +116,17 @@
   gap: 8px;
 }
 
+.centerNavRightDataInfoContainerLgNone {
+  display: none;
+}
+
 .centerNavRightDataIcon {
   font-size: 22px;
   margin-top: 6px;
+}
+
+.LgStyle {
+  display: none;
 }
 
 .centerNavRightDataText {
@@ -276,17 +284,93 @@
 
 /* responsive css */
 @media screen and (max-width: 750px) {
-  /* Navigation bar Top section data style */
   .topNavAllDataContainer,
-  .centerNavAllDataContainer,
   .bottomNavAllDataContainer {
     display: none;
   }
 
   /* responsive css phone */
+  /* Navigation bar Center section data style */
+  .centerNavAllDataContainer {
+    padding: 10px 0 10px 10px;
+  }
+
+  .gadgetGalleryLogo {
+    max-width: 130px;
+    height: 50px;
+  }
+
+  .searchFieldContainer {
+    display: none;
+  }
+
+  .centerNavRightDataInfoContainerNone {
+    display: none;
+  }
+
+  .centerNavRightDataInfoContainerLgNone {
+    display: block;
+  }
+
+  /* .allCategories {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-wrap: nowrap;
+    text-transform: capitalize;
+    padding: 0 30px;
+    border-right: 1px solid #000000;
+    height: 50px;
+    border-radius: 0 2px 2px 0;
+  } */
+
+  /* 
+  .angleDownIcon {
+    padding: 0 2px;
+  } */
+
+  /* .searchField {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    color: #353333;
+    border: none;
+    padding: 5px 20px;
+    font-size: 1rem;
+  } */
+  /* 
+  .searchButton {
+    background-color: #0068c8;
+    color: #fff;
+    border: none;
+    padding: 17px 30px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+  } */
+
+  /* .searchButton:hover {
+    background-color: #1a74c9;
+  } */
+
+  .centerNavRightDataContainer {
+    display: flex;
+    gap: 20px;
+  }
+
+  .centerNavRightDataIcon {
+    font-size: 20px;
+    margin-top: 0px;
+  }
+
+  .centerNavRightDataText {
+    display: none;
+  }
 }
 
-@media screen and (min-width: 750px) and (max-width: 1179px) {
+@media screen and (min-width: 751px) and (max-width: 1179px) {
   /* Navigation bar Center section data style */
   .centerNavAllDataContainer {
     gap: 30px;
