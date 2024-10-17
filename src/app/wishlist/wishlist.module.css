@@ -82,6 +82,10 @@
   justify-content: space-between;
 }
 
+.priceSmContainer {
+  display: none;
+}
+
 .priceContainer {
   display: flex;
   align-items: center;
@@ -151,4 +155,148 @@
   font-size: 20px;
   color: #848484;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1179px) {
+  .productCategoryContainer {
+    width: 67%;
+  }
+
+  .productPriceAndStorkContainer {
+    width: 46%;
+  }
+
+  /*  */
+
+  .wishlistProductImageAndNameContainer {
+    width: 40%;
+  }
+
+  .wishlistProductName {
+    width: 80%;
+  }
+
+  .wishlistPriceAndInStockContainer {
+    width: 45%;
+  }
+
+  .wishlistProductPriceBtnAmdStockContainer {
+    width: 70%;
+  }
+
+  .wishlistBtnAndCross {
+    gap: 40px;
+    padding-right: 0px;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1178px) {
+  .wishlistProductImageAndNameContainer {
+    width: 45%;
+  }
+
+  .wishlistProductName {
+    width: 95%;
+  }
+
+  .wishlistProductPriceBtnAmdStockContainer {
+    width: 55%;
+  }
+
+  .productCategoryContainer {
+    display: none;
+  }
+
+  /*  */
+  .priceSmContainer {
+    display: block;
+    margin-top: 8px;
+  }
+
+  .priceContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .wishlistAllInfoDataSectionContainer {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .productCategoryContainer {
+    display: none;
+  }
+
+  .wishlistAllDataContainer {
+    border: none;
+  }
+
+  /*  */
+  .wishlistProductDataContainer {
+    position: relative;
+    flex-direction: column;
+    border: 1px solid #ebebeb;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .wishlistProductImageAndNameContainer {
+    width: 100%;
+  }
+
+  .wishlistProductImage {
+    width: 100%;
+    max-width: 110px;
+    height: 100px;
+  }
+
+  .wishlistProductName {
+    width: 100%;
+  }
+
+  .priceSmContainer {
+    display: block;
+    margin-top: 8px;
+  }
+
+  .priceContainer {
+    display: none;
+  }
+
+  .wishlistInStock,
+  .wishlistInStockRed {
+    font-size: 0.8rem;
+  }
+
+  .wishlistProductPriceBtnAmdStockContainer {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .wishlistAddToCartBtn {
+    width: 100%;
+    padding: 10px 26px;
+  }
+
+  .wishlistBtnAndCross {
+    padding-right: 0;
+  }
+
+  .crossIcon {
+    position: absolute;
+    top: 15px;
+    right: 12px;
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .wishlistProductImageAndNameContainer {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
 }

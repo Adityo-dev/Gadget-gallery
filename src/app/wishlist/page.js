@@ -50,7 +50,20 @@ const Wishlist = () => {
                       src={item?.image}
                       alt="Product"
                     />
-                    <p className={styles.wishlistProductName}>{item?.title}</p>
+                    <div>
+                      <p className={styles.wishlistProductName}>
+                        {item?.title}
+                      </p>
+
+                      <p className={styles.priceSmContainer}>
+                        <span className={styles.currentPrice}>
+                          ${item?.currentPrice}
+                        </span>
+                        <del className={styles.oldPrice}>
+                          $<span>{item?.oldPrice}</span>
+                        </del>
+                      </p>
+                    </div>
                   </div>
 
                   <div
@@ -72,7 +85,7 @@ const Wishlist = () => {
                             : styles.wishlistInStock
                         }
                       >
-                        <GoCheck className={styles.wishlistCheckIcon} />{" "}
+                        <GoCheck className={styles.wishlistCheckIcon} />
                         {item.soldOut === true ? "out Stock" : "In Stock"}
                       </p>
                     </div>
