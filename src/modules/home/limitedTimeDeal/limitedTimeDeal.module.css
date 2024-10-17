@@ -86,3 +86,26 @@
     border-radius: 0.625rem;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .allDataContainer {
+    padding: 0 0.938rem;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1350px) {
+  .dealTitle {
+    font-size: 1.563rem;
+    font-weight: 800;
+    margin: 0.75rem 0;
+  }
+
+  .limitedDealProductInfoContainer {
+    width: 100%;
+    height: 350px;
+  }
+
+  .limitedDealInfoContainer {
+    padding: 2rem 1.875rem 1.5rem 1.875rem;
+  }
+}
