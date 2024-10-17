@@ -62,33 +62,25 @@ const Cart = () => {
 
                 {cart.map((item, ind) => (
                   <div key={ind}>
-                    <div className={styles.wishlistProductDataContainer}>
-                      <div
-                        className={styles.wishlistProductImageAndNameContainer}
-                      >
+                    <div className={styles.cartProductDataContainer}>
+                      <div className={styles.cartProductImageAndNameContainer}>
                         <Image
-                          className={styles.wishlistProductImage}
+                          className={styles.cartProductImage}
                           src={item?.image}
                           alt="Product"
                         />
-                        <p className={styles.wishlistProductName}>
-                          {item?.name}
-                        </p>
+                        <p className={styles.cartProductName}>{item?.name}</p>
                       </div>
 
                       <div
-                        className={
-                          styles.wishlistProductPriceBtnAmdStockContainer
-                        }
+                        className={styles.cartProductPriceBtnAmdStockContainer}
                       >
                         <div className={styles.productSmContainer}>
                           <p className={styles.productPriceSm}>Price</p>
                           <p className={styles.productQuantitySm}>Quantity</p>
                           <p className={styles.productSubTotalSm}>Subtotal</p>
                         </div>
-                        <div
-                          className={styles.wishlistPriceAndInStockContainer}
-                        >
+                        <div className={styles.cartPriceAndInStockContainer}>
                           <p className={styles.currentPrice}>${item?.price}</p>
 
                           <div className={styles.cartCounterSmContainer}>
@@ -111,7 +103,7 @@ const Cart = () => {
                             </div>
                           </div>
 
-                          <p className={styles.wishlistInStockRed}>
+                          <p className={styles.cartInStockRed}>
                             ${count * item?.price}
                           </p>
 
