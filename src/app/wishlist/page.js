@@ -1,11 +1,10 @@
-// components/Wishlist.js
 "use client";
 import styles from "./wishlist.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
 import { useWishlist } from "@/components/context/WishlistContext";
-import image from "../../assets/images/products/games/4.png";
+import { useCartContext } from "@/components/context/CartContext";
 import { GoCheck } from "react-icons/go";
 import { RxCross1 } from "react-icons/rx";
 
@@ -16,6 +15,8 @@ const breadcrumbItems = [
 
 const Wishlist = () => {
   const { wishlistItems, removeFromWishlist } = useWishlist();
+  // add to shopping Cart
+  const { addToCart, removeCart } = useCartContext();
 
   return (
     <section className={styles.wishlistAllInfoAllDataContainer}>
@@ -56,12 +57,16 @@ const Wishlist = () => {
                       </p>
 
                       <p className={styles.priceSmContainer}>
-                        <span className={styles.currentPrice}>
-                          ${item?.currentPrice}
-                        </span>
-                        <del className={styles.oldPrice}>
-                          $<span>{item?.oldPrice}</span>
-                        </del>
+                        {item.currentPrice && (
+                          <span className={styles.currentPrice}>
+                            ${item?.currentPrice}
+                          </span>
+                        )}
+                        {item.oldPrice && (
+                          <del className={styles.oldPrice}>
+                            $<span>{item?.oldPrice}</span>
+                          </del>
+                        )}
                       </p>
                     </div>
                   </div>
@@ -71,12 +76,16 @@ const Wishlist = () => {
                   >
                     <div className={styles.wishlistPriceAndInStockContainer}>
                       <p className={styles.priceContainer}>
-                        <span className={styles.currentPrice}>
-                          ${item?.currentPrice}
-                        </span>
-                        <del className={styles.oldPrice}>
-                          $<span>{item?.oldPrice}</span>
-                        </del>
+                        {item.currentPrice && (
+                          <span className={styles.currentPrice}>
+                            ${item?.currentPrice}
+                          </span>
+                        )}
+                        {item.oldPrice && (
+                          <del className={styles.oldPrice}>
+                            $<span>{item?.oldPrice}</span>
+                          </del>
+                        )}
                       </p>
                       <p
                         className={
@@ -91,9 +100,19 @@ const Wishlist = () => {
                     </div>
 
                     <div className={styles.wishlistBtnAndCross}>
-                      <button className={styles.wishlistAddToCartBtn}>
-                        Select options
-                      </button>
+                      {item?.soldOut === false ? (
+                        <button
+                          onClick={() => {
+                            addToCart(item.name, item.title, item);
+                            removeFromWishlist(item.title);
+                          }}
+                          className={styles.wishlistAddToCartBtn}
+                        >
+                          Add to Cart
+                        </button>
+                      ) : (
+                        ""
+                      )}
                       <RxCross1
                         className={styles.crossIcon}
                         onClick={() => removeFromWishlist(item.title)}

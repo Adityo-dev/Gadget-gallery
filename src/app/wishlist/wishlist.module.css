@@ -64,7 +64,8 @@
 }
 
 .wishlistProductImage {
-  width: 110px;
+  width: 100%;
+  max-width: 110px;
   height: 100px;
 }
 
@@ -245,12 +246,6 @@
 
   .wishlistProductImageAndNameContainer {
     width: 100%;
-  }
-
-  .wishlistProductImage {
-    width: 100%;
-    max-width: 110px;
-    height: 100px;
   }
 
   .wishlistProductName {
