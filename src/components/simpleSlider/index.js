@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import ProductDetailsRowSlider from "@/components/productDetailsSlider/rowSlider";
 import DynamicRating from "../rating";
+import TransparentButton from "../buttonGroup/transparentButton";
 // slider data
 
 function SimpleSlider({ dealData }) {
@@ -65,7 +66,9 @@ function SimpleSlider({ dealData }) {
                   )}
                 </p>
 
-                <button className={styles.btnAddToCart}>Add to cart</button>
+                <div className={styles.btnAddToCart}>
+                  <TransparentButton btnName={"Add to cart"} btnUrl={""} />
+                </div>
               </div>
             </div>
           </div>
