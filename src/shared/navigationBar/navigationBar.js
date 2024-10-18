@@ -6,6 +6,14 @@ import Link from "next/link";
 // mui
 import * as React from "react";
 import Badge from "@mui/material/Badge";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
 
 // import icon
 import ggLogo from "../../assets/icons/navBar/gadget-gallery-logo.png";
@@ -342,6 +350,56 @@ const navData = [
 const NavigationBar = () => {
   const { cart } = useCartContext();
   const { wishlistItems } = useWishlist();
+
+  const [state, setState] = React.useState({
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: 250 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <LuAlignJustify>
+                {index % 2 === 0 ? <LuAlignJustify /> : <LuAlignJustify />}
+              </LuAlignJustify>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {["All mail", "Trash", "Spam"].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <LuAlignJustify>
+                {index % 2 === 0 ? <LuAlignJustify /> : <LuAlignJustify />}
+              </LuAlignJustify>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
   return (
     <>
       {/* data phone 750px  */}
@@ -412,6 +470,16 @@ const NavigationBar = () => {
             <div>
               {navData.map((data, ind) => (
                 <div className={styles.centerNavRightDataContainer} key={ind}>
+                  <div>
+                    <Button onClick={toggleDrawer("right", true)}>Open</Button>
+                    <Drawer
+                      anchor="right"
+                      open={state.right}
+                      onClose={toggleDrawer("right", false)}
+                    >
+                      {list("right")}
+                    </Drawer>
+                  </div>
                   {data?.centerNavData?.map((item, ind) => (
                     <Link
                       href={item?.info?.url}
