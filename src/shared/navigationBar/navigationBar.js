@@ -347,280 +347,321 @@ const navData = [
   },
 ];
 
-const NavigationBar = () => {
-  const { cart } = useCartContext();
-  const { wishlistItems } = useWishlist();
+const SearchField = () => (
+  <div className={styles.searchFieldContainer}>
+    <p className={styles.allCategories}>
+      <span>all categories</span>
+      <TfiAngleDown className={styles.angleDownIcon} />
+    </p>
+    <input
+      className={styles.searchField}
+      type="search"
+      id="search"
+      name="search"
+      placeholder="Search for products"
+    />
+    <button className={styles.searchButton}>search</button>
+  </div>
+);
 
-  const [state, setState] = React.useState({
-    right: false,
-  });
+const TopNavSection = ({ navData }) => (
+  <section className={styles.topNavAllDataContainer}>
+    <div className={styles.topNavDataContainer}>
+      {navData.map((item, ind) => (
+        <div className={styles.topNavInfoContainer} key={ind}>
+          <div className={styles.topNavInfoContainer}>
+            <p>{item?.topNavData?.language?.[0]}</p>
+            <p>{item?.topNavData?.typeOfMoney?.[0]}</p>
+            <p className={styles.topNavFreeShipping}>
+              Free Shipping On All Orders Over $100
+            </p>
+          </div>
+          <div className={styles.topNavInfoContainer}>
+            <FcElectricity className={styles.electricIcon} />
+            {item?.topNavData?.navCategoryList?.map((categoryList, index) => (
+              <Link
+                key={index}
+                href={categoryList?.pathName}
+                className={`${
+                  index === 0
+                    ? styles.categoryListHighlightText
+                    : styles.categoryListText
+                }`}
+              >
+                {categoryList?.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+);
 
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
+const CenterNavSection = ({
+  navData,
+  toggleSearchDrawer,
+  toggleMenuDrawer,
+  open,
+  open1,
+  cart,
+}) => (
+  <section>
+    <div className={styles.centerNavAllDataContainer}>
+      <Link href="/">
+        <Image
+          className={styles.gadgetGalleryLogo}
+          src={ggLogo}
+          alt="gadgets gallery logo"
+        />
+      </Link>
+      <SearchField />
+      <div>
+        {navData.map((data, ind) => (
+          <div className={styles.centerNavRightDataContainer} key={ind}>
+            <Drawer
+              anchor="right"
+              open={open}
+              onClose={toggleSearchDrawer(false)}
+            >
+              <Box
+                sx={{ width: 500 }}
+                role="presentation"
+                onClick={toggleSearchDrawer(false)}
+              >
+                <h1>Hi</h1>
+                <SearchField />
+              </Box>
+            </Drawer>
 
-    setState({ ...state, [anchor]: open });
-  };
-
-  const list = (anchor) => (
-    <Box
-      sx={{ width: 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <LuAlignJustify>
-                {index % 2 === 0 ? <LuAlignJustify /> : <LuAlignJustify />}
-              </LuAlignJustify>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <LuAlignJustify>
-                {index % 2 === 0 ? <LuAlignJustify /> : <LuAlignJustify />}
-              </LuAlignJustify>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-  return (
-    <>
-      {/* data phone 750px  */}
-
-      {/* data 750px up */}
-      <main className={styles.navigationBarAllDataContainer}>
-        {/* Navigation bar Top section data */}
-        <section className={styles.topNavAllDataContainer}>
-          <div className={styles.topNavDataContainer}>
-            {navData.map((item, ind) => (
-              <div className={styles.topNavInfoContainer} key={ind}>
-                <div className={styles.topNavInfoContainer}>
-                  <p>{item?.topNavData?.language?.[0]}</p>
-                  <p>{item?.topNavData?.typeOfMoney?.[0]}</p>
-                  <p className={styles.topNavFreeShipping}>
-                    Free Shipping On All Orders Over $100
+            <Drawer
+              anchor="right"
+              open={open1}
+              onClose={toggleMenuDrawer(false)}
+            >
+              <Box
+                sx={{ width: 500 }}
+                role="presentation"
+                onClick={toggleMenuDrawer(false)}
+              >
+                <div className={styles.shopCategoriesAllTextContainer}>
+                  <div className={styles.shopCategoriesTextAndIconContainer}>
+                    <LuAlignJustify className={styles.alignJustifyIcon} />
+                    <p className={styles.shopCategoriesText}>Shop Categories</p>
+                  </div>
+                  <TfiAngleDown className={styles.arrowDownIcon} />
+                  <div className={styles.shopCategoriesALlDataInfoContainer}>
+                    {navData.map((bottomNav, ind) => (
+                      <div key={ind}>
+                        {bottomNav?.bottomNavData?.shopCategories.map(
+                          (categoryData, index) => (
+                            <Link
+                              href={`${
+                                categoryData?.url === "shop"
+                                  ? "/"
+                                  : `/product-category/${categoryData?.url}`
+                              }`}
+                              className={
+                                styles.navCategoryListHrLineAndCategory
+                              }
+                              key={index}
+                            >
+                              <div
+                                className={
+                                  styles.navCategoryListItemAllDataContainer
+                                }
+                              >
+                                <p
+                                  className={
+                                    styles.navCategoryListItemContainer
+                                  }
+                                >
+                                  <span className={styles.categoryDataIcon}>
+                                    {categoryData?.icon}
+                                  </span>
+                                  <span className={styles.categoryDataName}>
+                                    {categoryData?.categoryName}
+                                  </span>
+                                </p>
+                                <TfiAngleRight
+                                  className={styles.angleRightIcon}
+                                />
+                              </div>
+                            </Link>
+                          )
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Box>
+            </Drawer>
+            {data?.centerNavData?.map((item, index) => (
+              <Link
+                href={item?.info?.url}
+                className={`${
+                  index > 0
+                    ? styles.centerNavRightDataInfoContainer
+                    : styles.centerNavRightDataInfoContainerNone
+                } ${
+                  index === 1 || index === 4
+                    ? styles.centerNavRightDataInfoContainerLgNone
+                    : ""
+                }`}
+                key={index}
+              >
+                {index === 3 ? (
+                  <Badge badgeContent={cart.length} color="primary">
+                    <p className={styles.centerNavRightDataIcon}>
+                      {item?.info?.icon}
+                    </p>
+                  </Badge>
+                ) : (
+                  <p className={styles.centerNavRightDataIcon}>
+                    {index === 1 ? (
+                      <span onClick={toggleSearchDrawer(true)}>
+                        {item?.info?.icon}
+                      </span>
+                    ) : (
+                      <span className={styles.centerNavRightDataIcon}>
+                        {index === 4 ? (
+                          <span onClick={toggleMenuDrawer(true)}>
+                            {item?.info?.icon}
+                          </span>
+                        ) : (
+                          <span>{item?.info?.icon}</span>
+                        )}
+                      </span>
+                    )}
                   </p>
-                </div>
+                )}
 
-                <div className={styles.topNavInfoContainer}>
-                  <FcElectricity className={styles.electricIcon} />
+                <p className={styles.centerNavRightDataText}>
+                  <span
+                    className={`${index > 0 ? styles.centerNavRightText : ""}`}
+                  >
+                    {item?.info?.title}
+                  </span>
+                  <br />
+                  <span className={styles.centerNavHelpNumber}>
+                    {item?.info?.helpNumber}
+                  </span>
+                </p>
+              </Link>
+            ))}
+            <p></p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
-                  {item?.topNavData?.navCategoryList?.map(
-                    (categoryList, ind) => (
-                      <Link
-                        key={ind}
-                        href={categoryList?.pathName}
-                        className={`${
-                          ind === 0
-                            ? styles.categoryListHighlightText
-                            : styles.categoryListText
-                        }`}
+const BottomNavSection = ({ navData, wishlistItems }) => (
+  <section className={styles.bottomNavHrLine}>
+    <div className={styles.bottomNavAllDataContainer}>
+      <div className={styles.shopCategoriesALlDataContainer}>
+        <div className={styles.shopCategoriesAllTextContainer}>
+          <div className={styles.shopCategoriesTextAndIconContainer}>
+            <LuAlignJustify className={styles.alignJustifyIcon} />
+            <p className={styles.shopCategoriesText}>Shop Categories</p>
+          </div>
+          <TfiAngleDown className={styles.arrowDownIcon} />
+          <div className={styles.shopCategoriesALlDataInfoContainer}>
+            {navData.map((bottomNav, ind) => (
+              <div key={ind}>
+                {bottomNav?.bottomNavData?.shopCategories.map(
+                  (categoryData, index) => (
+                    <Link
+                      href={`${
+                        categoryData?.url === "shop"
+                          ? "/"
+                          : `/product-category/${categoryData?.url}`
+                      }`}
+                      className={styles.navCategoryListHrLineAndCategory}
+                      key={index}
+                    >
+                      <div
+                        className={styles.navCategoryListItemAllDataContainer}
                       >
-                        {categoryList?.name}
-                      </Link>
-                    )
-                  )}
-                </div>
+                        <p className={styles.navCategoryListItemContainer}>
+                          <span className={styles.categoryDataIcon}>
+                            {categoryData?.icon}
+                          </span>
+                          <span className={styles.categoryDataName}>
+                            {categoryData?.categoryName}
+                          </span>
+                        </p>
+                        <TfiAngleRight className={styles.angleRightIcon} />
+                      </div>
+                    </Link>
+                  )
+                )}
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Navigation bar Center section data */}
-        <section>
-          <div className={styles.centerNavAllDataContainer}>
-            <Link href={"/"}>
-              <Image
-                className={styles.gadgetGalleryLogo}
-                src={ggLogo}
-                alt="gadgets gallery logo"
-              />
-            </Link>
-            <div className={styles.searchFieldContainer}>
-              <p className={styles.allCategories}>
-                <span>all categories</span>
-                <TfiAngleDown className={styles.angleDownIcon} />
-              </p>
-              <input
-                className={styles.searchField}
-                type="search"
-                id="search"
-                name="search"
-                placeholder="Search for products"
-              />
-              <button className={styles.searchButton}>search</button>
-            </div>
-            <div>
-              {navData.map((data, ind) => (
-                <div className={styles.centerNavRightDataContainer} key={ind}>
-                  <div>
-                    <Button onClick={toggleDrawer("right", true)}>Open</Button>
-                    <Drawer
-                      anchor="right"
-                      open={state.right}
-                      onClose={toggleDrawer("right", false)}
-                    >
-                      {list("right")}
-                    </Drawer>
-                  </div>
-                  {data?.centerNavData?.map((item, ind) => (
-                    <Link
-                      href={item?.info?.url}
-                      className={`${
-                        ind > 0
-                          ? styles.centerNavRightDataInfoContainer
-                          : styles.centerNavRightDataInfoContainerNone
-                      } ${
-                        ind === 1 || ind === 4
-                          ? styles.centerNavRightDataInfoContainerLgNone
-                          : ""
-                      }`}
-                      key={ind}
-                    >
-                      {ind === 3 ? (
-                        <Badge badgeContent={cart.length} color="primary">
-                          <p className={styles.centerNavRightDataIcon}>
-                            {item?.info?.icon}
-                          </p>
-                        </Badge>
-                      ) : (
-                        <p className={styles.centerNavRightDataIcon}>
-                          {item?.info?.icon}
-                        </p>
-                      )}
-
-                      <p className={styles.centerNavRightDataText}>
-                        <span
-                          className={`${
-                            ind > 0 ? styles.centerNavRightText : ""
-                          }`}
-                        >
-                          {item?.info?.title}
-                        </span>
-                        <br />
-
-                        <span className={styles.centerNavHelpNumber}>
-                          {item?.info?.helpNumber}
-                        </span>
-                      </p>
-                    </Link>
-                  ))}
-                  <p></p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* nav bar bottom section data */}
-        <section className={styles.bottomNavHrLine}>
-          <div className={styles.bottomNavAllDataContainer}>
-            <div className={styles.shopCategoriesALlDataContainer}>
-              <div className={styles.shopCategoriesAllTextContainer}>
-                <div className={styles.shopCategoriesTextAndIconContainer}>
-                  <LuAlignJustify className={styles.alignJustifyIcon} />
-                  <p className={styles.shopCategoriesText}>Shop Categories</p>
-                </div>
-                <TfiAngleDown className={styles.arrowDownIcon} />
-                {/* shop categories Data  */}
-                <div className={styles.shopCategoriesALlDataInfoContainer}>
-                  {navData.map((bottomNav, ind) => (
-                    <div key={ind}>
-                      {bottomNav?.bottomNavData?.shopCategories.map(
-                        (categoryData, ind) => (
-                          <Link
-                            href={`${
-                              categoryData?.url === "shop"
-                                ? "/"
-                                : /product-category/
-                            }${categoryData?.url}`}
-                            className={styles.navCategoryListHrLineAndCategory}
-                            key={ind}
-                          >
-                            <div
-                              className={
-                                styles.navCategoryListItemAllDataContainer
-                              }
-                            >
-                              <p
-                                className={styles.navCategoryListItemContainer}
-                              >
-                                <span className={styles.categoryDataIcon}>
-                                  {categoryData?.icon}
-                                </span>
-                                <span className={styles.categoryDataName}>
-                                  {categoryData?.categoryName}
-                                </span>
-                              </p>
-
-                              <TfiAngleRight
-                                className={styles.angleRightIcon}
-                              />
-                            </div>
-                          </Link>
-                        )
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                {navData?.map((bottomNav, ind) => (
-                  <div
-                    className={styles.bottomNavListAllDataContainer}
-                    key={ind}
+        </div>
+        <div>
+          {navData.map((bottomNav, ind) => (
+            <div className={styles.bottomNavListAllDataContainer} key={ind}>
+              {bottomNav?.bottomNavData?.navListItems.map(
+                (navListData, index) => (
+                  <Link
+                    key={index}
+                    href={`${index > 0 ? "/product-category/" : ""}${
+                      navListData?.url
+                    }`}
                   >
-                    {bottomNav?.bottomNavData?.navListItems.map(
-                      (navListData, ind) => (
-                        <Link
-                          key={ind}
-                          href={`${ind > 0 ? /product-category/ : ""}${
-                            navListData?.url
-                          }`}
-                        >
-                          <p>{navListData?.categoryName}</p>
-                        </Link>
-                      )
-                    )}
-                  </div>
-                ))}
-              </div>
+                    <p>{navListData?.categoryName}</p>
+                  </Link>
+                )
+              )}
             </div>
+          ))}
+        </div>
+      </div>
+      <div className={styles.navCategoryRightList}>
+        <Badge badgeContent={wishlistItems.length} color="primary">
+          <Link href="/wishlist">
+            <TfiHeart className={styles.bottomNavRightHeartIcon} />
+          </Link>
+        </Badge>
+        <p className={styles.navCategoryListRightItemHrLine}></p>
+        <Link className={styles.bottomNavRightPcBuilder} href="/pc_builder">
+          Pc Builder
+        </Link>
+      </div>
+    </div>
+  </section>
+);
 
-            <div className={styles.navCategoryRightList}>
-              <Badge badgeContent={wishlistItems.length} color="primary">
-                <Link href={"/wishlist"}>
-                  <TfiHeart className={styles.bottomNavRightHeartIcon} />
-                </Link>
-              </Badge>
-              <p className={styles.navCategoryListRightItemHrLine}></p>
-              <Link
-                className={styles.bottomNavRightPcBuilder}
-                href={"/pc_builder"}
-              >
-                Pc Builder
-              </Link>
-            </div>
-          </div>
-        </section>
+const NavigationBar = () => {
+  const { cart } = useCartContext();
+  const { wishlistItems } = useWishlist();
+  const [open, setOpen] = React.useState(false);
+  const [open1, setOpen1] = React.useState(false);
+
+  const toggleSearchDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
+
+  const toggleMenuDrawer = (newOpen1) => () => {
+    setOpen1(newOpen1);
+  };
+
+  return (
+    <>
+      <main className={styles.navigationBarAllDataContainer}>
+        <TopNavSection navData={navData} />
+        <CenterNavSection
+          navData={navData}
+          toggleSearchDrawer={toggleSearchDrawer}
+          toggleMenuDrawer={toggleMenuDrawer}
+          open={open}
+          open1={open1}
+          cart={cart}
+        />
+        <BottomNavSection navData={navData} wishlistItems={wishlistItems} />
       </main>
     </>
   );
