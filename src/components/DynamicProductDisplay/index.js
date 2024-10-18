@@ -1,23 +1,13 @@
 "use client";
 import styles from "./dynamicProductDisplay.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
-// import components
+// Import components
 import ColumnCart from "../products-cart/columnCart";
-import * as React from "react";
-import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
 import DynamicBreadcrumb from "../dynamicBreadcrumb";
 import ArrowSlider from "../arrowSlider";
-
-// import icons
-import games_icon from "../../assets/icons/product-category-icon/icon-games.png";
-import headphone_icon from "../../assets/icons/product-category-icon/icon-headphone.png";
-import laptops_icon from "../../assets/icons/product-category-icon/icon-laptops.png";
-import phone_icon from "../../assets/icons/product-category-icon/icon-phone.png";
-import speaker_icon from "../../assets/icons/product-category-icon/icon-speaker.png";
-import television_icon from "../../assets/icons/product-category-icon/icon-television.png";
-
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
@@ -27,38 +17,22 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Checkbox from "@mui/material/Checkbox";
 import ListItemText from "@mui/material/ListItemText";
 
+// Import icons
+import games_icon from "../../assets/icons/product-category-icon/icon-games.png";
+import headphone_icon from "../../assets/icons/product-category-icon/icon-headphone.png";
+import laptops_icon from "../../assets/icons/product-category-icon/icon-laptops.png";
+import phone_icon from "../../assets/icons/product-category-icon/icon-phone.png";
+import speaker_icon from "../../assets/icons/product-category-icon/icon-speaker.png";
+import television_icon from "../../assets/icons/product-category-icon/icon-television.png";
+
 // Sample product categories
 const productCategory = [
-  {
-    icon: laptops_icon,
-    title: "laptops",
-    backgroundColor: "#DAEBE9",
-  },
-  {
-    icon: games_icon,
-    title: "games",
-    backgroundColor: "#EBDDE8",
-  },
-  {
-    icon: phone_icon,
-    title: "smartphones",
-    backgroundColor: "#F2E1D7",
-  },
-  {
-    icon: television_icon,
-    title: "television",
-    backgroundColor: "#E9E5EF",
-  },
-  {
-    icon: headphone_icon,
-    title: "headphone",
-    backgroundColor: "#EEEAE0",
-  },
-  {
-    icon: speaker_icon,
-    title: "speakers",
-    backgroundColor: "#F2F5DE",
-  },
+  { icon: laptops_icon, title: "Laptops", backgroundColor: "#DAEBE9" },
+  { icon: games_icon, title: "Games", backgroundColor: "#EBDDE8" },
+  { icon: phone_icon, title: "Smartphones", backgroundColor: "#F2E1D7" },
+  { icon: television_icon, title: "Television", backgroundColor: "#E9E5EF" },
+  { icon: headphone_icon, title: "Headphones", backgroundColor: "#EEEAE0" },
+  { icon: speaker_icon, title: "Speakers", backgroundColor: "#F2F5DE" },
 ];
 
 const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
@@ -73,6 +47,8 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
   const [maxPrice, setMaxPrice] = useState(initialMaxPrice);
   const [filterData, setFilterData] = useState({});
   const [checkedItems, setCheckedItems] = useState({});
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
 
   const breadcrumbItems = [
     { label: "Home", href: "/" },
@@ -80,18 +56,58 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
   ];
 
   const fetchFilterData = async (products) => {
-    const colors = [...new Set(products.map((product) => product.color))];
-    const models = [...new Set(products.map((product) => product.model))];
-    const stock = [...new Set(products.map((product) => product.stock))];
-    const types = [...new Set(products.map((product) => product.type))];
-    const brands = [...new Set(products.map((product) => product.brand))];
+    const colors = [
+      ...new Set(
+        products.flatMap((product) =>
+          product.filters
+            .filter((f) => f.filterName === "color")
+            .map((f) => f.value)
+        )
+      ),
+    ];
+    const models = [
+      ...new Set(
+        products.flatMap((product) =>
+          product.filters
+            .filter((f) => f.filterName === "model")
+            .map((f) => f.value)
+        )
+      ),
+    ];
+    const stocks = [
+      ...new Set(
+        products.flatMap((product) =>
+          product.filters
+            .filter((f) => f.filterName === "stock")
+            .map((f) => f.value)
+        )
+      ),
+    ];
+    const types = [
+      ...new Set(
+        products.flatMap((product) =>
+          product.filters
+            .filter((f) => f.filterName === "type")
+            .map((f) => f.value)
+        )
+      ),
+    ];
+    const brands = [
+      ...new Set(
+        products.flatMap((product) =>
+          product.filters
+            .filter((f) => f.filterName === "brand")
+            .map((f) => f.value)
+        )
+      ),
+    ];
 
     return {
       colors: colors.map((color) => ({ id: color, label: color })),
       brands: brands.map((brand) => ({ id: brand, label: brand })),
       models: models.map((model) => ({ id: model, label: model })),
       types: types.map((type) => ({ id: type, label: type })),
-      stock: stock.map((stockItem) => ({ id: stockItem, label: stockItem })),
+      stocks: stocks.map((stockItem) => ({ id: stockItem, label: stockItem })),
     };
   };
 
@@ -99,7 +115,6 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
     const loadData = async () => {
       const data = await fetchFilterData(products);
       setFilterData(data);
-
       const initialCheckedItems = {};
       Object.keys(data).forEach((key) => {
         initialCheckedItems[key] = [];
@@ -110,7 +125,7 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
   }, [products]);
 
   const handleToggle = (category, value) => {
-    const currentChecked = checkedItems[category];
+    const currentChecked = checkedItems[category] || [];
     const newChecked = currentChecked.includes(value)
       ? currentChecked.filter((item) => item !== value)
       : [...currentChecked, value];
@@ -121,32 +136,50 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
     });
   };
 
-  const filterProducts = () => {
+  const filterProducts = useMemo(() => {
     return products.filter((product) => {
-      const { currentPrice, color, model, stock, type, brand } = product;
-
+      const { currentPrice } = product;
       const isWithinPriceRange =
         currentPrice >= minPrice && currentPrice <= maxPrice;
-      const selectedColors = checkedItems.colors || [];
-      const matchesColor = selectedColors.length
-        ? selectedColors.includes(color)
-        : true;
-      const selectedModels = checkedItems.models || [];
-      const matchesModel = selectedModels.length
-        ? selectedModels.includes(model)
-        : true;
-      const selectedStock = checkedItems.stock || [];
-      const matchesStock = selectedStock.length
-        ? selectedStock.includes(stock)
-        : true;
-      const selectedTypes = checkedItems.types || [];
-      const matchesType = selectedTypes.length
-        ? selectedTypes.includes(type)
-        : true;
-      const selectedBrands = checkedItems.brands || [];
-      const matchesBrand = selectedBrands.length
-        ? selectedBrands.includes(brand)
-        : true; // Checking brand matches
+
+      const matchesColor =
+        !checkedItems.colors ||
+        checkedItems.colors.length === 0 ||
+        product.filters.some(
+          (f) =>
+            f.filterName === "color" && checkedItems.colors.includes(f.value)
+        );
+
+      const matchesModel =
+        !checkedItems.models ||
+        checkedItems.models.length === 0 ||
+        product.filters.some(
+          (f) =>
+            f.filterName === "model" && checkedItems.models.includes(f.value)
+        );
+
+      const matchesStock =
+        !checkedItems.stocks ||
+        checkedItems.stocks.length === 0 ||
+        product.filters.some(
+          (f) =>
+            f.filterName === "stock" && checkedItems.stocks.includes(f.value)
+        );
+
+      const matchesType =
+        !checkedItems.types ||
+        checkedItems.types.length === 0 ||
+        product.filters.some(
+          (f) => f.filterName === "type" && checkedItems.types.includes(f.value)
+        );
+
+      const matchesBrand =
+        !checkedItems.brands ||
+        checkedItems.brands.length === 0 ||
+        product.filters.some(
+          (f) =>
+            f.filterName === "brand" && checkedItems.brands.includes(f.value)
+        );
 
       return (
         isWithinPriceRange &&
@@ -157,106 +190,69 @@ const DynamicProductDetailsDisplay = ({ DynamicPageName, products }) => {
         matchesBrand
       );
     });
-  };
+  }, [products, minPrice, maxPrice, checkedItems]);
 
-  const renderFilterSection = (filterKey, filterTitle) => {
-    if (!filterData[filterKey]) return null;
-
-    return (
-      <Accordion className={styles.filteringDataContainer} defaultExpanded>
-        <AccordionSummary>
-          <Typography>{filterTitle}</Typography>
-        </AccordionSummary>
-        <div>
-          <List className={styles.filteringInfoContainer} dense>
-            {filterData[filterKey].map((item) => {
-              const labelId = `${filterKey}-filter-${item.id}-label`;
-
-              return (
-                <ListItemButton
-                  key={item.id}
-                  onClick={() => handleToggle(filterKey, item.id)}
-                >
-                  <ListItemIcon>
-                    <Checkbox
-                      checked={checkedItems[filterKey]?.includes(item.id)}
-                      tabIndex={-1}
-                      disableRipple
-                      inputProps={{ "aria-labelledby": labelId }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText id={labelId} primary={item.label} />
-                </ListItemButton>
-              );
-            })}
-          </List>
-        </div>
-      </Accordion>
-    );
-  };
+  // Paginate products
+  const totalPages = Math.ceil(filterProducts.length / itemsPerPage);
+  const displayedProducts = filterProducts.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   return (
     <>
-      <section>
-        <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
-      </section>
-
+      <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
       <section className={styles.productCategoryDetailsAllDataContainer}>
-        <h1 className={styles.pageName}>{DynamicPageName}</h1>
-        <div>
-          <ArrowSlider categoryData={productCategory} />
-        </div>
-
         <div className={styles.productCategoryDetailsCartAndAsideContainer}>
           <div className={styles.productCategoryDetailsAsideContainer}>
-            <div className={styles.priceRangeContainer}>
-              <p className={styles.priceRangeTitle}>Price Range</p>
-              <div className={styles.priceRangeInputContainer}>
-                <input
-                  className={styles.priceRangeInput}
-                  type="number"
-                  value={minPrice}
-                  onChange={(e) => setMinPrice(Number(e.target.value))}
-                />
-                <input
-                  className={styles.priceRangeInput}
-                  type="number"
-                  value={maxPrice}
-                  onChange={(e) => setMaxPrice(Number(e.target.value))}
-                />
-              </div>
-            </div>
-            <main>
-              <div>
-                {Object.keys(filterData).map((key) =>
-                  renderFilterSection(
-                    key,
-                    key.charAt(0).toUpperCase() + key.slice(1)
-                  )
-                )}
-              </div>
-            </main>
+            <h3>Filters</h3>
+            {Object.entries(filterData).map(([key, values]) => (
+              <Accordion key={key}>
+                <AccordionSummary>
+                  <Typography>
+                    {key.charAt(0).toUpperCase() + key.slice(1)}
+                  </Typography>
+                </AccordionSummary>
+                <List>
+                  {values.map((item) => (
+                    <ListItemButton
+                      key={item.id}
+                      role={undefined}
+                      onClick={() => handleToggle(key, item.id)}
+                      dense
+                    >
+                      <ListItemIcon>
+                        <Checkbox
+                          edge="start"
+                          checked={
+                            checkedItems[key]?.includes(item.id) || false
+                          }
+                          tabIndex={-1}
+                          disableRipple
+                        />
+                      </ListItemIcon>
+                      <ListItemText primary={item.label} />
+                    </ListItemButton>
+                  ))}
+                </List>
+              </Accordion>
+            ))}
           </div>
-
           <div className={styles.productCategoryDetailsCartContainer}>
-            {filterProducts().map((data, ind) => (
-              <ColumnCart key={ind} cartData={data} />
+            {displayedProducts.map((product, index) => (
+              <ColumnCart key={index} cartData={product} />
             ))}
           </div>
         </div>
       </section>
-
-      <div className={styles.productPaginationContainer}>
-        {products.length > 20 && (
-          <Stack spacing={2}>
-            <Pagination
-              count={Math.ceil(products.length / 20)}
-              variant="outlined"
-              shape="rounded"
-            />
-          </Stack>
-        )}
-      </div>
+      <Stack spacing={2}>
+        <Pagination
+          count={totalPages}
+          variant="outlined"
+          color="primary"
+          onChange={(event, value) => setCurrentPage(value)}
+        />
+      </Stack>
     </>
   );
 };
