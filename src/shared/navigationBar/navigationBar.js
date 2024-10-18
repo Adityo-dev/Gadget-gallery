@@ -1,6 +1,11 @@
+"use client";
 import styles from "./navigationBar.module.css";
 import Image from "next/image";
 import Link from "next/link";
+
+// mui
+import * as React from "react";
+import Badge from "@mui/material/Badge";
 
 // import icon
 import ggLogo from "../../assets/icons/navBar/gadget-gallery-logo.png";
@@ -26,6 +31,8 @@ import { PiSpeakerHifi } from "react-icons/pi";
 import { TbAperture } from "react-icons/tb";
 import { GoGift } from "react-icons/go";
 import { IoSearchOutline } from "react-icons/io5";
+import { useCartContext } from "@/components/context/CartContext";
+import { useWishlist } from "@/components/context/WishlistContext";
 
 const navData = [
   {
@@ -333,6 +340,8 @@ const navData = [
 ];
 
 const NavigationBar = () => {
+  const { cart } = useCartContext();
+  const { wishlistItems } = useWishlist();
   return (
     <>
       {/* data phone 750px  */}
@@ -417,9 +426,18 @@ const NavigationBar = () => {
                       }`}
                       key={ind}
                     >
-                      <p className={styles.centerNavRightDataIcon}>
-                        {item?.info?.icon}
-                      </p>
+                      {ind === 3 ? (
+                        <Badge badgeContent={cart.length} color="primary">
+                          <p className={styles.centerNavRightDataIcon}>
+                            {item?.info?.icon}
+                          </p>
+                        </Badge>
+                      ) : (
+                        <p className={styles.centerNavRightDataIcon}>
+                          {item?.info?.icon}
+                        </p>
+                      )}
+
                       <p className={styles.centerNavRightDataText}>
                         <span
                           className={`${
@@ -520,9 +538,11 @@ const NavigationBar = () => {
             </div>
 
             <div className={styles.navCategoryRightList}>
-              <Link href={"/wishlist"}>
-                <TfiHeart className={styles.bottomNavRightHeartIcon} />
-              </Link>
+              <Badge badgeContent={wishlistItems.length} color="primary">
+                <Link href={"/wishlist"}>
+                  <TfiHeart className={styles.bottomNavRightHeartIcon} />
+                </Link>
+              </Badge>
               <p className={styles.navCategoryListRightItemHrLine}></p>
               <Link
                 className={styles.bottomNavRightPcBuilder}
