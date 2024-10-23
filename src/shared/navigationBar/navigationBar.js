@@ -14,6 +14,9 @@ import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
 
 // import icon
 import ggLogo from "../../assets/icons/navBar/gadget-gallery-logo.png";
@@ -406,6 +409,35 @@ const TopNavSection = ({ navData }) => (
   </section>
 );
 
+function CustomTabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+    </div>
+  );
+}
+
+CustomTabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  };
+}
+
 const CenterNavSection = ({
   navData,
   toggleSearchDrawer,
@@ -413,6 +445,9 @@ const CenterNavSection = ({
   open,
   open1,
   cart,
+  wishlistItems,
+  tabValue,
+  tabHandleChange,
 }) => (
   <section>
     <div className={styles.centerNavAllDataContainer}>
@@ -445,66 +480,39 @@ const CenterNavSection = ({
               </Drawer>
             </div>
 
-            <Drawer
-              anchor="right"
-              open={open1}
-              onClose={toggleMenuDrawer(false)}
-            >
-              <Box
-                sx={{ width: 500, height: 300 }}
-                role="presentation"
-                onClick={toggleMenuDrawer(false)}
-              >
-                <div className={styles.shopCategoriesAllTextContainer}>
-                  <div className={styles.shopCategoriesTextAndIconContainer}>
-                    <LuAlignJustify className={styles.alignJustifyIcon} />
-                    <p className={styles.shopCategoriesText}>Shop Categories</p>
+            <Drawer anchor="right" open={open1}>
+              <Box className={styles.searchDrawerContainer} role="presentation">
+                <div className={styles.NavCategoryAllConTainerSm}>
+                  <Box sx={{ width: "100%" }}>
+                    <Box className={styles.tabBoxContainer}>
+                      <Tabs value={tabValue} onChange={tabHandleChange}>
+                        <Tab
+                          label={
+                            <LuAlignJustify
+                              className={styles.tabLuAlignJustify}
+                            />
+                          }
+                          {...a11yProps(0)}
+                        />
+                        <Tab label="Shop Categories" {...a11yProps(1)} />
+                      </Tabs>
+                    </Box>
+                    <div className={styles.tabBoxInfoContainer}>
+                      <CustomTabPanel value={tabValue} index={0}>
+                        <NavBarList navData={navData} />
+                      </CustomTabPanel>
+                      <CustomTabPanel value={tabValue} index={1}>
+                        <NavBarCategories navData={navData} />
+                      </CustomTabPanel>
+                    </div>
+                  </Box>
+                  <div className={styles.DrawerCrossBtn}>
+                    <RxCross1 onClick={toggleMenuDrawer(false)} />
                   </div>
+                </div>
 
-                  <TfiAngleDown className={styles.arrowDownIcon} />
-                  <div className={styles.shopCategoriesALlDataInfoContainer}>
-                    {navData.map((bottomNav, ind) => (
-                      <div key={ind}>
-                        {bottomNav?.bottomNavData?.shopCategories.map(
-                          (categoryData, index) => (
-                            <Link
-                              href={`${
-                                categoryData?.url === "shop"
-                                  ? "/"
-                                  : `/product-category/${categoryData?.url}`
-                              }`}
-                              className={
-                                styles.navCategoryListHrLineAndCategory
-                              }
-                              key={index}
-                            >
-                              <div
-                                className={
-                                  styles.navCategoryListItemAllDataContainer
-                                }
-                              >
-                                <p
-                                  className={
-                                    styles.navCategoryListItemContainer
-                                  }
-                                >
-                                  <span className={styles.categoryDataIcon}>
-                                    {categoryData?.icon}
-                                  </span>
-                                  <span className={styles.categoryDataName}>
-                                    {categoryData?.categoryName}
-                                  </span>
-                                </p>
-                                <TfiAngleRight
-                                  className={styles.angleRightIcon}
-                                />
-                              </div>
-                            </Link>
-                          )
-                        )}
-                      </div>
-                    ))}
-                  </div>
+                <div className={styles.NavCategoryRightListConTainerSm}>
+                  <NavCategoryRightList wishlistItems={wishlistItems} />
                 </div>
               </Box>
             </Drawer>
@@ -569,6 +577,114 @@ const CenterNavSection = ({
   </section>
 );
 
+const NavBarList = ({ navData }) => {
+  return (
+    <div>
+      {navData.map((bottomNav, ind) => (
+        <div key={ind} className={styles.bottomNavListAllDataContainer}>
+          {bottomNav?.bottomNavData?.navListItems.map((navListData, index) => (
+            <Link
+              key={index}
+              href={`${index > 0 ? "/product-category/" : ""}${
+                navListData?.url
+              }`}
+            >
+              <p>{navListData?.categoryName}</p>
+            </Link>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const NavBarCategories = ({ navData }) => {
+  return (
+    <div>
+      {navData.map((bottomNav, ind) => (
+        <div key={ind}>
+          {bottomNav?.bottomNavData?.shopCategories.map(
+            (categoryData, index) => (
+              <div
+                key={index}
+                className={styles.navCategoryListHrLineAndCategory}
+              >
+                <Link
+                  href={`${
+                    categoryData?.url === "shop"
+                      ? "/shop"
+                      : `/product-category/${categoryData?.url}`
+                  }`}
+                >
+                  <div className={styles.navCategoryListItemAllDataContainer}>
+                    <p className={styles.navCategoryListItemContainer}>
+                      <span className={styles.categoryDataIcon}>
+                        {categoryData?.icon}
+                      </span>
+                      <span className={styles.categoryDataName}>
+                        {categoryData?.categoryName}
+                      </span>
+                    </p>
+                    {categoryData?.subCategories && (
+                      <TfiAngleRight className={styles.angleRightIcon} />
+                    )}
+                  </div>
+                </Link>
+
+                {categoryData?.subCategories && (
+                  <div className={styles.subCategoriesAllDataContainer}>
+                    <div className={styles.subCategoriesAllInfoContainer}>
+                      {categoryData?.subCategories?.map(
+                        (subCategoryData, index) => (
+                          <div key={index}>
+                            <p className={styles.subCategoriesName}>
+                              {subCategoryData?.subCategoriesName}
+                            </p>
+
+                            <div className={styles.subCategoriesListContainer}>
+                              {subCategoryData?.subCategoriesList.map(
+                                (list, index) => (
+                                  <Link
+                                    href={`/product-category/${list.url}`}
+                                    className={styles.subCategoriesList}
+                                    key={index}
+                                  >
+                                    {list.list}
+                                  </Link>
+                                )
+                              )}
+                            </div>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const NavCategoryRightList = ({ wishlistItems }) => {
+  return (
+    <div className={styles.navCategoryRightList}>
+      <Badge badgeContent={wishlistItems.length} color="primary">
+        <Link href="/wishlist">
+          <TfiHeart className={styles.bottomNavRightHeartIcon} />
+        </Link>
+      </Badge>
+      <p className={styles.navCategoryListRightItemHrLine}></p>
+      <Link className={styles.bottomNavRightPcBuilder} href="/pc_builder">
+        Pc Builder
+      </Link>
+    </div>
+  );
+};
+
 const BottomNavSection = ({ navData, wishlistItems }) => (
   <section className={styles.bottomNavHrLine}>
     <div className={styles.bottomNavAllDataContainer}>
@@ -580,107 +696,15 @@ const BottomNavSection = ({ navData, wishlistItems }) => (
           </div>
           <TfiAngleDown className={styles.arrowDownIcon} />
           <div className={styles.shopCategoriesALlDataInfoContainer}>
-            {navData.map((bottomNav, ind) => (
-              <div key={ind}>
-                {bottomNav?.bottomNavData?.shopCategories.map(
-                  (categoryData, index) => (
-                    <div
-                      key={index}
-                      className={styles.navCategoryListHrLineAndCategory}
-                    >
-                      <Link
-                        href={`${
-                          categoryData?.url === "shop"
-                            ? "/shop"
-                            : `/product-category/${categoryData?.url}`
-                        }`}
-                      >
-                        <div
-                          className={styles.navCategoryListItemAllDataContainer}
-                        >
-                          <p className={styles.navCategoryListItemContainer}>
-                            <span className={styles.categoryDataIcon}>
-                              {categoryData?.icon}
-                            </span>
-                            <span className={styles.categoryDataName}>
-                              {categoryData?.categoryName}
-                            </span>
-                          </p>
-                          {categoryData?.subCategories && (
-                            <TfiAngleRight className={styles.angleRightIcon} />
-                          )}
-                        </div>
-                      </Link>
-
-                      {categoryData?.subCategories && (
-                        <div className={styles.subCategoriesAllDataContainer}>
-                          <div className={styles.subCategoriesAllInfoContainer}>
-                            {categoryData?.subCategories?.map(
-                              (subCategoryData, index) => (
-                                <div key={index}>
-                                  <p className={styles.subCategoriesName}>
-                                    {subCategoryData?.subCategoriesName}
-                                  </p>
-
-                                  <div
-                                    className={
-                                      styles.subCategoriesListContainer
-                                    }
-                                  >
-                                    {subCategoryData?.subCategoriesList.map(
-                                      (list, index) => (
-                                        <Link
-                                          href={`/product-category/${list.url}`}
-                                          className={styles.subCategoriesList}
-                                          key={index}
-                                        >
-                                          {list.list}
-                                        </Link>
-                                      )
-                                    )}
-                                  </div>
-                                </div>
-                              )
-                            )}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  )
-                )}
-              </div>
-            ))}
+            <NavBarCategories navData={navData} />
           </div>
         </div>
         <div>
-          {navData.map((bottomNav, ind) => (
-            <div className={styles.bottomNavListAllDataContainer} key={ind}>
-              {bottomNav?.bottomNavData?.navListItems.map(
-                (navListData, index) => (
-                  <Link
-                    key={index}
-                    href={`${index > 0 ? "/product-category/" : ""}${
-                      navListData?.url
-                    }`}
-                  >
-                    <p>{navListData?.categoryName}</p>
-                  </Link>
-                )
-              )}
-            </div>
-          ))}
+          <NavBarList navData={navData} />
         </div>
       </div>
-      <div className={styles.navCategoryRightList}>
-        <Badge badgeContent={wishlistItems.length} color="primary">
-          <Link href="/wishlist">
-            <TfiHeart className={styles.bottomNavRightHeartIcon} />
-          </Link>
-        </Badge>
-        <p className={styles.navCategoryListRightItemHrLine}></p>
-        <Link className={styles.bottomNavRightPcBuilder} href="/pc_builder">
-          Pc Builder
-        </Link>
+      <div>
+        <NavCategoryRightList wishlistItems={wishlistItems} />
       </div>
     </div>
   </section>
@@ -691,6 +715,12 @@ const NavigationBar = () => {
   const { wishlistItems } = useWishlist();
   const [open, setOpen] = React.useState(false);
   const [open1, setOpen1] = React.useState(false);
+  //
+  const [tabValue, setTabValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setTabValue(newValue);
+  };
 
   const toggleSearchDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -711,6 +741,9 @@ const NavigationBar = () => {
           open={open}
           open1={open1}
           cart={cart}
+          wishlistItems={wishlistItems}
+          tabHandleChange={handleChange}
+          tabValue={tabValue}
         />
         <BottomNavSection navData={navData} wishlistItems={wishlistItems} />
       </main>

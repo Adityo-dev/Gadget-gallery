@@ -464,6 +464,69 @@
   .centerNavRightDataText {
     display: none;
   }
+
+  /* bottom  */
+  .tabBoxContainer {
+    width: 100%;
+    position: relative;
+  }
+
+  .NavCategoryAllConTainerSm {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: 52px;
+    background-color: #efefef;
+  }
+
+  .tabBoxInfoContainer {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  .tabLuAlignJustify {
+    font-size: 1.8rem;
+  }
+
+  .NavCategoryRightListConTainerSm {
+    border-top: 1px solid #ebebeb;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  /*  */
+  .bottomNavListAllDataContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: start;
+    font-size: 1rem;
+    /* padding: 0 25px 0 0;
+    border-top: 1px solid #ebebeb; */
+  }
+  /*  */
+  .navCategoryRightList {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 0;
+  }
+
+  .bottomNavRightHeartIcon {
+    font-size: 1.5rem;
+  }
+
+  .navCategoryListRightItemHrLine {
+    display: none;
+  }
+
+  .bottomNavRightPcBuilder {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
 }
 
 @media screen and (min-width: 751px) and (max-width: 1179px) {
