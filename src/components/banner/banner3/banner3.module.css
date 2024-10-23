@@ -43,6 +43,7 @@
 
 .bannerImage {
   width: 100%;
+  max-width: 320px;
   height: 260px;
 
   margin-bottom: -5px;

@@ -94,7 +94,13 @@ const Wishlist = () => {
                             : styles.wishlistInStock
                         }
                       >
-                        <GoCheck className={styles.wishlistCheckIcon} />
+                        <span>
+                          {item.soldOut === true ? (
+                            <RxCross1 className={styles.wishlistCheckIcon} />
+                          ) : (
+                            <GoCheck className={styles.wishlistCheckIcon} />
+                          )}
+                        </span>
                         {item.soldOut === true ? "out Stock" : "In Stock"}
                       </p>
                     </div>

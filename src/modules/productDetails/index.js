@@ -71,10 +71,11 @@ const ProductDetails = ({ data }) => {
       </section>
 
       <section className={styles.productDetailsALlDataContainer}>
-        <div>
+        <div className={styles.productDetailsImageContainer}>
           <ProductDetailsColumnSlider />
         </div>
-        <div>
+
+        <div className={styles.productDetailsInfoContainer}>
           {productDetailsData.map((data, ind) => (
             <div key={ind}>
               <p className={styles.title}>{data?.title}</p>

@@ -438,6 +438,7 @@ const products = [
         currentPrice: "499.00",
         oldPrice: "599.00",
         discount: "17",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -456,6 +457,7 @@ const products = [
         currentPrice: "399.00",
         oldPrice: "499.00",
         discount: "20",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -474,6 +476,7 @@ const products = [
         currentPrice: "1399.00",
         oldPrice: "1599.00",
         discount: "12",
+        soldOut: true,
         hot: true,
         url: "",
         filters: [
@@ -492,6 +495,7 @@ const products = [
         currentPrice: "125.00",
         oldPrice: "150.00",
         discount: "17",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -510,6 +514,7 @@ const products = [
         currentPrice: "449.00",
         oldPrice: "549.00",
         discount: "18",
+        soldOut: true,
         hot: true,
         url: "",
         filters: [
@@ -528,6 +533,7 @@ const products = [
         currentPrice: "299.00",
         oldPrice: "399.00",
         discount: "25",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -546,6 +552,7 @@ const products = [
         currentPrice: "1299.00",
         oldPrice: "1399.00",
         discount: "7",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -564,6 +571,7 @@ const products = [
         currentPrice: "1198.00",
         oldPrice: "1299.00",
         discount: "8",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -582,6 +590,7 @@ const products = [
         currentPrice: "1199.00",
         oldPrice: "1299.00",
         discount: "8",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -618,6 +627,7 @@ const products = [
         currentPrice: "1699.00",
         oldPrice: "1799.00",
         discount: "6",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -636,6 +646,7 @@ const products = [
         currentPrice: "2499.00",
         oldPrice: "2599.00",
         discount: "3",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -654,6 +665,7 @@ const products = [
         currentPrice: "349.00",
         oldPrice: "399.00",
         discount: "13",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -672,6 +684,7 @@ const products = [
         currentPrice: "1999.00",
         oldPrice: "2099.00",
         discount: "5",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -691,6 +704,7 @@ const products = [
         oldPrice: "899.00",
         discount: "11",
         hot: true,
+        soldOut: false,
         url: "",
         filters: [
           { filterName: "color", value: "Gray" },
@@ -713,6 +727,7 @@ const products = [
         currentPrice: "348.00",
         oldPrice: "398.00",
         discount: "12",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -731,6 +746,7 @@ const products = [
         currentPrice: "249.00",
         oldPrice: "279.00",
         discount: "10",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -749,6 +765,7 @@ const products = [
         currentPrice: "379.00",
         oldPrice: "399.00",
         discount: "5",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -767,6 +784,7 @@ const products = [
         currentPrice: "169.00",
         oldPrice: "199.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -785,6 +803,7 @@ const products = [
         currentPrice: "99.00",
         oldPrice: "109.00",
         discount: "9",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -803,6 +822,7 @@ const products = [
         currentPrice: "89.00",
         oldPrice: "99.00",
         discount: "10",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -821,6 +841,7 @@ const products = [
         currentPrice: "99.00",
         oldPrice: "119.00",
         discount: "17",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -839,6 +860,7 @@ const products = [
         currentPrice: "349.00",
         oldPrice: "399.00",
         discount: "12",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -857,6 +879,7 @@ const products = [
         currentPrice: "499.00",
         oldPrice: "549.00",
         discount: "9",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -875,6 +898,7 @@ const products = [
         currentPrice: "249.00",
         oldPrice: "279.00",
         discount: "10",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -893,6 +917,7 @@ const products = [
         currentPrice: "199.00",
         oldPrice: "229.00",
         discount: "13",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -911,6 +936,7 @@ const products = [
         currentPrice: "79.00",
         oldPrice: "89.00",
         discount: "11",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -929,6 +955,7 @@ const products = [
         currentPrice: "99.00",
         oldPrice: "109.00",
         discount: "9",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -947,6 +974,7 @@ const products = [
         currentPrice: "99.00",
         oldPrice: "109.00",
         discount: "9",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -970,6 +998,7 @@ const products = [
         currentPrice: "79.99",
         oldPrice: "99.99",
         discount: "20",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -988,6 +1017,7 @@ const products = [
         currentPrice: "49.99",
         oldPrice: "59.99",
         discount: "17",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1006,6 +1036,7 @@ const products = [
         currentPrice: "89.99",
         oldPrice: "109.99",
         discount: "18",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1024,6 +1055,7 @@ const products = [
         currentPrice: "59.99",
         oldPrice: "69.99",
         discount: "14",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1042,6 +1074,7 @@ const products = [
         currentPrice: "299.99",
         oldPrice: "349.99",
         discount: "14",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1060,6 +1093,7 @@ const products = [
         currentPrice: "199.99",
         oldPrice: "239.99",
         discount: "17",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1078,6 +1112,7 @@ const products = [
         currentPrice: "299.99",
         oldPrice: "349.99",
         discount: "14",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1096,6 +1131,7 @@ const products = [
         currentPrice: "149.99",
         oldPrice: "179.99",
         discount: "17",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1114,6 +1150,7 @@ const products = [
         currentPrice: "299.99",
         oldPrice: "349.99",
         discount: "14",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1132,6 +1169,7 @@ const products = [
         currentPrice: "29.99",
         oldPrice: "39.99",
         discount: "25",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1150,6 +1188,7 @@ const products = [
         currentPrice: "89.99",
         oldPrice: "109.99",
         discount: "18",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1168,6 +1207,7 @@ const products = [
         currentPrice: "39.99",
         oldPrice: "49.99",
         discount: "20",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1186,6 +1226,7 @@ const products = [
         currentPrice: "29.99",
         oldPrice: "39.99",
         discount: "25",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1209,6 +1250,7 @@ const products = [
         currentPrice: "399.00",
         oldPrice: "499.00",
         discount: "20",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1227,6 +1269,7 @@ const products = [
         currentPrice: "299.00",
         oldPrice: "349.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1245,6 +1288,7 @@ const products = [
         currentPrice: "199.00",
         oldPrice: "249.00",
         discount: "20",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1263,6 +1307,7 @@ const products = [
         currentPrice: "499.00",
         oldPrice: "599.00",
         discount: "17",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1281,6 +1326,7 @@ const products = [
         currentPrice: "399.00",
         oldPrice: "499.00",
         discount: "20",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1299,6 +1345,7 @@ const products = [
         currentPrice: "129.00",
         oldPrice: "149.00",
         discount: "14",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1317,6 +1364,7 @@ const products = [
         currentPrice: "249.00",
         oldPrice: "299.00",
         discount: "17",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1335,6 +1383,7 @@ const products = [
         currentPrice: "299.00",
         oldPrice: "349.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1353,6 +1402,7 @@ const products = [
         currentPrice: "499.00",
         oldPrice: "599.00",
         discount: "17",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1371,6 +1421,7 @@ const products = [
         currentPrice: "199.00",
         oldPrice: "249.00",
         discount: "20",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1389,6 +1440,7 @@ const products = [
         currentPrice: "399.00",
         oldPrice: "499.00",
         discount: "20",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1407,6 +1459,7 @@ const products = [
         currentPrice: "699.00",
         oldPrice: "799.00",
         discount: "12",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1431,8 +1484,8 @@ const products = [
         currentPrice: "1499.99",
         oldPrice: "1799.99",
         discount: "17",
-        hot: true,
         soldOut: false,
+        hot: true,
         filters: [
           { filterName: "color", value: "Black" },
           { filterName: "model", value: "OLED55CXPUA" },
@@ -1450,8 +1503,8 @@ const products = [
         currentPrice: "1299.99",
         oldPrice: "1499.99",
         discount: "13",
-        hot: true,
         soldOut: false,
+        hot: true,
         filters: [
           { filterName: "color", value: "red" },
           { filterName: "model", value: "QN55Q80TAFXZA" },
@@ -1469,8 +1522,8 @@ const products = [
         currentPrice: "1999.99",
         oldPrice: "2199.99",
         discount: "9",
-        hot: true,
         soldOut: false,
+        hot: true,
         filters: [
           { filterName: "color", value: "Black" },
           { filterName: "model", value: "XBR55A8H" },
@@ -1488,8 +1541,8 @@ const products = [
         currentPrice: "799.99",
         oldPrice: "899.99",
         discount: "11",
-        hot: true,
         soldOut: false,
+        hot: true,
         filters: [
           { filterName: "color", value: "Black" },
           { filterName: "model", value: "55R635" },
@@ -1507,8 +1560,8 @@ const products = [
         currentPrice: "699.99",
         oldPrice: "799.99",
         discount: "13",
-        hot: true,
         soldOut: false,
+        hot: true,
         filters: [
           { filterName: "color", value: "silver" },
           { filterName: "model", value: "D-Series" },
@@ -1526,8 +1579,8 @@ const products = [
         currentPrice: "649.99",
         oldPrice: "749.99",
         discount: "13",
-        hot: true,
         soldOut: false,
+        hot: true,
         filters: [
           { filterName: "color", value: "Green" },
           { filterName: "model", value: "U6G" },
@@ -1545,8 +1598,8 @@ const products = [
         currentPrice: "549.99",
         oldPrice: "649.99",
         discount: "15",
-        hot: true,
         soldOut: false,
+        hot: true,
         filters: [
           { filterName: "color", value: "green" },
           { filterName: "model", value: "55PFL5602/F7" },
@@ -1564,8 +1617,8 @@ const products = [
         currentPrice: "499.99",
         oldPrice: "599.99",
         discount: "17",
-        hot: true,
         soldOut: false,
+        hot: true,
         filters: [
           { filterName: "color", value: "White" },
           { filterName: "model", value: "55BL2EA" },
@@ -1727,6 +1780,7 @@ const products = [
         currentPrice: "1527.00",
         oldPrice: "1795.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1745,6 +1799,7 @@ const products = [
         currentPrice: "1527.00",
         oldPrice: "1795.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1763,6 +1818,7 @@ const products = [
         currentPrice: "1527.00",
         oldPrice: "1795.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1781,6 +1837,7 @@ const products = [
         currentPrice: "1527.00",
         oldPrice: "1795.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1799,6 +1856,7 @@ const products = [
         currentPrice: "1527.00",
         oldPrice: "1795.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1817,6 +1875,7 @@ const products = [
         currentPrice: "1527.00",
         oldPrice: "1795.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1835,6 +1894,7 @@ const products = [
         currentPrice: "1527.00",
         oldPrice: "1795.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1853,6 +1913,7 @@ const products = [
         currentPrice: "1527.00",
         oldPrice: "1795.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1876,6 +1937,7 @@ const products = [
         currentPrice: "16.62",
         oldPrice: "",
         discount: "",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1894,6 +1956,7 @@ const products = [
         currentPrice: "40.06",
         oldPrice: "59.00",
         discount: "42",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1912,6 +1975,7 @@ const products = [
         currentPrice: "1527.00",
         oldPrice: "1795.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1930,6 +1994,7 @@ const products = [
         currentPrice: "1527.00",
         oldPrice: "1795.00",
         discount: "15",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1948,6 +2013,7 @@ const products = [
         currentPrice: "44.00",
         oldPrice: "",
         discount: "",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1966,6 +2032,7 @@ const products = [
         currentPrice: "49.99",
         oldPrice: "59.99",
         discount: "17",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -1984,6 +2051,7 @@ const products = [
         currentPrice: "249.00",
         oldPrice: "",
         discount: "",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [
@@ -2002,6 +2070,7 @@ const products = [
         currentPrice: "99.99",
         oldPrice: "109.99",
         discount: "9",
+        soldOut: false,
         hot: true,
         url: "",
         filters: [

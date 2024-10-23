@@ -54,12 +54,16 @@
 
 .searchFieldContainer {
   overflow: hidden;
+  width: 100%;
   display: flex;
   align-items: center;
-  width: 100%;
   border: 2px solid #0068c8;
   border-radius: 8px;
-  margin-left: 30px;
+}
+
+.centerSearchFieldContainer {
+  width: 100%;
+  display: block;
 }
 
 .allCategories {
@@ -102,6 +106,10 @@
 
 .searchButton:hover {
   background-color: #1a74c9;
+}
+
+.searchButtonSearchIcon {
+  display: none;
 }
 
 .centerNavRightDataContainer {
@@ -227,6 +235,7 @@
 
 .shopCategoriesALlDataInfoContainer {
   width: 100%;
+  max-width: 300px;
   position: absolute;
   top: 50px;
   background-color: #fff;
@@ -282,6 +291,52 @@
   text-transform: capitalize;
 }
 
+/* sub Categories All Data Container */
+
+.subCategoriesAllDataContainer {
+  max-width: 500px;
+  background-color: #fff;
+  position: absolute;
+  right: -432px;
+  border-top: 1px solid #ebebeb;
+  border-left: 1px solid #ebebeb;
+  display: none;
+  border-radius: 0 10px 10px 0;
+  padding-top: 5px;
+  z-index: 300;
+  padding: 30px 40px;
+  opacity: 0;
+}
+
+.navCategoryListHrLineAndCategory:hover .subCategoriesAllDataContainer {
+  display: block;
+  opacity: 1;
+}
+
+.subCategoriesAllInfoContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.subCategoriesName {
+  color: red;
+  text-wrap: nowrap;
+  margin-bottom: 12px;
+}
+
+.subCategoriesListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.subCategoriesList {
+  color: #000000;
+  font-size: 0.9rem;
+  text-wrap: nowrap;
+}
+
 /* responsive css */
 @media screen and (max-width: 750px) {
   .topNavAllDataContainer,
@@ -300,7 +355,7 @@
     height: 50px;
   }
 
-  .searchFieldContainer {
+  .centerSearchFieldContainer {
     display: none;
   }
 
@@ -355,6 +410,15 @@
     background-color: #1a74c9;
   } */
 
+  .searchButtonSearchText {
+    display: none;
+  }
+
+  .searchButtonSearchIcon {
+    font-size: 1rem;
+    display: block;
+  }
+
   .centerNavRightDataContainer {
     display: flex;
     gap: 20px;
@@ -376,8 +440,13 @@
     gap: 30px;
   }
 
-  .searchFieldContainer {
-    margin-left: 10px;
+  .searchButtonSearchText {
+    display: none;
+  }
+
+  .searchButtonSearchIcon {
+    font-size: 1rem;
+    display: block;
   }
 
   .centerNavRightDataInfoContainerNone,
@@ -471,7 +540,6 @@
   }
 
   .searchFieldContainer {
-    margin-left: 0;
     height: 48px;
   }
 
@@ -559,13 +627,13 @@
     font-size: 0.9rem;
   }
 
-  .centerNavRightText {
+  .centerNavRightText,
+  .searchButtonSearchText {
     display: none;
   }
-}
 
-@media screen and (min-width: 1276px) and (max-width: 1400px) {
-  .searchFieldContainer {
-    margin-left: 5px;
+  .searchButtonSearchIcon {
+    font-size: 1rem;
+    display: block;
   }
 }

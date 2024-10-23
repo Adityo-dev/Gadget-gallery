@@ -4,7 +4,7 @@
   max-height: 350px;
   height: 100%;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   flex-direction: column;
   background-color: #f4f4f4;
   padding: 10px 20px 20px 20px;
@@ -13,6 +13,7 @@
 
 .cartImage {
   width: 100%;
+  max-width: 230px;
   height: 220px;
 }
 

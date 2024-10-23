@@ -94,18 +94,18 @@ const navData = [
             {
               subCategoriesName: "Computers & Tablets",
               subCategoriesList: [
-                { list: "Laptops & Desktops", url: "" },
-                { list: "Tablets", url: "" },
+                { list: "Laptops & Desktops", url: "laptops&desktops" },
+                { list: "Tablets", url: "tablets" },
                 { list: "Monitors", url: "" },
-                { list: "Laptops", url: "" },
-                { list: "Accessories", url: "" },
-                { list: "Drones", url: "" },
+                { list: "Laptops", url: "laptops" },
+                { list: "Accessories", url: "accessories" },
+                { list: "Drones", url: "drones" },
               ],
             },
             {
               subCategoriesName: "Cell Phone",
               subCategoriesList: [
-                { list: "Smartphone", url: "" },
+                { list: "Smartphone", url: "smartphone" },
                 { list: "AT&T", url: "" },
                 { list: "iPhone", url: "" },
                 { list: "Prepaid Phones", url: "" },
@@ -116,7 +116,7 @@ const navData = [
             {
               subCategoriesName: "TV & Home Theater",
               subCategoriesList: [
-                { list: "Television", url: "" },
+                { list: "Television", url: "television" },
                 { list: '55" TVs', url: "" },
                 { list: '65" TVs', url: "" },
                 { list: "OLED TVs", url: "" },
@@ -143,15 +143,15 @@ const navData = [
             {
               subCategoriesList: [
                 { list: "Laptops & Desktops", url: "" },
-                { list: "Accessories", url: "" },
+                { list: "Accessories", url: "accessories" },
                 { list: "Chromebook", url: "" },
                 { list: "Computer Component", url: "" },
                 { list: "Desktops", url: "" },
                 { list: "iMac", url: "" },
-                { list: "Laptops", url: "" },
+                { list: "Laptops", url: "laptops" },
                 { list: "Macbook", url: "" },
                 { list: "Monitors", url: "" },
-                { list: "PC Gaming", url: "" },
+                { list: "PC Gaming", url: "gaming" },
                 { list: "Printers & Ink", url: "" },
                 { list: "Restored Computers", url: "" },
                 { list: "Windows Laptops", url: "" },
@@ -360,7 +360,10 @@ const SearchField = () => (
       name="search"
       placeholder="Search for products"
     />
-    <button className={styles.searchButton}>search</button>
+    <button className={styles.searchButton}>
+      <span className={styles.searchButtonSearchText}>search</span>
+      <IoSearchOutline className={styles.searchButtonSearchIcon} />
+    </button>
   </div>
 );
 
@@ -415,7 +418,11 @@ const CenterNavSection = ({
           alt="gadgets gallery logo"
         />
       </Link>
-      <SearchField />
+
+      <div className={styles.centerSearchFieldContainer}>
+        <SearchField />
+      </div>
+
       <div>
         {navData.map((data, ind) => (
           <div className={styles.centerNavRightDataContainer} key={ind}>
@@ -440,7 +447,7 @@ const CenterNavSection = ({
               onClose={toggleMenuDrawer(false)}
             >
               <Box
-                sx={{ width: 500 }}
+                sx={{ width: 500, height: 300 }}
                 role="presentation"
                 onClick={toggleMenuDrawer(false)}
               >
@@ -449,6 +456,7 @@ const CenterNavSection = ({
                     <LuAlignJustify className={styles.alignJustifyIcon} />
                     <p className={styles.shopCategoriesText}>Shop Categories</p>
                   </div>
+
                   <TfiAngleDown className={styles.arrowDownIcon} />
                   <div className={styles.shopCategoriesALlDataInfoContainer}>
                     {navData.map((bottomNav, ind) => (
@@ -496,6 +504,7 @@ const CenterNavSection = ({
                 </div>
               </Box>
             </Drawer>
+
             {data?.centerNavData?.map((item, index) => (
               <Link
                 href={item?.info?.url}
@@ -535,7 +544,6 @@ const CenterNavSection = ({
                     )}
                   </p>
                 )}
-
                 <p className={styles.centerNavRightDataText}>
                   <span
                     className={`${index > 0 ? styles.centerNavRightText : ""}`}
@@ -572,29 +580,68 @@ const BottomNavSection = ({ navData, wishlistItems }) => (
               <div key={ind}>
                 {bottomNav?.bottomNavData?.shopCategories.map(
                   (categoryData, index) => (
-                    <Link
-                      href={`${
-                        categoryData?.url === "shop"
-                          ? "/"
-                          : `/product-category/${categoryData?.url}`
-                      }`}
-                      className={styles.navCategoryListHrLineAndCategory}
+                    <div
                       key={index}
+                      className={styles.navCategoryListHrLineAndCategory}
                     >
-                      <div
-                        className={styles.navCategoryListItemAllDataContainer}
+                      <Link
+                        href={`${
+                          categoryData?.url === "shop"
+                            ? "/shop"
+                            : `/product-category/${categoryData?.url}`
+                        }`}
                       >
-                        <p className={styles.navCategoryListItemContainer}>
-                          <span className={styles.categoryDataIcon}>
-                            {categoryData?.icon}
-                          </span>
-                          <span className={styles.categoryDataName}>
-                            {categoryData?.categoryName}
-                          </span>
-                        </p>
-                        <TfiAngleRight className={styles.angleRightIcon} />
-                      </div>
-                    </Link>
+                        <div
+                          className={styles.navCategoryListItemAllDataContainer}
+                        >
+                          <p className={styles.navCategoryListItemContainer}>
+                            <span className={styles.categoryDataIcon}>
+                              {categoryData?.icon}
+                            </span>
+                            <span className={styles.categoryDataName}>
+                              {categoryData?.categoryName}
+                            </span>
+                          </p>
+                          {categoryData?.subCategories && (
+                            <TfiAngleRight className={styles.angleRightIcon} />
+                          )}
+                        </div>
+                      </Link>
+
+                      {categoryData?.subCategories && (
+                        <div className={styles.subCategoriesAllDataContainer}>
+                          <div className={styles.subCategoriesAllInfoContainer}>
+                            {categoryData?.subCategories?.map(
+                              (subCategoryData, index) => (
+                                <div key={index}>
+                                  <p className={styles.subCategoriesName}>
+                                    {subCategoryData?.subCategoriesName}
+                                  </p>
+
+                                  <div
+                                    className={
+                                      styles.subCategoriesListContainer
+                                    }
+                                  >
+                                    {subCategoryData?.subCategoriesList.map(
+                                      (list, index) => (
+                                        <Link
+                                          href={`/product-category/${list.url}`}
+                                          className={styles.subCategoriesList}
+                                          key={index}
+                                        >
+                                          {list.list}
+                                        </Link>
+                                      )
+                                    )}
+                                  </div>
+                                </div>
+                              )
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   )
                 )}
               </div>
