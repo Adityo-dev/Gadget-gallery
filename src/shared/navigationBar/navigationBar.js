@@ -39,6 +39,8 @@ import { PiSpeakerHifi } from "react-icons/pi";
 import { TbAperture } from "react-icons/tb";
 import { GoGift } from "react-icons/go";
 import { IoSearchOutline } from "react-icons/io5";
+import { RxCross1 } from "react-icons/rx";
+// import components
 import { useCartContext } from "@/components/context/CartContext";
 import { useWishlist } from "@/components/context/WishlistContext";
 
@@ -349,21 +351,24 @@ const navData = [
 
 const SearchField = () => (
   <div className={styles.searchFieldContainer}>
-    <p className={styles.allCategories}>
+    <div className={styles.allCategories}>
       <span>all categories</span>
       <TfiAngleDown className={styles.angleDownIcon} />
-    </p>
-    <input
-      className={styles.searchField}
-      type="search"
-      id="search"
-      name="search"
-      placeholder="Search for products"
-    />
-    <button className={styles.searchButton}>
-      <span className={styles.searchButtonSearchText}>search</span>
-      <IoSearchOutline className={styles.searchButtonSearchIcon} />
-    </button>
+    </div>
+
+    <div className={styles.searchFieldAndButton}>
+      <input
+        className={styles.searchField}
+        type="search"
+        id="search"
+        name="search"
+        placeholder="Search for products"
+      />
+      <button className={styles.searchButton}>
+        <span className={styles.searchButtonSearchText}>search</span>
+        <IoSearchOutline className={styles.searchButtonSearchIcon} />
+      </button>
+    </div>
   </div>
 );
 
@@ -426,20 +431,19 @@ const CenterNavSection = ({
       <div>
         {navData.map((data, ind) => (
           <div className={styles.centerNavRightDataContainer} key={ind}>
-            <Drawer
-              anchor="right"
-              open={open}
-              onClose={toggleSearchDrawer(false)}
-            >
-              <Box
-                sx={{ width: 500 }}
-                role="presentation"
-                onClick={toggleSearchDrawer(false)}
-              >
-                <h1>Hi</h1>
-                <SearchField />
-              </Box>
-            </Drawer>
+            <div>
+              <Drawer anchor="right" open={open}>
+                <Box
+                  className={styles.searchDrawerContainer}
+                  role="presentation"
+                >
+                  <div className={styles.DrawerCrossBtn}>
+                    <RxCross1 onClick={toggleSearchDrawer(false)} />
+                  </div>
+                  <SearchField />
+                </Box>
+              </Drawer>
+            </div>
 
             <Drawer
               anchor="right"
