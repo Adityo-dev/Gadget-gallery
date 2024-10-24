@@ -1,7 +1,12 @@
 import styles from "./register.module.css";
 import Link from "next/link";
+import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
 
-//Mui Text Field
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "my account", href: "/my-account" },
+  { label: "register", href: "/register" },
+];
 
 export default function Register() {
   const handleFromBtn = (btnName) => {
@@ -13,44 +18,50 @@ export default function Register() {
   };
 
   return (
-    <section className={styles.regAllDataContainer}>
-      <div className={styles.regDataContainer}>
-        <h1 className={styles.regText}>Create Account</h1>
-        <p className={styles.regSubText}>
-          Please Register using account detail below.
-        </p>
+    <>
+      <section>
+        <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
+      </section>
 
-        <div className={styles.inputFieldContainer}>
-          <input
-            className={styles.inputField}
-            type="text"
-            placeholder="Please Enter Your First Name"
-          />
-          <input
-            className={styles.inputField}
-            type="text"
-            placeholder="Please Enter Your Last Name"
-          />
-          <input
-            className={styles.inputField}
-            type="email"
-            placeholder="Please Enter Your Email"
-          />
-          <input
-            className={styles.inputField}
-            type="Password"
-            placeholder="Please Enter Your Password"
-          />
+      <section className={styles.regAllDataContainer}>
+        <div className={styles.regDataContainer}>
+          <h1 className={styles.regText}>Create Account</h1>
+          <p className={styles.regSubText}>
+            Please Register using account detail below.
+          </p>
+
+          <div className={styles.inputFieldContainer}>
+            <input
+              className={styles.inputField}
+              type="text"
+              placeholder="Please Enter Your First Name"
+            />
+            <input
+              className={styles.inputField}
+              type="text"
+              placeholder="Please Enter Your Last Name"
+            />
+            <input
+              className={styles.inputField}
+              type="email"
+              placeholder="Please Enter Your Email"
+            />
+            <input
+              className={styles.inputField}
+              type="Password"
+              placeholder="Please Enter Your Password"
+            />
+          </div>
+
+          <div className={styles.singInAndForgotPsContainer}>
+            {handleFromBtn("Create Now")}
+          </div>
+
+          <Link href={"/"} className={styles.createAccountText}>
+            Return to Store
+          </Link>
         </div>
-
-        <div className={styles.singInAndForgotPsContainer}>
-          {handleFromBtn("Create Now")}
-        </div>
-
-        <Link href={"/"} className={styles.createAccountText}>
-          Return to Store
-        </Link>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

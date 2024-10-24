@@ -1,11 +1,11 @@
-import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
 import styles from "./login.module.css";
 import Link from "next/link";
+import DynamicBreadcrumb from "@/components/dynamicBreadcrumb";
 
-//Mui Text Field
 const breadcrumbItems = [
   { label: "Home", href: "/" },
-  { label: "contact", href: "/contact" },
+  { label: "my account", href: "/my-account" },
+  { label: "login", href: "/login" },
 ];
 
 export default function Login() {
@@ -18,42 +18,44 @@ export default function Login() {
   };
 
   return (
-    <section className={styles.loginAllDataContainer}>
+    <>
       <section>
         <DynamicBreadcrumb breadcrumbItems={breadcrumbItems} />
       </section>
 
-      <div className={styles.loginDataContainer}>
-        <h1 className={styles.loginText}>Login</h1>
-        <p className={styles.loginSubText}>
-          Please login using account detail bellow.
-        </p>
+      <section className={styles.loginAllDataContainer}>
+        <div className={styles.loginDataContainer}>
+          <h1 className={styles.loginTitle}>Login</h1>
+          <p className={styles.loginSubTitle}>
+            Please login using account detail bellow.
+          </p>
 
-        <div className={styles.inputFieldContainer}>
-          <input
-            className={styles.inputField}
-            type="Email"
-            placeholder="Please Enter Your Email"
-          />
-          <input
-            className={styles.inputField}
-            type="Password"
-            placeholder="Please Enter Your Password"
-          />
+          <div className={styles.inputFieldContainer}>
+            <input
+              className={styles.inputField}
+              type="Email"
+              placeholder="Please Enter Your Email"
+            />
+            <input
+              className={styles.inputField}
+              type="Password"
+              placeholder="Please Enter Your Password"
+            />
+          </div>
+
+          <div className={styles.singInAndForgotPsContainer}>
+            {handleFromBtn("sign in")}
+            <p className={styles.createAccountText}>Forgot your password?</p>
+          </div>
+
+          <Link
+            href={"/my-account/register"}
+            className={styles.createAccountText}
+          >
+            Create account
+          </Link>
         </div>
-
-        <div className={styles.singInAndForgotPsContainer}>
-          {handleFromBtn("sign in")}
-          <p className={styles.createAccountText}>Forgot your password?</p>
-        </div>
-
-        <Link
-          href={"/my-account/register"}
-          className={styles.createAccountText}
-        >
-          Create account
-        </Link>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
