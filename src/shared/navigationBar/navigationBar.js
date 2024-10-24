@@ -467,7 +467,11 @@ const CenterNavSection = ({
         {navData.map((data, ind) => (
           <div className={styles.centerNavRightDataContainer} key={ind}>
             <div>
-              <Drawer anchor="right" open={open}>
+              <Drawer
+                className={styles.DrawerContainer}
+                anchor="right"
+                open={open}
+              >
                 <Box
                   className={styles.searchDrawerContainer}
                   role="presentation"
@@ -480,7 +484,11 @@ const CenterNavSection = ({
               </Drawer>
             </div>
 
-            <Drawer anchor="right" open={open1}>
+            <Drawer
+              className={styles.DrawerContainer}
+              anchor="right"
+              open={open1}
+            >
               <Box className={styles.searchDrawerContainer} role="presentation">
                 <div className={styles.NavCategoryAllConTainerSm}>
                   <Box sx={{ width: "100%" }}>
