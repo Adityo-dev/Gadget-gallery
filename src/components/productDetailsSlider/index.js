@@ -59,13 +59,13 @@ function ProductDetailsSlider({ cartData }) {
   return (
     <div>
       <Slider
+        className={styles.firstImageContainer}
         asNavFor={nav2}
         ref={(slider) => (sliderRef1 = slider)}
         {...settings2}
-        className={styles.firstImageContainer}
       >
         {imageData.map((image, ind) => (
-          <div className={styles.secondImageContainer} key={ind}>
+          <div key={ind}>
             <Image className={styles.firstImage} src={image} alt="" />
           </div>
         ))}

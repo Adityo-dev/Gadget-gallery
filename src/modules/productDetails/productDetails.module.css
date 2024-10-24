@@ -8,6 +8,7 @@
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 30px;
+  margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(2, 50%);
   gap: 30px;
@@ -135,4 +136,79 @@
 
 .shareIcon:hover {
   color: #0068c8;
+}
+
+@media only screen and (max-width: 1550px) {
+  .productDetailsALlDataContainer {
+    padding: 0 15px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .name {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .ratingStar {
+    font-size: 18px;
+  }
+
+  .stock {
+    margin-left: 5px;
+  }
+
+  .priceContainer {
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  .currentPrice {
+    font-size: 26px;
+  }
+
+  .oldPrice {
+    font-size: 18px;
+  }
+
+  .discount {
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  .serviceList {
+    font-size: 14px;
+  }
+
+  .hrLine {
+    margin: 40px 0;
+  }
+
+  .tagsContainer,
+  .shareContainer {
+    margin: 12px 0;
+  }
+
+  .tagsContainer {
+    align-items: normal;
+  }
+
+  .shareIcon {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1550px) {
+  .productDetailsALlDataContainer {
+    padding: 0 15px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+  }
 }

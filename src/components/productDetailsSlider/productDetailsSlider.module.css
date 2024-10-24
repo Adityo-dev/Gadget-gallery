@@ -36,3 +36,23 @@
   cursor: pointer;
   object-fit: cover;
 }
+
+@media only screen and (max-width: 1179px) {
+  .firstImage {
+    padding: 0px;
+  }
+
+  .secondImageAllDataContainer {
+    padding: 0 30px;
+  }
+
+  .secondImageContainer {
+    margin-top: 15px;
+    margin-right: 0;
+    margin-left: 5px;
+  }
+
+  .secondImage {
+    padding: 0;
+  }
+}

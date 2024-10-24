@@ -79,7 +79,11 @@ const navData = [
       },
 
       {
-        info: { icon: <FaRegUser />, title: "my account", url: "/" },
+        info: {
+          icon: <FaRegUser />,
+          title: "my account",
+          url: "/my-account/login",
+        },
       },
       {
         info: { icon: <LuShoppingCart />, title: "my cart", url: "/cart" },
