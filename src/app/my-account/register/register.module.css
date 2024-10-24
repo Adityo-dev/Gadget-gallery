@@ -11,7 +11,7 @@
 
 .regAllDataContainer {
   position: relative;
-  /* max-width: 1600px; */
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 15px;
   margin-top: 50px;
