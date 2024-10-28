@@ -59,7 +59,7 @@ function HeroSlider() {
     waitForAnimate: true,
   };
   return (
-    <div>
+    <div className={styles.sliderDataMainContainer}>
       <Slider {...settings}>
         {sliderData.map((data, ind) => (
           <div key={ind}>

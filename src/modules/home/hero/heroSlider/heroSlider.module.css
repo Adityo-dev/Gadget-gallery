@@ -1,7 +1,12 @@
-.sliderDataContainer {
+.sliderDataMainContainer {
   max-width: 1600px;
-  height: 32rem;
   margin: 0 auto;
+  padding: 0 30px;
+}
+
+.sliderDataContainer {
+  width: 100%;
+  height: 32rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
