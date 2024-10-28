@@ -1,12 +1,7 @@
-.sliderDataMainContainer {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 30px;
-}
-
 .sliderDataContainer {
-  width: 100%;
+  max-width: 1550px;
   height: 32rem;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
