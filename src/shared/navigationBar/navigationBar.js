@@ -544,7 +544,10 @@ const CenterNavSection = ({
                 key={index}
               >
                 {index === 3 ? (
-                  <Badge badgeContent={cart.length} color="primary">
+                  <Badge
+                    badgeContent={cart.length <= 0 ? "0" : cart.length}
+                    color="primary"
+                  >
                     <p className={styles.centerNavRightDataIcon}>
                       {item?.info?.icon}
                     </p>
@@ -684,7 +687,10 @@ const NavBarCategories = ({ navData }) => {
 const NavCategoryRightList = ({ wishlistItems }) => {
   return (
     <div className={styles.navCategoryRightList}>
-      <Badge badgeContent={wishlistItems.length} color="primary">
+      <Badge
+        badgeContent={wishlistItems.length <= 0 ? "0" : wishlistItems.length}
+        color="primary"
+      >
         <Link href="/wishlist">
           <TfiHeart className={styles.bottomNavRightHeartIcon} />
         </Link>
