@@ -1,5 +1,5 @@
 .sliderDataContainer {
-  max-width: 1550px;
+  max-width: 1600px;
   height: 32rem;
   margin: 0 auto;
   display: flex;
@@ -304,7 +304,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1500px) {
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
   .sliderDataContainer {
     height: 28rem;
     padding: 0 5.5rem;
@@ -353,7 +353,7 @@
   }
 }
 
-@media screen and (min-width: 1400px) and (max-width: 1500px) {
+@media screen and (min-width: 1400px) and (max-width: 1600px) {
   .sliderDataContainer {
     height: 31rem;
   }
