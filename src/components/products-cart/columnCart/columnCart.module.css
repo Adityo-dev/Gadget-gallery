@@ -111,7 +111,7 @@
 .cartButton {
   position: absolute;
   right: 15px;
-  top: 30px;
+  top: 20px;
   opacity: 0;
   transition: opacity 0.5s, transform 0.5s;
 }
@@ -235,4 +235,10 @@
     font-size: 0.85rem;
   }
   /* --------- */
+}
+
+@media screen and (max-width: 1179px) {
+  .cartButton {
+    opacity: 1;
+  }
 }

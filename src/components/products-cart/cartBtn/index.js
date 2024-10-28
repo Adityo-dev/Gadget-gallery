@@ -56,28 +56,34 @@ export default function CartButton({ cartData }) {
   return (
     <div>
       {cartBtnData.map((data, ind) => (
-        <Tooltip
-          style={{ display: "flex" }}
+        <div
           key={ind}
-          title={data?.name}
-          placement="left"
-          arrow
+          className={`${
+            data.name === "wishlist" ? styles.smBlock : styles.smNone
+          }`}
         >
-          <button
-            className={styles.cartBtn}
-            onClick={() => {
-              if (ind === 0) {
-                addToCart(name, title, cartData);
-              } else if (ind === 1) {
-                addToWishlist(cartData);
-              } else if (ind === 2) {
-                handleOpen();
-              }
-            }}
+          <Tooltip
+            style={{ display: "flex" }}
+            title={data?.name}
+            placement="left"
+            arrow
           >
-            {data?.icon}
-          </button>
-        </Tooltip>
+            <button
+              className={styles.cartBtn}
+              onClick={() => {
+                if (ind === 0) {
+                  addToCart(name, title, cartData);
+                } else if (ind === 1) {
+                  addToWishlist(cartData);
+                } else if (ind === 2) {
+                  handleOpen();
+                }
+              }}
+            >
+              {data?.icon}
+            </button>
+          </Tooltip>
+        </div>
       ))}
 
       {/* modal */}
