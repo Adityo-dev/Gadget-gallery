@@ -87,54 +87,51 @@ export default function CartButton({ cartData }) {
       ))}
 
       {/* modal */}
-      <div>
-        <Modal open={open} onClose={handleClose}>
-          <div className={styles.modalContainer}>
-            <div className={styles.modalInfoContainer}>
-              <div>
-                <ProductDetailsSlider cartData={cartData} />
-                <VscChromeClose
-                  onClick={handleClose}
-                  className={styles.modalCloseIcon}
-                />
+
+      <Modal open={open} onClose={handleClose}>
+        <div className={styles.modalContainer}>
+          <div className={styles.modalInfoContainer}>
+            <div>
+              <ProductDetailsSlider cartData={cartData} />
+              <VscChromeClose
+                onClick={handleClose}
+                className={styles.modalCloseIcon}
+              />
+            </div>
+
+            <div>
+              <p className={styles.name}>{name}</p>
+              <h3 className={styles.title}>{title}</h3>
+              <div className={styles.ratingReviewAndStockContainer}>
+                {rating && (
+                  <>
+                    <Rating
+                      className={styles.ratingStar}
+                      name="rating"
+                      defaultValue={rating}
+                      precision={0.5}
+                      readOnly
+                    />
+                    <p className={styles.rating}>({rating})</p>
+                  </>
+                )}
+
+                {review && <p className={styles.review}>{review} review</p>}
+                {stock && <p className={styles.stock}>{stock} in stock</p>}
               </div>
 
-              <div>
-                <p className={styles.name}>{name}</p>
-                <h3 className={styles.title}>{title}</h3>
-                <div className={styles.ratingReviewAndStockContainer}>
-                  {rating && (
-                    <>
-                      <Rating
-                        className={styles.ratingStar}
-                        name="rating"
-                        defaultValue={rating}
-                        precision={0.5}
-                        readOnly
-                      />
-                      <p className={styles.rating}>({rating})</p>
-                    </>
-                  )}
+              <p className={styles.priceContainer}>
+                <span className={styles.currentPrice}>${currentPrice}</span>
+                {oldPrice && <del className={styles.oldPrice}>${oldPrice}</del>}
 
-                  {review && <p className={styles.review}>{review} review</p>}
-                  {stock && <p className={styles.stock}>{stock} in stock</p>}
-                </div>
-
-                <p className={styles.priceContainer}>
-                  <span className={styles.currentPrice}>${currentPrice}</span>
-                  {oldPrice && (
-                    <del className={styles.oldPrice}>${oldPrice}</del>
-                  )}
-
-                  {discount && (
-                    <span className={styles.discount}>(-{`${discount}%`})</span>
-                  )}
-                </p>
-              </div>
+                {discount && (
+                  <span className={styles.discount}>(-{`${discount}%`})</span>
+                )}
+              </p>
             </div>
           </div>
-        </Modal>
-      </div>
+        </div>
+      </Modal>
     </div>
   );
 }
