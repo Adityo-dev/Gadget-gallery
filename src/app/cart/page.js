@@ -92,7 +92,7 @@ const Cart = () => {
                                 -
                               </button>
                               <span className={styles.cartCounterCounter}>
-                                {count}
+                                {item.counter}
                               </span>
                               <butt
                                 className={styles.cartCounterBtn}
@@ -104,7 +104,7 @@ const Cart = () => {
                           </div>
 
                           <p className={styles.cartInStockRed}>
-                            ${count * item?.price}
+                            ${(item.counter * item?.price).toFixed(2)}
                           </p>
 
                           <p>

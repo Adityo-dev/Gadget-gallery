@@ -57,6 +57,7 @@ export default function CartButton({ cartData }) {
   const quickViewHandleClose = () => setQuickView(false);
 
   // add to shopping Cart
+  const counter = 1;
   const { addToCart } = useCartContext();
   // add to Wishlist
   const { addToWishlist } = useWishlist();
@@ -81,7 +82,7 @@ export default function CartButton({ cartData }) {
               onClick={() => {
                 if (ind === 0) {
                   addToCartHandleOpen();
-                  addToCart(name, title, cartData);
+                  addToCart(name, title, counter, cartData);
                 } else if (ind === 1) {
                   addToWishlist(cartData);
                 } else if (ind === 2) {

@@ -21,8 +21,8 @@ const ProductDetails = ({ data }) => {
 
   const productDetailsData = [
     {
-      title: "Xbox series",
-      name: searchValue,
+      title: searchValue,
+      name: "Xbox series",
       rating: 4.5,
       review: 2,
       stock: 81,
@@ -78,8 +78,8 @@ const ProductDetails = ({ data }) => {
         <div className={styles.productDetailsInfoContainer}>
           {productDetailsData.map((data, ind) => (
             <div key={ind}>
-              <p className={styles.title}>{data?.title}</p>
-              <h3 className={styles.name}>{data?.name}</h3>
+              <p className={styles.title}>{data?.name}</p>
+              <h3 className={styles.name}>{data?.title}</h3>
 
               <div className={styles.ratingReviewAndStockContainer}>
                 {data.rating && (
@@ -126,17 +126,13 @@ const ProductDetails = ({ data }) => {
                 </ul>
               )}
 
-              {data.productDetails2 && (
-                <p className={styles.productDetails2}>{data.productDetails2}</p>
-              )}
-
               <ul className={styles.serviceList}>
                 {data.productService.map((service, index) => (
                   <li key={index}>{service}</li>
                 ))}
               </ul>
 
-              <ProductCounter />
+              <ProductCounter product={data} />
 
               <p className={styles.hrLine} />
               <div>

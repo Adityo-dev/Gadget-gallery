@@ -1,21 +1,40 @@
 function CartReducer(state, action) {
   if (action.type === "ADD_TO_CART") {
-    let { name, title, product } = action.payload;
+    let { name, title, counter, product } = action.payload;
 
-    let cartProduct;
+    let existingProduct = state.cart.find((curItem) => curItem.id === title);
 
-    cartProduct = {
-      id: title,
-      image: product.image,
-      name: product.title,
-      price: product.currentPrice,
-      stock: product.stock,
-    };
+    if (existingProduct) {
+      let updateProduct = state.cart.map((curItem) => {
+        if (curItem.id === title) {
+          let newCounter = curItem.counter + counter;
+          return {
+            ...curItem,
+            counter: newCounter,
+          };
+        } else {
+          return curItem;
+        }
+      });
+      return {
+        ...state,
+        cart: updateProduct,
+      };
+    } else {
+      let cartProduct = {
+        id: title,
+        image: product.image,
+        name: product.title,
+        counter,
+        price: product.currentPrice,
+        stock: product.stock,
+      };
 
-    return {
-      ...state,
-      cart: [...state.cart, cartProduct],
-    };
+      return {
+        ...state,
+        cart: [...state.cart, cartProduct],
+      };
+    }
   }
 
   if (action.type === "REMOVE_CART") {
