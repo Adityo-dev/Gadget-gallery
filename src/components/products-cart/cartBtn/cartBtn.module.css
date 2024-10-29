@@ -148,6 +148,15 @@
   margin-left: 5px;
 }
 
+.addToCartModalBtnGroup {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
 @media screen and (max-width: 1179px) {
   .smBlock {
     display: block;

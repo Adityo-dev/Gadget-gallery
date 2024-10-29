@@ -21,6 +21,7 @@ import Tooltip from "@mui/material/Tooltip";
 import Modal from "@mui/material/Modal";
 // import rating
 import Rating from "@mui/material/Rating";
+import TransparentButton from "@/components/buttonGroup/transparentButton";
 
 export default function CartButton({ cartData }) {
   const {
@@ -102,7 +103,7 @@ export default function CartButton({ cartData }) {
               onClick={addToCartHandleClose}
               className={styles.modalCloseIcon}
             />
-            <div>
+            <div className={styles.addToCartModalAllInfoContainer}>
               <h2 className={styles.addToCartModalContainerTitle}>
                 Product is added to cart
               </h2>
@@ -123,14 +124,13 @@ export default function CartButton({ cartData }) {
                         ${oldPrice}
                       </del>
                     )}
-
-                    {discount && (
-                      <span className={styles.discount}>
-                        (-{`${discount}%`})
-                      </span>
-                    )}
                   </p>
                 </div>
+              </div>
+
+              <div className={styles.addToCartModalBtnGroup}>
+                <TransparentButton btnName={"VIEW CART"} btnUrl={"cart"} />
+                <TransparentButton btnName={"CHECKOUT"} btnUrl={"checkout"} />
               </div>
             </div>
           </div>
