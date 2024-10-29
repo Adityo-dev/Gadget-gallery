@@ -24,6 +24,7 @@ import Rating from "@mui/material/Rating";
 
 export default function CartButton({ cartData }) {
   const {
+    image,
     name,
     title,
     currentPrice,
@@ -44,9 +45,15 @@ export default function CartButton({ cartData }) {
     { icon: <MdCompareArrows />, name: "compare" },
   ];
 
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  // add to cart Modal
+  const [addToCartOpen, setAddToCartOpen] = React.useState(false);
+  const addToCartHandleOpen = () => setAddToCartOpen(true);
+  const addToCartHandleClose = () => setAddToCartOpen(false);
+
+  // quick View Modal
+  const [quickView, setQuickView] = React.useState(false);
+  const quickViewHandleOpen = () => setQuickView(true);
+  const quickViewHandleClose = () => setQuickView(false);
 
   // add to shopping Cart
   const { addToCart } = useCartContext();
@@ -72,11 +79,12 @@ export default function CartButton({ cartData }) {
               className={styles.cartBtn}
               onClick={() => {
                 if (ind === 0) {
+                  addToCartHandleOpen();
                   addToCart(name, title, cartData);
                 } else if (ind === 1) {
                   addToWishlist(cartData);
                 } else if (ind === 2) {
-                  handleOpen();
+                  quickViewHandleOpen();
                 }
               }}
             >
@@ -86,52 +94,102 @@ export default function CartButton({ cartData }) {
         </div>
       ))}
 
-      {/* modal */}
-
-      <Modal open={open} onClose={handleClose}>
-        <div className={styles.modalContainer}>
-          <div className={styles.modalInfoContainer}>
+      <>
+        {/* add To Cart Modal */}
+        <Modal open={addToCartOpen} onClose={addToCartHandleClose}>
+          <div className={styles.addToCartModalContainer}>
+            <VscChromeClose
+              onClick={addToCartHandleClose}
+              className={styles.modalCloseIcon}
+            />
             <div>
-              <ProductDetailsSlider cartData={cartData} />
-              <VscChromeClose
-                onClick={handleClose}
-                className={styles.modalCloseIcon}
-              />
-            </div>
+              <h2 className={styles.addToCartModalContainerTitle}>
+                Product is added to cart
+              </h2>
+              <div className={styles.addToCartModalItemContainer}>
+                <Image
+                  className={styles.addToCartModalImage}
+                  src={image}
+                  alt=""
+                />
+                <div className={styles.addToCartModalInfoContainer}>
+                  <p className={styles.addToCartModalTitle}>{title}</p>
+                  <p className={styles.addToCartModalPriceContainer}>
+                    <span className={styles.addToCartModalCurrentPrice}>
+                      ${currentPrice}
+                    </span>
+                    {oldPrice && (
+                      <del className={styles.addToCartModalOldPrice}>
+                        ${oldPrice}
+                      </del>
+                    )}
 
-            <div>
-              <p className={styles.name}>{name}</p>
-              <h3 className={styles.title}>{title}</h3>
-              <div className={styles.ratingReviewAndStockContainer}>
-                {rating && (
-                  <>
-                    <Rating
-                      className={styles.ratingStar}
-                      name="rating"
-                      defaultValue={rating}
-                      precision={0.5}
-                      readOnly
-                    />
-                    <p className={styles.rating}>({rating})</p>
-                  </>
-                )}
-
-                {review && <p className={styles.review}>{review} review</p>}
-                {stock && <p className={styles.stock}>{stock} in stock</p>}
+                    {discount && (
+                      <span className={styles.discount}>
+                        (-{`${discount}%`})
+                      </span>
+                    )}
+                  </p>
+                </div>
               </div>
-
-              <p className={styles.priceContainer}>
-                <span className={styles.currentPrice}>${currentPrice}</span>
-                {oldPrice && <del className={styles.oldPrice}>${oldPrice}</del>}
-
-                {discount && (
-                  <span className={styles.discount}>(-{`${discount}%`})</span>
-                )}
-              </p>
             </div>
           </div>
-        </div>
-      </Modal>
+        </Modal>
+
+        {/* Quick View Modal */}
+        <Modal open={quickView} onClose={quickViewHandleClose}>
+          <div className={styles.quickViewModalContainer}>
+            <div className={styles.quickViewModalModalInfoContainer}>
+              <div>
+                <ProductDetailsSlider cartData={cartData} />
+                <VscChromeClose
+                  onClick={quickViewHandleClose}
+                  className={styles.modalCloseIcon}
+                />
+              </div>
+
+              <div>
+                <p className={styles.quickViewModalName}>{name}</p>
+                <p className={styles.quickViewModalTitle}>{title}</p>
+                <div className={styles.ratingReviewAndStockContainer}>
+                  {rating && (
+                    <>
+                      <Rating
+                        className={styles.ratingStar}
+                        name="rating"
+                        defaultValue={rating}
+                        precision={0.5}
+                        readOnly
+                      />
+                      <p className={styles.rating}>({rating})</p>
+                    </>
+                  )}
+
+                  {review && <p className={styles.review}>{review} review</p>}
+                  {stock && <p className={styles.stock}>{stock} in stock</p>}
+                </div>
+
+                <p className={styles.quickViewPriceContainer}>
+                  <span className={styles.quickViewModalCurrentPrice}>
+                    ${currentPrice}
+                  </span>
+                  {oldPrice && (
+                    <del className={styles.quickViewModalOldPrice}>
+                      ${oldPrice}
+                    </del>
+                  )}
+
+                  {discount && (
+                    <span className={styles.quickViewModalDiscount}>
+                      (-{`${discount}%`})
+                    </span>
+                  )}
+                </p>
+              </div>
+            </div>
+          </div>
+        </Modal>
+      </>
     </div>
   );
 }

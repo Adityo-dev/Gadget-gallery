@@ -15,7 +15,8 @@
   background-color: #dae0e6;
 }
 
-.modalContainer {
+.quickViewModalContainer,
+.addToCartModalContainer {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -28,10 +29,31 @@
   background-color: #fff;
 }
 
-.modalInfoContainer {
+.addToCartModalContainer {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+.quickViewModalModalInfoContainer {
   display: grid;
   grid-template-columns: repeat(2, 50%);
   gap: 30px;
+}
+
+.addToCartModalContainerTitle {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.addToCartModalItemContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  padding: 1rem 0;
 }
 
 .modalCloseIcon {
@@ -46,17 +68,28 @@
   cursor: pointer;
 }
 
-.name {
+.addToCartModalImage {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+}
+
+.quickViewModalName {
   font-size: 1rem;
   color: #848484;
   text-transform: capitalize;
 }
 
-.title {
+.quickViewModalTitle,
+.addToCartModalTitle {
   font-size: 1.8rem;
   font-weight: normal;
   text-transform: capitalize;
   margin: 0.7rem 0;
+}
+
+.addToCartModalTitle {
+  font-size: 1rem;
 }
 
 .ratingReviewAndStockContainer {
@@ -80,26 +113,37 @@
   margin-left: 1rem;
 }
 
-.priceContainer {
+.quickViewPriceContainer,
+.addToCartModalPriceContainer {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
 }
 
-.currentPrice {
+.quickViewModalCurrentPrice,
+.addToCartModalCurrentPrice {
   color: #dd2831;
   font-size: 1.8rem;
   font-weight: 700;
 }
 
-.oldPrice {
+.addToCartModalCurrentPrice {
+  font-size: 1.2rem;
+}
+
+.quickViewModalOldPrice,
+.addToCartModalOldPrice {
   color: #848484;
   font-size: 1.2rem;
   font-weight: 300;
 }
 
-.discount {
+.addToCartModalOldPrice {
+  font-size: 1.1rem;
+}
+
+.quickViewModalDiscount {
   font-size: 1rem;
   margin-left: 5px;
 }
