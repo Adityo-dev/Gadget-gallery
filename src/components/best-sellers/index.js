@@ -60,7 +60,7 @@ const bestSellersData = [
       {
         image: smartPhone0,
         name: "samsung galaxy",
-        title: "Samsung Galaxy S23 Ultra, Factory Unlocked, 512GB",
+        title: "iphone-14",
         rating: "4.5",
         currentPrice: "699.99",
         oldPrice: "949.99",
