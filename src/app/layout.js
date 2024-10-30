@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
             <NavigationBar />
             {children}
             <ToastContainer
-              position="top-right"
+              position="bottom-right"
               autoClose={3000}
               hideProgressBar={false}
               newestOnTop={false}
@@ -35,7 +35,6 @@ export default function RootLayout({ children }) {
               draggable
               pauseOnHover
               theme="light"
-              // transition: Flip,
             />
             <Footer />
             <LiveChat />
