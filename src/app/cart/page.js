@@ -19,17 +19,7 @@ const breadcrumbItems = [
 ];
 
 const Cart = () => {
-  const { cart, removeCart } = useCartContext();
-
-  // product counter
-  const [count, setCount] = useState(1);
-
-  const increment = () => setCount(count + 1);
-  const decrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  };
+  const { cart, removeCart, setDecrement, setIncrement } = useCartContext();
 
   return (
     <main>
@@ -87,7 +77,7 @@ const Cart = () => {
                             <div className={styles.cartCounterContainer}>
                               <button
                                 className={styles.cartCounterBtn}
-                                onClick={decrement}
+                                onClick={() => setDecrement(item?.id)}
                               >
                                 -
                               </button>
@@ -96,7 +86,7 @@ const Cart = () => {
                               </span>
                               <butt
                                 className={styles.cartCounterBtn}
-                                onClick={increment}
+                                onClick={() => setIncrement(item?.id)}
                               >
                                 +
                               </butt>

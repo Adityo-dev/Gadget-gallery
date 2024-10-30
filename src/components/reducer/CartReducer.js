@@ -37,6 +37,26 @@ function CartReducer(state, action) {
     }
   }
 
+  // setIncrement and setDecrement the product
+  if (action.type === "SET_DECREMENT") {
+    let updateProduct = state.cart.map((curItem) => {
+      if (curItem.id === action.payload) {
+        let decCounter = curItem.counter - 1;
+        if (decCounter <= 1) {
+          decCounter = 1;
+        }
+        return {
+          ...curItem,
+          counter: decCounter,
+        };
+      } else {
+        return curItem;
+      }
+    });
+    return { ...state, cart: updateProduct };
+  }
+
+  // to remove the individual item from cart
   if (action.type === "REMOVE_CART") {
     let updateCart = state.cart.filter(
       (curItem) => curItem.id !== action.payload

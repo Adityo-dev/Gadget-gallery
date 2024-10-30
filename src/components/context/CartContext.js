@@ -18,12 +18,24 @@ const CartProvider = ({ children }) => {
     });
   };
 
+  // setIncrement and setDecrement the product
+  const setDecrement = (id) => {
+    dispatch({ type: "SET_DECREMENT", payload: id });
+  };
+
+  const setIncrement = (id) => {
+    dispatch({ type: "SET_INCREMENT", payload: id });
+  };
+
+  // to remove the individual item from cart
   const removeCart = (id) => {
     dispatch({ type: "REMOVE_CART", payload: id });
   };
 
   return (
-    <CartContext.Provider value={{ ...state, addToCart, removeCart }}>
+    <CartContext.Provider
+      value={{ ...state, addToCart, removeCart, setDecrement, setIncrement }}
+    >
       {children}
     </CartContext.Provider>
   );
