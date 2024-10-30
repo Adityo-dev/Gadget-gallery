@@ -5,6 +5,9 @@ import Footer from "@/shared/footer/footer";
 import LiveChat from "@/components/liveChat/liveChat";
 import { CartProvider } from "@/components/context/CartContext";
 import { WishlistProvider } from "@/components/context/WishlistContext";
+// react tost
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +24,19 @@ export default function RootLayout({ children }) {
           <WishlistProvider>
             <NavigationBar />
             {children}
+            <ToastContainer
+              position="top-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+              // transition: Flip,
+            />
             <Footer />
             <LiveChat />
           </WishlistProvider>

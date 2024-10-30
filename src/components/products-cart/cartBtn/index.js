@@ -6,6 +6,7 @@ import Image from "next/image";
 import ProductDetailsSlider from "@/components/productDetailsSlider";
 import { useCartContext } from "@/components/context/CartContext";
 import { useWishlist } from "@/components/context/WishlistContext";
+import { toast } from "react-toastify";
 
 // import icon
 import { GiShoppingCart } from "react-icons/gi";
@@ -47,9 +48,9 @@ export default function CartButton({ cartData }) {
   ];
 
   // add to cart Modal
-  const [addToCartOpen, setAddToCartOpen] = React.useState(false);
-  const addToCartHandleOpen = () => setAddToCartOpen(true);
-  const addToCartHandleClose = () => setAddToCartOpen(false);
+  // const [addToCartOpen, setAddToCartOpen] = React.useState(false);
+  // const addToCartHandleOpen = () => setAddToCartOpen(true);
+  // const addToCartHandleClose = () => setAddToCartOpen(false);
 
   // quick View Modal
   const [quickView, setQuickView] = React.useState(false);
@@ -81,8 +82,8 @@ export default function CartButton({ cartData }) {
               className={styles.cartBtn}
               onClick={() => {
                 if (ind === 0) {
-                  addToCartHandleOpen();
                   addToCart(name, title, counter, cartData);
+                  toast.success("Product added to cart");
                 } else if (ind === 1) {
                   addToWishlist(cartData);
                 } else if (ind === 2) {
@@ -98,7 +99,7 @@ export default function CartButton({ cartData }) {
 
       <>
         {/* add To Cart Modal */}
-        <Modal open={addToCartOpen} onClose={addToCartHandleClose}>
+        {/* <Modal open={addToCartOpen} onClose={addToCartHandleClose}>
           <div className={styles.addToCartModalContainer}>
             <VscChromeClose
               onClick={addToCartHandleClose}
@@ -135,7 +136,7 @@ export default function CartButton({ cartData }) {
               </div>
             </div>
           </div>
-        </Modal>
+        </Modal> */}
 
         {/* Quick View Modal */}
         <Modal open={quickView} onClose={quickViewHandleClose}>
