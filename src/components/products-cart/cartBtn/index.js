@@ -86,6 +86,7 @@ export default function CartButton({ cartData }) {
                   toast.success("Product added to cart");
                 } else if (ind === 1) {
                   addToWishlist(cartData);
+                  toast.success("Product added to wishlist");
                 } else if (ind === 2) {
                   quickViewHandleOpen();
                 }

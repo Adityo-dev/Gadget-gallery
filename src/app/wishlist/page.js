@@ -16,7 +16,8 @@ const breadcrumbItems = [
 const Wishlist = () => {
   const { wishlistItems, removeFromWishlist } = useWishlist();
   // add to shopping Cart
-  const { addToCart, removeCart } = useCartContext();
+  const counter = 1;
+  const { addToCart } = useCartContext();
 
   return (
     <section className={styles.wishlistAllInfoAllDataContainer}>
@@ -109,7 +110,7 @@ const Wishlist = () => {
                       {item?.soldOut === false ? (
                         <button
                           onClick={() => {
-                            addToCart(item.name, item.title, item);
+                            addToCart(item.name, item.title, counter, item);
                             removeFromWishlist(item.title);
                           }}
                           className={styles.wishlistAddToCartBtn}
