@@ -1,11 +1,20 @@
 "use client";
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useEffect } from "react";
 import reducer from "../reducer/CartReducer";
 
 const CartContext = createContext();
 
+const getLocationCartData = () => {
+  let newCartData = localStorage.getItem("gadgetGalleryCart");
+  if (!newCartData) {
+    return [];
+  } else {
+    return JSON.parse(newCartData);
+  }
+};
+
 const initialState = {
-  cart: [],
+  cart: getLocationCartData(),
 };
 
 const CartProvider = ({ children }) => {
@@ -31,6 +40,11 @@ const CartProvider = ({ children }) => {
   const removeCart = (id) => {
     dispatch({ type: "REMOVE_CART", payload: id });
   };
+
+  // ti add the date in localStorage
+  useEffect(() => {
+    localStorage.setItem("gadgetGalleryCart", JSON.stringify(state.cart));
+  }, [state.cart]);
 
   return (
     <CartContext.Provider
