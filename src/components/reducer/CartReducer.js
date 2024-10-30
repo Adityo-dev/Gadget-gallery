@@ -56,6 +56,21 @@ function CartReducer(state, action) {
     return { ...state, cart: updateProduct };
   }
 
+  if (action.type === "SET_INCREMENT") {
+    let updateProduct = state.cart.map((curItem) => {
+      if (curItem.id === action.payload) {
+        let IncCounter = curItem.counter + 1;
+        return {
+          ...curItem,
+          counter: IncCounter,
+        };
+      } else {
+        return curItem;
+      }
+    });
+    return { ...state, cart: updateProduct };
+  }
+
   // to remove the individual item from cart
   if (action.type === "REMOVE_CART") {
     let updateCart = state.cart.filter(
