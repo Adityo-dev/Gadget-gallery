@@ -5,12 +5,15 @@ import reducer from "../reducer/CartReducer";
 const CartContext = createContext();
 
 const getLocationCartData = () => {
-  let newCartData = localStorage.getItem("gadgetGalleryCart");
-  if (!newCartData) {
-    return [];
-  } else {
-    return JSON.parse(newCartData);
+  if (typeof window !== "undefined") {
+    let newCartData = localStorage.getItem("gadgetGalleryCart");
+    if (!newCartData) {
+      return [];
+    } else {
+      return JSON.parse(newCartData);
+    }
   }
+  return [];
 };
 
 const initialState = {
@@ -43,7 +46,9 @@ const CartProvider = ({ children }) => {
 
   // ti add the date in localStorage
   useEffect(() => {
-    localStorage.setItem("gadgetGalleryCart", JSON.stringify(state.cart));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("gadgetGalleryCart", JSON.stringify(state.cart));
+    }
   }, [state.cart]);
 
   return (
