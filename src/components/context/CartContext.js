@@ -4,20 +4,20 @@ import reducer from "../reducer/CartReducer";
 
 const CartContext = createContext();
 
-const getLocationCartData = () => {
-  if (typeof window !== "undefined") {
-    let newCartData = localStorage.getItem("gadgetGalleryCart");
-    if (!newCartData) {
-      return [];
-    } else {
-      return JSON.parse(newCartData);
-    }
-  }
-  return [];
-};
+// const getLocationCartData = () => {
+//   if (typeof window !== "undefined") {
+//     let newCartData = localStorage.getItem("gadgetGalleryCart");
+//     if (!newCartData) {
+//       return [];
+//     } else {
+//       return JSON.parse(newCartData);
+//     }
+//   }
+//   return [];
+// };
 
 const initialState = {
-  cart: getLocationCartData(),
+  cart: [],
 };
 
 const CartProvider = ({ children }) => {
@@ -45,11 +45,11 @@ const CartProvider = ({ children }) => {
   };
 
   // ti add the date in localStorage
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("gadgetGalleryCart", JSON.stringify(state.cart));
-    }
-  }, [state.cart]);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     localStorage.setItem("gadgetGalleryCart", JSON.stringify(state.cart));
+  //   }
+  // }, [state.cart]);
 
   return (
     <CartContext.Provider
