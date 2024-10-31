@@ -10,20 +10,8 @@ body {
   overflow-x: hidden;
 }
 
-/* section {
-  width: 80%;
-  margin: 0 auto;
-} */
-
 a {
   text-decoration: none;
   list-style: none;
   color: #000000;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-    color: #000000;
-  }
-} */
