@@ -7,12 +7,11 @@ export const useWishlist = () => useContext(WishlistContext);
 
 export const WishlistProvider = ({ children }) => {
   const [wishlistItems, setWishlistItems] = useState(() => {
-    // ✅ Initial load from localStorage, only if window is defined
     if (typeof window !== "undefined") {
       const savedWishlist = localStorage.getItem("wishlistItems");
       return savedWishlist ? JSON.parse(savedWishlist) : [];
     }
-    return []; // ✅ server side এ খালি array ফেরত দিচ্ছে
+    return [];
   });
 
   const addToWishlist = (product) => {
@@ -32,7 +31,7 @@ export const WishlistProvider = ({ children }) => {
     );
   };
 
-  // ✅ Update localStorage only on client-side
+  //  Update localStorage only on client-side
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("wishlistItems", JSON.stringify(wishlistItems));
